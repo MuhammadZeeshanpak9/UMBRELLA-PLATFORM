@@ -5,27 +5,21 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import * as THREE from "three";
 
-function WhiteGalaxy() {
+function FlatUniverse() {
   const ref = useRef<THREE.Points>(null);
 
   const [positions, colors, sizes] = useMemo(() => {
-    const particleCount = 8000;
+    const particleCount = 20000;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
     const color = new THREE.Color();
 
     for (let i = 0; i < particleCount; i++) {
-      const armIndex = i % 4; 
-      const theta = (2 * Math.PI * armIndex) / 4 + 2 * Math.PI * Math.random();
-      const radius = Math.pow(Math.random(), 1.5) * 20; 
-      const spinAngle = radius * 0.4; 
-
-      const spread = (20 - radius) * 0.1 * (Math.random() - 0.5);
-
-      const x = Math.cos(theta + spinAngle) * radius + spread * 8;
-      const y = (Math.random() - 0.5) * 4 * (Math.random() > 0.5 ? 1 : -1) * (1 - radius / 20) + spread * 3;
-      const z = Math.sin(theta + spinAngle) * radius + spread * 8;
+      // Generate a wide, endless flat surface to cover the dark edges fully
+      const x = (Math.random() - 0.5) * 400;
+      const y = (Math.random() - 0.5) * 0.2;
+      const z = (Math.random() - 0.5) * 400;
 
       positions.set([x, y, z], i * 3);
 
@@ -44,8 +38,23 @@ function WhiteGalaxy() {
 
   useFrame((state) => {
     if (ref.current) {
-      ref.current.rotation.y = state.clock.elapsedTime * 0.03;
-      ref.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.1;
+      // Rotate the flat plane at the original speed
+      ref.current.rotation.y = state.clock.elapsedTime * 0.02;
+      
+      // Animate individual stars moving forward at normal speed
+      const positions = ref.current.geometry.attributes.position.array as Float32Array;
+      for (let i = 0; i < sizes.length; i++) {
+        const i3 = i * 3;
+        // Move Z forward (towards the camera)
+        positions[i3 + 2] += 0.05 + (sizes[i] * 0.02);
+
+        // If a star passes behind the camera, reset it to the far distance
+        if (positions[i3 + 2] > 200) {
+          positions[i3 + 2] = -200;
+          positions[i3] = (Math.random() - 0.5) * 400;
+        }
+      }
+      ref.current.geometry.attributes.position.needsUpdate = true;
     }
   });
 
@@ -56,13 +65,13 @@ function WhiteGalaxy() {
         <bufferAttribute attach="attributes-color" args={[colors, 3]} />
         <bufferAttribute attach="attributes-size" args={[sizes, 1]} />
       </bufferGeometry>
-      <pointsMaterial 
-        size={0.06} 
-        vertexColors 
-        transparent 
-        opacity={0.6} 
-        sizeAttenuation 
-        depthWrite={false} 
+      <pointsMaterial
+        size={0.06}
+        vertexColors
+        transparent
+        opacity={0.6}
+        sizeAttenuation
+        depthWrite={false}
       />
     </points>
   );
@@ -71,22 +80,27 @@ function WhiteGalaxy() {
 export default function GalaxyBackground() {
   return (
     <div className="fixed inset-0 z-[0] pointer-events-none bg-[#030008]">
-      {/* Background Loop Video */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen"
-      >
-        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4" type="video/mp4" />
-      </video>
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Increased scale to 6 to fully stretch across the screen edges */}
+        <div className="absolute inset-0 w-full h-full" style={{ transform: "perspective(1200px) rotateX(75deg) scale(6) translateY(-10%)", transformOrigin: "center center" }}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-40 mix-blend-screen"
+            style={{ filter: "hue-rotate(150deg) saturate(1.2)" }}
+          >
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
 
       {/* Galaxy 3D Overlay */}
       <div className="absolute inset-0 z-[1]">
         <Canvas camera={{ position: [0, 8, 24], fov: 60 }} gl={{ antialias: true, alpha: true }}>
           <ambientLight intensity={2} />
-          <WhiteGalaxy />
+          <FlatUniverse />
         </Canvas>
       </div>
 

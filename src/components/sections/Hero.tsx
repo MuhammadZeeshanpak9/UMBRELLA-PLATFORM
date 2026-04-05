@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Download, Wand2, BookOpen, ArrowRight, Menu } from "lucide-react";
+import AudioPlayer from "@/components/layout/AudioPlayer";
 
 export default function Hero() {
   return (
@@ -42,6 +43,8 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2 }}
               className="flex flex-col items-center text-center"
             >
+              <AudioPlayer />
+              
               <div className="text-xs md:text-sm tracking-[0.6em] font-bold text-[#9f81b9] uppercase mb-8 flex flex-col gap-3 opacity-90">
                 <span>MIND <span className="font-serif italic text-[var(--complement-pink)] normal-case mx-1">+</span> BODY</span>
                 <span>SPIRITUALITY <span className="font-serif italic text-[var(--complement-pink)] normal-case mx-1">+</span> SCIENCE</span>
