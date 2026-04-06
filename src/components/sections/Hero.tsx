@@ -45,22 +45,22 @@ export default function Hero() {
             >
               <AudioPlayer />
               
-              <div className="text-xs md:text-sm tracking-[0.6em] font-bold text-[#9f81b9] uppercase mb-8 flex flex-col gap-3 opacity-90">
-                <span>MIND <span className="font-serif italic text-[var(--complement-pink)] normal-case mx-1">+</span> BODY</span>
-                <span>SPIRITUALITY <span className="font-serif italic text-[var(--complement-pink)] normal-case mx-1">+</span> SCIENCE</span>
-                <span>CONSCIOUSNESS <span className="font-serif italic text-[var(--complement-pink)] normal-case mx-1">+</span> GODLY LIVING</span>
+              <div className="text-[10px] md:text-sm tracking-[0.6em] font-light text-[var(--primary)] uppercase mb-8 flex flex-col gap-3 opacity-80">
+                <span>MIND <span className="opacity-40 mx-1">+</span> BODY</span>
+                <span>SPIRITUALITY <span className="opacity-40 mx-1">+</span> SCIENCE</span>
+                <span>CONSCIOUSNESS <span className="opacity-40 mx-1">+</span> GODLY LIVING</span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium tracking-tight text-[#9f81b9] leading-[1.05] max-w-3xl">
+              <h1 className="text-4xl md:text-6xl lg:text-[5rem] font-sans font-extralight tracking-[0.15em] text-[var(--primary)] leading-[1.2] max-w-4xl uppercase">
                 WELCOME TO <br />
-                <span className="font-serif italic text-gray-400 font-light mix-blend-multiply">ELEV8</span> UNIVERSE
+                <span className="font-sans font-medium tracking-[0.05em] text-[var(--foreground)] opacity-80">ELEV8</span> UNIVERSE
               </h1>
             </motion.div>
 
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-12 liquid-glass-strong flex items-center gap-4 px-8 py-4 rounded-full text-[var(--foreground)] font-medium text-sm transition-all shadow-md group border border-white/60 hover:border-white"
+              className="mt-12 liquid-glass-strong flex items-center gap-4 px-8 py-4 rounded-full text-[var(--foreground)] font-light tracking-[0.2em] text-[10px] transition-all shadow-md group border border-white/40 hover:border-white uppercase"
             >
               Explore Now 
               <div className="w-8 h-8 rounded-full bg-[var(--primary)]/10 flex items-center justify-center group-hover:bg-[var(--primary)] transition-colors">
@@ -69,7 +69,7 @@ export default function Hero() {
             </motion.button>
 
             <div className="mt-12 flex flex-wrap justify-center gap-3">
-              {["Artistic Gallery", "AI Generation", "3D Structures"].map((tag, i) => (
+              {["BODY", "MIND", "SOUL"].map((tag, i) => (
                 <motion.span 
                   key={tag}
                   initial={{ opacity: 0, y: 10 }}
@@ -86,8 +86,8 @@ export default function Hero() {
           {/* Bottom Quote */}
           <div className="p-8 pb-10 text-center">
             <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-[var(--primary)] opacity-80 block mb-4">Visionary Design</span>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-md mx-auto leading-relaxed">
-              "We imagined a realm with <span className="font-serif italic text-gray-400">no ending</span>."
+            <p className="text-lg md:text-xl text-[var(--primary)] max-w-md mx-auto leading-relaxed font-extralight tracking-[0.1em] uppercase">
+              THE GRAND DESIGNER. <span className="font-light opacity-50">I AM YOU.</span>
             </p>
             <div className="mt-8 flex items-center justify-center gap-4">
               <div className="h-[1px] w-8 bg-gray-300"></div>
@@ -125,8 +125,8 @@ export default function Hero() {
             <div className="liquid-glass rounded-[2.5rem] p-4 flex flex-col gap-4 shadow-xl shadow-[var(--primary)]/5">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { title: "Processing", icon: Wand2, color: "text-[var(--complement-cyan)]", bg: "bg-[var(--complement-cyan)]/10" },
-                  { title: "Growth Archive", icon: BookOpen, color: "text-[var(--complement-pink)]", bg: "bg-[var(--complement-pink)]/10" }
+                  { title: "SYSTEMS", icon: Wand2, color: "text-[var(--complement-cyan)]", bg: "bg-[var(--complement-cyan)]/10" },
+                  { title: "ACCOUNTABILITY", icon: BookOpen, color: "text-[var(--complement-pink)]", bg: "bg-[var(--complement-pink)]/10" }
                 ].map((card) => (
                   <div key={card.title} className="liquid-glass-strong p-6 rounded-3xl group cursor-pointer hover:border-white transition-colors">
                     <div className={`w-10 h-10 rounded-full ${card.bg} flex items-center justify-center mb-6 overflow-hidden`}>
@@ -142,7 +142,7 @@ export default function Hero() {
                   <div className="w-16 h-12 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] overflow-hidden shadow-inner">
                   </div>
                   <div>
-                    <h4 className="font-medium text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors">Advanced Brand Sculpting</h4>
+                    <h4 className="font-medium text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors uppercase tracking-widest text-[10px]">RESULTS</h4>
                     <p className="text-xs text-gray-500 mt-1">Discover dynamic scaling</p>
                   </div>
                 </div>

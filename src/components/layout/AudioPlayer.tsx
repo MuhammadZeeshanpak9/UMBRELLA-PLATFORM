@@ -72,7 +72,7 @@ export default function AudioPlayer() {
         ) : (
           <>
             <Play className="w-4 h-4 fill-current" />
-            <span>Play me Now</span>
+            <span>PLAY NOW</span>
           </>
         )}
       </button>

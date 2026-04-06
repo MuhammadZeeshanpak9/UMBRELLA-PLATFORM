@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins, Source_Serif_4 } from "next/font/google";
+import { Outfit, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 import Footer from "@/components/layout/Footer";
 import GalaxyBackground from "@/components/layout/GalaxyBackground";
 
-const poppins = Poppins({
+const outfit = Outfit({
   variable: "--font-outfit",
-  weight: ["300", "400", "500", "600"],
+  weight: ["100", "200", "300", "400", "500", "600"],
   subsets: ["latin"],
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${sourceSerif.variable} h-full antialiased`}
+      className={`${outfit.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] selection:bg-[var(--primary)] selection:text-white">
         <GalaxyBackground />
