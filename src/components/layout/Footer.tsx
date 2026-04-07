@@ -16,9 +16,9 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row gap-16 md:w-2/3 md:justify-end">
           <div>
-            <h4 className="text-xs font-semibold tracking-[0.2em] uppercase mb-8 text-[var(--foreground)]">Featured Configurations</h4>
+            <h4 className="text-xs font-semibold tracking-[0.2em] uppercase mb-8 text-[var(--foreground)]">Universe Creations</h4>
             <ul className="space-y-6">
-              {BRANDS.filter((b) => b.featured).map((brand) => (
+              {BRANDS.slice().sort((a, b) => a.priority - b.priority).slice(0, 5).map((brand) => (
                 <li key={brand.id}>
                   <a href={brand.url} target="_blank" rel="noreferrer" className="group flex items-center text-sm text-gray-500 hover:text-[var(--foreground)] transition-all duration-300">
                     <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--primary)] inline-block mr-0 group-hover:mr-3"></span>
