@@ -1,7 +1,6 @@
 import Loader from "@/components/layout/Loader";
 import Hero from "@/components/sections/Hero";
-import Featured from "@/components/sections/Featured";
-import CreationsGrid from "@/components/sections/CreationsGrid";
+import UniverseEcosystem from "@/components/sections/UniverseEcosystem";
 import Vision from "@/components/sections/Vision";
 
 export default function Home() {
@@ -9,8 +8,7 @@ export default function Home() {
     <>
       <Loader />
       <Hero />
-      <Featured />
-      <CreationsGrid />
+      <UniverseEcosystem />
       <Vision />
     </>
   );
