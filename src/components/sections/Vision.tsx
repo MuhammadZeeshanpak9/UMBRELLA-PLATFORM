@@ -37,7 +37,7 @@ export default function Vision() {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-sm md:text-base tracking-[0.4em] uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#9f81b9] to-[var(--complement-cyan)] mb-12 block drop-shadow-[0_0_20px_rgba(159,129,185,0.5)]"
         >
-          Our Universal Vision
+          ELEV8 Universal Vision
         </motion.p>
         
         <motion.h2
@@ -59,7 +59,7 @@ export default function Vision() {
            className="mt-24 flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12"
         >
           <a href="#contact" className="group relative inline-flex items-center justify-center px-12 py-6 bg-white outline outline-1 outline-white/20 text-xs font-bold uppercase tracking-[0.2em] text-[#030008] overflow-hidden transition-all duration-700 hover:bg-transparent hover:text-white hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] rounded-full">
-            <span className="relative z-10 transition-colors duration-500">Collaborate With Us</span>
+            <span className="relative z-10 transition-colors duration-500">COLLABORATE</span>
           </a>
           <a href="#creations" className="group relative inline-flex items-center justify-center px-12 py-6 bg-[#030008]/40 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-[0.2em] text-white overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-[0_0_60px_rgba(255,214,232,0.3)] rounded-full">
             <span className="relative z-10 transition-colors duration-500 group-hover:text-[#030008] drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] group-hover:drop-shadow-none">Join the Movement</span>

@@ -55,8 +55,8 @@ function EcosystemCard({ brand }: { brand: Brand }) {
               </div>
             </div>
             
-            <h4 className="text-xl font-light tracking-wide text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#9f81b9] transition-all duration-300 pr-4 mb-4">
-              {brand.priority}. {brand.name}
+            <h4 className="text-xl font-light tracking-wide text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#9f81b9] transition-all duration-300 pr-4 mb-4 uppercase">
+              {brand.name}
             </h4>
             
             <p className="text-sm font-light text-gray-400 mb-8 leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-500">
@@ -79,10 +79,20 @@ function EcosystemCard({ brand }: { brand: Brand }) {
 export default function UniverseEcosystem() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("ALL");
 
-  const filters: FilterType[] = ["ALL", "BODY", "MIND", "SOUL"];
+  const filters: FilterType[] = ["ALL", "SOUL", "MIND", "BODY"];
 
-  // Maintain original priority order regardless of filter
-  const sortedBrands = [...BRANDS].sort((a, b) => a.priority - b.priority);
+  // Group by category order (SOUL, MIND, BODY) then by priority
+  const categoryOrder: UniverseCategory[] = ["SOUL", "MIND", "BODY"];
+  const sortedBrands = [...BRANDS].sort((a, b) => {
+    const categoryA = categoryOrder.indexOf(a.universeCategory);
+    const categoryB = categoryOrder.indexOf(b.universeCategory);
+    
+    if (categoryA !== categoryB) {
+      return categoryA - categoryB;
+    }
+    
+    return a.priority - b.priority;
+  });
   
   const filteredBrands = sortedBrands.filter(
     brand => activeFilter === "ALL" || brand.universeCategory === activeFilter
@@ -99,9 +109,9 @@ export default function UniverseEcosystem() {
             whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl font-sans font-light tracking-tighter text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-12"
+            className="text-5xl md:text-7xl font-sans font-light tracking-tighter text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-12 uppercase"
           >
-            THE UNIVERSE <span className="text-[#9f81b9]">ECOSYSTEM</span>
+            ELEV8 UNIVERSE <span className="text-[#9f81b9]">ECOSYSTEM</span>
           </motion.h2>
 
           {/* Interactive Filter Pills */}
