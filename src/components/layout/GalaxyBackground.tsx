@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { motion } from "framer-motion";
@@ -85,6 +85,11 @@ function FlatUniverse() {
 // Nothing is visible on load. Stars fly in from all edges and BUILD
 // both the figure silhouette (white dots) and the 7 chakras (colored orbs).
 function StarGatherFigure() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // ── Figure outline dots (white) ──
   const outlinePoints: { x: number; y: number; color: string; size: number }[] = [
     // HEAD
@@ -159,6 +164,8 @@ function StarGatherFigure() {
     }),
     [] // eslint-disable-line react-hooks/exhaustive-deps
   );
+
+  if (!mounted) return null;
 
   return (
     <div className="fixed inset-0 z-[3] pointer-events-none flex items-center justify-center overflow-hidden">
