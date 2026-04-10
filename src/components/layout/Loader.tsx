@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Elev8LogoText } from "@/components/ui/InfinityLogo";
 
 export default function Loader() {
   const [loading, setLoading] = useState(true);
@@ -26,9 +27,13 @@ export default function Loader() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl font-sans font-medium tracking-[0.2em] text-[var(--primary)] uppercase"
+            className="flex items-center justify-center p-4 bg-transparent"
           >
-            ELEV8
+            <Elev8LogoText 
+              textClassName="text-4xl font-sans font-medium tracking-[0.2em] text-[var(--primary)] uppercase"
+              iconClassName="-my-2 text-[var(--primary)] scale-125 mx-2"
+              animated={true}
+            />
           </motion.div>
         </motion.div>
       )}

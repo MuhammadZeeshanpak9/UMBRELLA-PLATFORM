@@ -1,18 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
+
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence, useMotionTemplate, useSpring } from "framer-motion";
 import { BRANDS, Brand, UniverseCategory } from "@/config/brands";
 import { ArrowUpRight } from "lucide-react";
 
-type FilterType = UniverseCategory | "ALL";
+type FilterType = UniverseCategory | "CREATIONS";
 
 function EcosystemCard({ brand }: { brand: Brand }) {
   // 3D Hover & Flashlight Effect
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
   
-  function onMouseMove({ currentTarget, clientX, clientY }: any) {
+  function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent<HTMLAnchorElement>) {
     const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
@@ -77,9 +80,18 @@ function EcosystemCard({ brand }: { brand: Brand }) {
 }
 
 export default function UniverseEcosystem() {
-  const [activeFilter, setActiveFilter] = useState<FilterType>("ALL");
+  const searchParams = useSearchParams();
+  const [activeFilter, setActiveFilter] = useState<FilterType>("CREATIONS");
 
-  const filters: FilterType[] = ["ALL", "SOUL", "MIND", "BODY"];
+  useEffect(() => {
+    const filterParam = searchParams.get("filter")?.toUpperCase();
+    if (filterParam && ["SOUL", "MIND", "BODY", "CREATIONS"].includes(filterParam)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setActiveFilter(filterParam as FilterType);
+    }
+  }, [searchParams]);
+
+  const filters: FilterType[] = ["CREATIONS", "SOUL", "MIND", "BODY"];
 
   // Group by category order (SOUL, MIND, BODY) then by priority
   const categoryOrder: UniverseCategory[] = ["SOUL", "MIND", "BODY"];
@@ -95,7 +107,7 @@ export default function UniverseEcosystem() {
   });
   
   const filteredBrands = sortedBrands.filter(
-    brand => activeFilter === "ALL" || brand.universeCategory === activeFilter
+    brand => activeFilter === "CREATIONS" || brand.universeCategory === activeFilter
   );
 
   return (

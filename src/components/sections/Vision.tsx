@@ -61,7 +61,7 @@ export default function Vision() {
           <a href="#contact" className="group relative inline-flex items-center justify-center px-12 py-6 bg-white outline outline-1 outline-white/20 text-xs font-bold uppercase tracking-[0.2em] text-[#030008] overflow-hidden transition-all duration-700 hover:bg-transparent hover:text-white hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] rounded-full">
             <span className="relative z-10 transition-colors duration-500">COLLABORATE</span>
           </a>
-          <a href="#creations" className="group relative inline-flex items-center justify-center px-12 py-6 bg-[#030008]/40 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-[0.2em] text-white overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-[0_0_60px_rgba(255,214,232,0.3)] rounded-full">
+          <a href="#contact" className="group relative inline-flex items-center justify-center px-12 py-6 bg-[#030008]/40 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-[0.2em] text-white overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-[0_0_60px_rgba(255,214,232,0.3)] rounded-full">
             <span className="relative z-10 transition-colors duration-500 group-hover:text-[#030008] drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] group-hover:drop-shadow-none">Join the Movement</span>
             <div className="absolute inset-0 h-full w-0 bg-gradient-to-r from-white via-[var(--complement-cyan)] to-white transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full z-0"></div>
           </a>

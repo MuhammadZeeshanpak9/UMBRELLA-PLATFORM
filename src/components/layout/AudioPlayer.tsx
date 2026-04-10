@@ -17,7 +17,7 @@ export default function AudioPlayer() {
       try {
         await audio.play();
         setIsPlaying(true);
-      } catch (err) {
+      } catch {
         console.warn("Autoplay prevented by browser. Audio will start on first interaction.");
       }
     };

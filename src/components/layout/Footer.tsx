@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BRANDS } from "@/config/brands";
+import { Elev8LogoText } from "@/components/ui/InfinityLogo";
 
 export default function Footer() {
   return (
@@ -7,7 +8,10 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start gap-16">
         <div className="md:w-1/3">
           <Link href="/" className="group inline-block">
-            <span className="text-2xl font-semibold tracking-[0.3em] uppercase text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-500">ELEV8</span>
+            <Elev8LogoText 
+              textClassName="text-2xl font-semibold tracking-[0.3em] uppercase text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-500"
+              iconClassName="-my-2 text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-500 scale-110"
+            />
           </Link>
           <p className="mt-6 text-sm text-gray-500 leading-relaxed max-w-sm tracking-wide">
             A universe of interconnected creations designed to ELEV8 human awareness, potential and experiences in this beautiful GRAND DESIGN called LIFE.
@@ -32,19 +36,31 @@ export default function Footer() {
             <h4 className="text-xs font-semibold tracking-[0.2em] uppercase mb-8 text-[var(--foreground)]">Communicate</h4>
             <ul className="space-y-6">
               <li>
-                <a href="#" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
+                <a href="https://youtube.com/@theworldsgreatestwater111?si=Y8Uz6sBWkmKln2cI" target="_blank" rel="noreferrer" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
                   <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--primary)] inline-block mr-0 group-hover:mr-3"></span>
-                  Instagram
+                  YOUTUBE
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@theworldsgreatestwater?_r=1&_t=ZP-95MUNoMMi11" target="_blank" rel="noreferrer" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
+                  <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--primary)] inline-block mr-0 group-hover:mr-3"></span>
+                  TIKTOK
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/theworldsgreatestwater?igsh=MWY5NnptdW5uM3NzZQ==" target="_blank" rel="noreferrer" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
+                  <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--primary)] inline-block mr-0 group-hover:mr-3"></span>
+                  INSTAGRAM
                 </a>
               </li>
               <li>
                 <a href="#" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
                   <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--primary)] inline-block mr-0 group-hover:mr-3"></span>
-                  Twitter
+                  TWITTER
                 </a>
               </li>
               <li>
-                <a href="#" className="group flex items-center text-sm text-gray-500 hover:text-[var(--foreground)] transition-all duration-300">
+                <a href="#contact" className="group flex items-center text-sm text-gray-500 hover:text-[var(--foreground)] transition-all duration-300">
                   <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--foreground)] inline-block mr-0 group-hover:mr-3"></span>
                   SAY HELLO
                 </a>
