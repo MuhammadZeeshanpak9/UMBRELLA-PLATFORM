@@ -46,7 +46,7 @@ export default function Navbar() {
         <Link href="/" className="relative z-50 group">
           <Elev8LogoText 
             textClassName="font-sans font-semibold tracking-[0.2em] text-lg uppercase transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[var(--primary)] group-hover:to-[var(--complement-cyan)]"
-            iconClassName="-my-2"
+            iconClassName="w-[0.8em] h-[1.15em] mx-[0.1em]"
           />
         </Link>
 

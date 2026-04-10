@@ -62,7 +62,7 @@ export default function Hero() {
               <div className="text-[var(--primary)] drop-shadow-[0_0_8px_rgba(159,129,185,0.8)]">
                 <SacredGeometryLogo className="w-10 h-10" />
               </div>
-              <Elev8LogoText textClassName="font-semibold text-xl tracking-tighter text-[var(--foreground)] uppercase" iconClassName="-my-1 w-[1.5em] h-[0.75em]" />
+              <Elev8LogoText textClassName="font-semibold text-xl tracking-tighter text-[var(--foreground)] uppercase" iconClassName="w-[0.8em] h-[1.15em] mx-[0.1em]" />
             </div>
             <button 
               onClick={() => setIsMenuOpen(true)}
@@ -87,7 +87,7 @@ export default function Hero() {
                     <div className="text-[var(--primary)] drop-shadow-[0_0_8px_rgba(159,129,185,0.8)]">
                        <SacredGeometryLogo className="w-10 h-10" />
                     </div>
-                    <Elev8LogoText textClassName="font-semibold text-xl tracking-tighter text-[var(--foreground)] uppercase" iconClassName="-my-1 w-[1.5em] h-[0.75em]" />
+                    <Elev8LogoText textClassName="font-semibold text-xl tracking-tighter text-[var(--foreground)] uppercase" iconClassName="w-[0.8em] h-[1.15em] mx-[0.1em]" />
                   </div>
                   <button 
                     onClick={() => setIsMenuOpen(false)}
@@ -154,7 +154,7 @@ export default function Hero() {
                 <span>WELCOME TO</span> 
                 <Elev8LogoText 
                   textClassName="font-sans font-medium tracking-[0.05em] text-[var(--foreground)] opacity-80" 
-                  iconClassName="-my-2 text-[var(--foreground)] opacity-80 scale-125 mx-2" 
+                  iconClassName="w-[0.8em] h-[1.15em] opacity-80 mx-1" 
                   animated={true}
                 />
                 <span>UNIVERSE</span>

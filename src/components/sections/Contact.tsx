@@ -20,7 +20,7 @@ export default function Contact() {
             className="flex-1 w-full text-center lg:text-left"
           >
             <h2 className="text-4xl md:text-5xl lg:text-[4.5rem] font-sans font-bold tracking-tighter text-white uppercase leading-[1.1] mb-6 drop-shadow-xl">
-              FEEL FREE TO SEND <br className="hidden lg:block"/> US A MESSAGE.
+              GREATEST, <br className="hidden lg:block"/> SAY HELLO
             </h2>
             <p className="text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
               We&apos;d love to hear from you. Reach out for partnerships, collaborations, or general inquiries.

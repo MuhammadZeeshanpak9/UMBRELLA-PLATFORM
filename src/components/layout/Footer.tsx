@@ -10,7 +10,7 @@ export default function Footer() {
           <Link href="/" className="group inline-block">
             <Elev8LogoText 
               textClassName="text-2xl font-semibold tracking-[0.3em] uppercase text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-500"
-              iconClassName="-my-2 text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-500 scale-110"
+              iconClassName="w-[0.8em] h-[1.15em] mx-[0.1em]"
             />
           </Link>
           <p className="mt-6 text-sm text-gray-500 leading-relaxed max-w-sm tracking-wide">
@@ -35,6 +35,12 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-semibold tracking-[0.2em] uppercase mb-8 text-[var(--foreground)]">Communicate</h4>
             <ul className="space-y-6">
+              <li>
+                <a href="#" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
+                  <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--primary)] inline-block mr-0 group-hover:mr-3"></span>
+                  <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> <span className="ml-1">ALL</span>
+                </a>
+              </li>
               <li>
                 <a href="https://youtube.com/@theworldsgreatestwater111?si=Y8Uz6sBWkmKln2cI" target="_blank" rel="noreferrer" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
                   <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--primary)] inline-block mr-0 group-hover:mr-3"></span>
