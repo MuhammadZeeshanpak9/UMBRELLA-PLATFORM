@@ -13,17 +13,33 @@ export function InfinityLogo({ className = "", animated = false }: { className?:
       fill="none" 
       xmlns="http://www.w3.org/2000/svg" 
       className={className}
-      animate={{ y: [0, -2, 0], scale: [1, 1.05, 1] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
     >
       <defs>
+        {/* Base Gradient - Swapped for more obvious contrast at top */}
         <linearGradient id="eightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#9f81b9" />
-          <stop offset="50%" stopColor="#FFD6E8" />
-          <stop offset="100%" stopColor="#a3e6ff" />
+          <stop offset="0%" stopColor="#a3e6ff" />
+          <stop offset="40%" stopColor="#FFD6E8" />
+          <stop offset="100%" stopColor="#9f81b9" />
         </linearGradient>
+
+        {/* Chakra Energy Gradient */}
+        <linearGradient id="chakraGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#FF4D4D" /> {/* Root */}
+          <stop offset="15%" stopColor="#FFA34D" /> {/* Sacral */}
+          <stop offset="30%" stopColor="#FFE64D" /> {/* Solar */}
+          <stop offset="45%" stopColor="#4DFF4D" /> {/* Heart */}
+          <stop offset="60%" stopColor="#4DFFFF" /> {/* Throat */}
+          <stop offset="75%" stopColor="#A34DFF" /> {/* Third Eye */}
+          <stop offset="100%" stopColor="#9f81b9" /> {/* Crown */}
+        </linearGradient>
+
         <filter id="eightGlow" x="-30%" y="-10%" width="160%" height="120%">
           <feGaussianBlur stdDeviation="2" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+
+        <filter id="chakraPulseGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3.5" result="blur" />
           <feComposite in="SourceGraphic" in2="blur" operator="over" />
         </filter>
       </defs>
@@ -36,19 +52,56 @@ export function InfinityLogo({ className = "", animated = false }: { className?:
         strokeLinecap="round" 
         strokeLinejoin="round"
         filter="url(#eightGlow)"
-        opacity="0.5"
+        opacity="0.3"
       />
       
       {/* Main crisp layer */}
-      <motion.path 
+      <path 
         d={EIGHT_PATH}
         stroke="url(#eightGrad)" 
         strokeWidth="3.5" 
         strokeLinecap="round" 
         strokeLinejoin="round"
-        initial={animated ? { pathLength: 0, opacity: 0 } : { pathLength: 1, opacity: 1 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        opacity="0.9"
+      />
+
+      {/* Chakra Energy Flow Layer */}
+      <motion.path 
+        d={EIGHT_PATH}
+        stroke="url(#chakraGrad)" 
+        strokeWidth="4" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+        filter="url(#chakraPulseGlow)"
+        initial={{ pathLength: 0.1, pathOffset: 0, opacity: 0 }}
+        animate={{ 
+          pathOffset: 1, 
+          opacity: [0.4, 0.8, 0.4],
+          pathLength: [0.15, 0.25, 0.15]
+        }}
+        transition={{ 
+          pathOffset: { duration: 4, repeat: Infinity, ease: "linear" },
+          opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+          pathLength: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+        }}
+      />
+
+      {/* Secondary sharper energy highlight */}
+      <motion.path 
+        d={EIGHT_PATH}
+        stroke="white" 
+        strokeWidth="1.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+        initial={{ pathLength: 0.05, pathOffset: 0, opacity: 0 }}
+        animate={{ 
+          pathOffset: 1,
+          opacity: [0, 0.6, 0]
+        }}
+        transition={{ 
+          pathOffset: { duration: 4, repeat: Infinity, ease: "linear" },
+          opacity: { duration: 4, repeat: Infinity, ease: "linear" }
+        }}
       />
     </motion.svg>
   );
@@ -73,6 +126,41 @@ export function Elev8LogoText({
         animated={animated} 
       />
     </span>
+  );
+}
+
+export function ReplaceElev8({ 
+  text, 
+  className = "", 
+  textClassName = "", 
+  iconClassName = "",
+  animated = false
+}: { 
+  text: string, 
+  className?: string, 
+  textClassName?: string, 
+  iconClassName?: string,
+  animated?: boolean
+}) {
+  if (!text.includes("ELEV8")) return <>{text}</>;
+  
+  const parts = text.split("ELEV8");
+  return (
+    <>
+      {parts.map((part, i) => (
+        <React.Fragment key={i}>
+          {part}
+          {i < parts.length - 1 && (
+            <Elev8LogoText 
+              className={className} 
+              textClassName={textClassName} 
+              iconClassName={iconClassName} 
+              animated={animated}
+            />
+          )}
+        </React.Fragment>
+      ))}
+    </>
   );
 }
 

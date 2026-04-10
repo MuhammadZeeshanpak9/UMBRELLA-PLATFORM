@@ -14,7 +14,7 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-6 text-sm text-gray-500 leading-relaxed max-w-sm tracking-wide">
-            A universe of interconnected creations designed to ELEV8 human awareness, potential and experiences in this beautiful GRAND DESIGN called LIFE.
+            A universe of interconnected creations designed to <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> human awareness, potential and experiences in this beautiful GRAND DESIGN called LIFE.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container mx-auto px-6 md:px-12 mt-20 pt-10 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="text-xs tracking-wider text-gray-400 uppercase">© {new Date().getFullYear()} ELEV8 INCORPORATION. Universal License.</p>
+        <p className="text-xs tracking-wider text-gray-400 uppercase">© {new Date().getFullYear()} <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> INCORPORATION. Universal License.</p>
         <div className="flex gap-8 text-xs tracking-wider text-gray-400 uppercase">
           <a href="#" className="hover:text-[var(--foreground)] transition-colors duration-300">Privacy Policy</a>
           <a href="#" className="hover:text-[var(--foreground)] transition-colors duration-300">Terms of Service</a>

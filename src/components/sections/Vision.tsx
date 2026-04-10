@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Elev8LogoText } from "@/components/ui/InfinityLogo";
 
 export default function Vision() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,7 +38,7 @@ export default function Vision() {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-sm md:text-base tracking-[0.4em] uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#9f81b9] to-[var(--complement-cyan)] mb-12 block drop-shadow-[0_0_20px_rgba(159,129,185,0.5)]"
         >
-          ELEV8 Universal Vision
+          <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] ml-[0.02em] mr-[0.1em] opacity-80" /> Universal Vision
         </motion.p>
         
         <motion.h2

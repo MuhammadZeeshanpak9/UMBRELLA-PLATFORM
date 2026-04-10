@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence, useMotionTemplate, useSpring } from "framer-motion";
 import { BRANDS, Brand, UniverseCategory } from "@/config/brands";
 import { ArrowUpRight } from "lucide-react";
+import { Elev8LogoText, ReplaceElev8 } from "@/components/ui/InfinityLogo";
 
 type FilterType = UniverseCategory | "CREATIONS";
 
@@ -59,17 +60,17 @@ function EcosystemCard({ brand }: { brand: Brand }) {
             </div>
             
             <h4 className="text-xl font-light tracking-wide text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#9f81b9] transition-all duration-300 pr-4 mb-4 uppercase">
-              {brand.name}
+              <ReplaceElev8 text={brand.name} iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em]" />
             </h4>
             
             <p className="text-sm font-light text-gray-400 mb-8 leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-500">
-              {brand.description}
+              <ReplaceElev8 text={brand.description} iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" />
             </p>
           </div>
           
           <div className="mt-auto border-t border-white/5 pt-5 group-hover:border-[#9f81b9]/30 transition-colors duration-500">
             <span className="relative text-xs tracking-[0.2em] uppercase font-semibold text-gray-400 group-hover:text-[#9f81b9] transition-colors inline-block overflow-hidden">
-              {brand.ctaText}
+              <ReplaceElev8 text={brand.ctaText} iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em]" />
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-[#9f81b9] to-[var(--complement-cyan)] transition-all duration-700 ease-out group-hover:w-full"></span>
             </span>
           </div>
@@ -121,9 +122,14 @@ export default function UniverseEcosystem() {
             whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl font-sans font-light tracking-tighter text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-12 uppercase"
+            className="flex flex-wrap items-center justify-center text-5xl md:text-7xl font-sans font-light tracking-tighter text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-12 uppercase"
           >
-            ELEV8 UNIVERSE <span className="text-[#9f81b9]">ECOSYSTEM</span>
+            <Elev8LogoText 
+              textClassName="text-white" 
+              iconClassName="w-[1.25em] h-[1.7em] ml-[0.05em] mr-[0.2em] opacity-90" 
+            />
+            <span className="mx-2 md:mx-4">UNIVERSE</span>
+            <span className="text-[var(--primary)] text-[#9f81b9]">ECOSYSTEM</span>
           </motion.h2>
 
           {/* Interactive Filter Pills */}

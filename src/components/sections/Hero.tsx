@@ -154,7 +154,7 @@ export default function Hero() {
                 <span>WELCOME TO</span> 
                 <Elev8LogoText 
                   textClassName="font-sans font-medium tracking-[0.05em] text-[var(--foreground)] opacity-80" 
-                  iconClassName="w-[0.8em] h-[1.15em] opacity-80 mx-1" 
+                  iconClassName="w-[1.2em] h-[1.65em] opacity-80 ml-[0.1em] mr-[0.2em]" 
                   animated={true}
                 />
                 <span>UNIVERSE</span>
@@ -199,7 +199,9 @@ export default function Hero() {
             </p>
             <div className="mt-8 flex items-center justify-center gap-4">
               <div className="h-[1px] w-8 bg-gray-300"></div>
-              <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase">ELEV8 INCORPORATION</span>
+              <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase">
+                <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] ml-[0.02em] mr-[0.1em] opacity-80" /> INCORPORATION
+              </span>
               <div className="h-[1px] w-8 bg-gray-300"></div>
             </div>
           </div>
@@ -236,7 +238,7 @@ export default function Hero() {
 
           <div className="flex justify-center lg:justify-end px-4">
              <div className="liquid-glass-strong w-full lg:w-64 p-6 rounded-3xl flex flex-col gap-3 text-center lg:text-left">
-               <h3 className="font-semibold text-lg text-[var(--primary)] tracking-tight uppercase">ENTER ELEV8 ECOSYSTEM</h3>
+               <h3 className="font-semibold text-lg text-[var(--primary)] tracking-tight uppercase">ENTER <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em]" /> ECOSYSTEM</h3>
                <p className="text-sm text-gray-500 font-light leading-relaxed">A seamless integration between spiritual innerstanding and physical manifestation.</p>
              </div>
           </div>
@@ -306,7 +308,7 @@ export default function Hero() {
               </div>
               <h3 className="text-xl font-semibold tracking-tight text-white uppercase mb-3">Connect with the Ecosystem</h3>
               <p className="text-sm text-gray-400 font-light leading-relaxed mb-8">
-                The ELEV8 ecosystem connects SOUL, MIND and BODY creations into a single unified experience. Reach out to learn how you can integrate, collaborate, or partner with us.
+                The <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> ecosystem connects SOUL, MIND and BODY creations into a single unified experience. Reach out to learn how you can integrate, collaborate, or partner with us.
               </p>
               <a
                 href="#contact"
@@ -345,7 +347,7 @@ export default function Hero() {
                 <X size={18} />
               </button>
               <h3 className="text-xl font-semibold tracking-tight text-white uppercase mb-2">Experience the Results</h3>
-              <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">Explore the full range of premium experiences, products, and courses from the ELEV8 universe.</p>
+              <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">Explore the full range of premium experiences, products, and courses from the <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> universe.</p>
               <div className="grid grid-cols-3 gap-3 mb-8">
                 {[
                   { label: "Experiences", color: "from-[var(--primary)] to-[var(--complement-pink)]" },
