@@ -29,7 +29,9 @@ export default function AudioPlayer() {
         audio.play().then(() => {
           setIsPlaying(true);
           setHasInteracted(true);
-        }).catch(console.error);
+        }).catch(() => {
+          // silently ignore — browser may block even after interaction on some devices
+        });
       }
     };
 

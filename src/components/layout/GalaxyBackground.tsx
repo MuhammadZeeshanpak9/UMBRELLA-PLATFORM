@@ -306,8 +306,19 @@ export default function GalaxyBackground() {
       </div>
 
       {/* Three.js star field */}
-      <div className="absolute inset-0 z-[1]">
-        <Canvas camera={{ position: [0, 8, 24], fov: 60 }} gl={{ antialias: true, alpha: true }}>
+      <div className="absolute inset-0 z-[1]" style={{ position: "relative" }}>
+        <Canvas
+          camera={{ position: [0, 8, 24], fov: 60 }}
+          gl={{ antialias: true, alpha: true }}
+          onCreated={() => {
+            // Suppress the deprecated THREE.Clock warning from r3f internals
+            const originalWarn = console.warn.bind(console);
+            console.warn = (...args: unknown[]) => {
+              if (typeof args[0] === "string" && args[0].includes("THREE.Clock")) return;
+              originalWarn(...args);
+            };
+          }}
+        >
           <ambientLight intensity={2} />
           <FlatUniverse />
         </Canvas>
