@@ -18,7 +18,7 @@ export default function Vision() {
   const yMove = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section id="vision" ref={containerRef} className="relative py-48 md:py-[30vh] z-10 overflow-hidden text-center flex flex-col items-center justify-center">
+    <section id="vision" ref={containerRef} className="relative py-24 md:py-[30vh] z-10 overflow-hidden text-center flex flex-col items-center justify-center">
       {/* Animated Breathing Cosmos Singularity Orbs */}
       <motion.div 
         style={{ scale: scalePulse, rotate: rotatePulse, opacity: opacityPulse }}
@@ -46,7 +46,7 @@ export default function Vision() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl md:text-6xl lg:text-[5.5rem] font-sans font-light tracking-tighter text-[#9f81b9] max-w-6xl mx-auto leading-[1.1] drop-shadow-2xl"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-[5.5rem] font-sans font-light tracking-tighter text-[#9f81b9] max-w-6xl mx-auto leading-[1.15] drop-shadow-2xl"
         >
           MIND CREATIONS designed to express the unlimited nature of consciousness in the human experience. <br /><br />
           <span className="italic font-medium text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] via-[var(--complement-pink)] to-[var(--complement-cyan)] shadow-white/30">I AM YOU.</span>
@@ -57,12 +57,12 @@ export default function Vision() {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true, margin: "-100px" }}
            transition={{ duration: 1.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="mt-24 flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12"
+           className="mt-12 md:mt-24 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12"
         >
-          <a href="#contact" className="group relative inline-flex items-center justify-center px-12 py-6 bg-white outline outline-1 outline-white/20 text-xs font-bold uppercase tracking-[0.2em] text-[#030008] overflow-hidden transition-all duration-700 hover:bg-transparent hover:text-white hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] rounded-full">
+          <a href="#contact" className="group relative inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 bg-white outline outline-1 outline-white/20 text-xs font-bold uppercase tracking-[0.2em] text-[#030008] overflow-hidden transition-all duration-700 hover:bg-transparent hover:text-white hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] rounded-full w-full sm:w-auto">
             <span className="relative z-10 transition-colors duration-500">COLLABORATE</span>
           </a>
-          <a href="#contact" className="group relative inline-flex items-center justify-center px-12 py-6 bg-[#030008]/40 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-[0.2em] text-white overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-[0_0_60px_rgba(255,214,232,0.3)] rounded-full">
+          <a href="#contact" className="group relative inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 bg-[#030008]/40 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-[0.2em] text-white overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-[0_0_60px_rgba(255,214,232,0.3)] rounded-full w-full sm:w-auto">
             <span className="relative z-10 transition-colors duration-500 group-hover:text-[#030008] drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] group-hover:drop-shadow-none">Join the Movement</span>
             <div className="absolute inset-0 h-full w-0 bg-gradient-to-r from-white via-[var(--complement-cyan)] to-white transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full z-0"></div>
           </a>

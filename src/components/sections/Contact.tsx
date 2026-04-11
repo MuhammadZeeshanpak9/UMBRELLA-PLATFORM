@@ -19,7 +19,7 @@ export default function Contact() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="flex-1 w-full text-center lg:text-left"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-[4.5rem] font-sans font-bold tracking-tighter text-white uppercase leading-[1.1] mb-6 drop-shadow-xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4.5rem] font-sans font-bold tracking-tighter text-white uppercase leading-[1.1] mb-4 md:mb-6 drop-shadow-xl">
               GREATEST, <br className="hidden lg:block"/> SAY HELLO
             </h2>
             <p className="text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
@@ -45,8 +45,8 @@ export default function Contact() {
                     required
                   />
                   <input 
-                    type="text" 
-                    placeholder="Surname" 
+                    type="tel" 
+                    placeholder="Phone#" 
                     className="w-full bg-[#030008]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] focus:bg-[#030008]/80 transition-all backdrop-blur-md"
                     required
                   />

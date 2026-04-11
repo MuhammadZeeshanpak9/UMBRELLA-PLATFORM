@@ -36,7 +36,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold tracking-[0.2em] uppercase mb-8 text-[var(--foreground)]">Communicate</h4>
             <ul className="space-y-6">
               <li>
-                <a href="#" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
+                <a href="?filter=CREATIONS#ecosystem" className="group flex items-center text-sm text-gray-500 hover:text-[var(--primary)] transition-all duration-300">
                   <span className="w-0 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 h-[1px] bg-[var(--primary)] inline-block mr-0 group-hover:mr-3"></span>
                   <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> <span className="ml-1">ALL</span>
                 </a>

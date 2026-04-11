@@ -4,9 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Portrait viewBox (50x100) draws the path as a vertical figure-8 / number 8
-const EIGHT_PATH = "M 25,50 C 35,50 42,40 42,27 A 17,17 0 1,0 8,27 C 8,40 15,50 25,50 C 15,50 8,60 8,73 A 17,17 0 1,0 42,73 C 42,60 35,50 25,50 Z";
+// Energy flows from bottom (Root) through center crossover, loops top to bottom.
+const EIGHT_PATH = "M 25,90 A 17,17 0 0,1 8,73 C 8,60 15,50 25,50 C 35,50 42,40 42,27 A 17,17 0 1,0 8,27 C 8,40 15,50 25,50 C 35,50 42,60 42,73 A 17,17 0 0,1 25,90 Z";
 
-export function InfinityLogo({ className = "", animated = false }: { className?: string, animated?: boolean }) {
+export function InfinityLogo({ className = "" }: { className?: string }) {
   return (
     <motion.svg 
       viewBox="0 0 50 100" 
@@ -23,7 +24,7 @@ export function InfinityLogo({ className = "", animated = false }: { className?:
         </linearGradient>
 
         {/* Chakra Energy Gradient */}
-        <linearGradient id="chakraGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <linearGradient id="chakraGrad" x1="0%" y1="100%" x2="0%" y2="0%">
           <stop offset="0%" stopColor="#FF4D4D" /> {/* Root */}
           <stop offset="15%" stopColor="#FFA34D" /> {/* Sacral */}
           <stop offset="30%" stopColor="#FFE64D" /> {/* Solar */}
@@ -118,12 +119,14 @@ export function Elev8LogoText({
   iconClassName?: string, 
   animated?: boolean 
 }) {
+  // Strip any old margin classes to universally control the spacing here safely
+  const strippedIconClass = iconClassName.replace(/\bm[lxyr]?-\[[^\]]+\]\b/g, "").trim();
+
   return (
     <span className={`inline-flex items-center leading-none ${className}`}>
       <span className={textClassName}>ELEV</span>
       <InfinityLogo 
-        className={`inline-block flex-shrink-0 ${iconClassName}`} 
-        animated={animated} 
+        className={`inline-block flex-shrink-0 -ml-[0.10em] mr-[0.02em] ${strippedIconClass}`} 
       />
     </span>
   );

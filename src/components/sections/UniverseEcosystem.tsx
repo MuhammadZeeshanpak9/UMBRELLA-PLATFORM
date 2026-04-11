@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence, useMotionTemplate, useSpring } from "framer-motion";
 import { BRANDS, Brand, UniverseCategory } from "@/config/brands";
 import { ArrowUpRight } from "lucide-react";
-import { Elev8LogoText, ReplaceElev8 } from "@/components/ui/InfinityLogo";
+import { Elev8LogoText, ReplaceElev8, InfinityLogo } from "@/components/ui/InfinityLogo";
 
 type FilterType = UniverseCategory | "CREATIONS";
 
@@ -112,22 +112,24 @@ export default function UniverseEcosystem() {
   );
 
   return (
-    <section id="ecosystem" className="py-32 md:py-48 relative z-10 w-full min-h-screen">
+    <section id="ecosystem" className="py-20 md:py-32 lg:py-48 relative z-10 w-full min-h-screen">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header & Filter System */}
-        <div className="mb-24 flex flex-col items-center text-center">
+        <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
           <motion.h2 
             initial={{ opacity: 0, filter: "blur(20px)", scale: 0.9 }}
             whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center justify-center text-5xl md:text-7xl font-sans font-light tracking-tighter text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-12 uppercase"
+            className="flex flex-wrap items-center justify-center text-4xl sm:text-5xl md:text-7xl font-sans font-light tracking-tighter text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-8 md:mb-12 uppercase"
           >
-            <Elev8LogoText 
-              textClassName="text-white" 
-              iconClassName="w-[1.25em] h-[1.7em] ml-[0.05em] mr-[0.2em] opacity-90" 
-            />
+            <span className="inline-flex items-center leading-none justify-center">
+              <span className="text-white">ELEV</span>
+              <InfinityLogo 
+                className="inline-block flex-shrink-0 w-[0.65em] h-[1em] opacity-90 ml-0 mr-[0.1em]" 
+              />
+            </span>
             <span className="mx-2 md:mx-4">UNIVERSE</span>
             <span className="text-[var(--primary)] text-[#9f81b9]">ECOSYSTEM</span>
           </motion.h2>
@@ -138,13 +140,13 @@ export default function UniverseEcosystem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-4 bg-white/5 p-2 rounded-full backdrop-blur-xl border border-white/10"
+            className="flex flex-wrap justify-center gap-2 sm:gap-4 bg-white/5 p-2 rounded-full backdrop-blur-xl border border-white/10 mx-4 sm:mx-0"
           >
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`relative px-8 py-3 rounded-full text-xs md:text-sm font-medium tracking-[0.2em] transition-all duration-500 ${
+                className={`relative px-5 sm:px-8 py-2.5 sm:py-3 rounded-full text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-500 ${
                   activeFilter === filter 
                     ? "text-white" 
                     : "text-gray-400 hover:text-white"
