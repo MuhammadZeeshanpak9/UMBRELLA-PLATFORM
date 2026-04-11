@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, Wand2, BookOpen, ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -35,6 +35,18 @@ export default function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showAccountabilityModal, setShowAccountabilityModal] = useState(false);
   const [showResultsOverlay, setShowResultsOverlay] = useState(false);
+
+  // Lock/unlock body scroll when any modal is open
+  useEffect(() => {
+    const anyModalOpen = showAccountabilityModal || showResultsOverlay;
+    document.body.style.overflow = anyModalOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [showAccountabilityModal, showResultsOverlay]);
+
+  const openAccountability = () => setShowAccountabilityModal(true);
+  const closeAccountability = () => setShowAccountabilityModal(false);
+  const openResults = () => setShowResultsOverlay(true);
+  const closeResults = () => setShowResultsOverlay(false);
 
   const handleSystemsClick = () => {
     const el = document.getElementById('ecosystem');
@@ -252,7 +264,7 @@ export default function Hero() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { title: "SYSTEMS", icon: Wand2, color: "text-[var(--complement-cyan)]", bg: "bg-[var(--complement-cyan)]/10", onClick: handleSystemsClick },
-                  { title: "ACCOUNTABILITY", icon: BookOpen, color: "text-[var(--complement-pink)]", bg: "bg-[var(--complement-pink)]/10", onClick: () => setShowAccountabilityModal(true) }
+                  { title: "ACCOUNTABILITY", icon: BookOpen, color: "text-[var(--complement-pink)]", bg: "bg-[var(--complement-pink)]/10", onClick: openAccountability }
                 ].map((card) => (
                   <div key={card.title} onClick={card.onClick} className="liquid-glass-strong p-4 md:p-6 rounded-3xl group cursor-pointer hover:border-white transition-colors flex flex-col items-center sm:items-start text-center sm:text-left">
                     <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full ${card.bg} flex items-center justify-center mb-4 md:mb-6 overflow-hidden`}>
@@ -263,7 +275,7 @@ export default function Hero() {
                 ))}
               </div>
 
-              <div onClick={() => setShowResultsOverlay(true)} className="liquid-glass-strong p-4 md:p-6 rounded-3xl flex items-center justify-between group cursor-pointer hover:border-white transition-colors">
+              <div onClick={openResults} className="liquid-glass-strong p-4 md:p-6 rounded-3xl flex items-center justify-between group cursor-pointer hover:border-white transition-colors">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-12 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] overflow-hidden shadow-inner"></div>
                   <div>
@@ -289,8 +301,8 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-[#030008]/70 backdrop-blur-md"
-            onClick={() => setShowAccountabilityModal(false)}
+            className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-[#030008]/80 backdrop-blur-lg touch-none"
+            onClick={closeAccountability}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.94, y: 20 }}
@@ -298,10 +310,10 @@ export default function Hero() {
               exit={{ opacity: 0, scale: 0.94, y: 20 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-md bg-[#030008]/90 border border-white/10 rounded-3xl p-10 shadow-[0_30px_80px_rgba(159,129,185,0.2)] text-center"
+              className="relative w-full max-w-md bg-[#030008]/95 border border-white/10 rounded-3xl p-10 shadow-[0_30px_80px_rgba(159,129,185,0.2)] text-center"
             >
               <button
-                onClick={() => setShowAccountabilityModal(false)}
+                onClick={closeAccountability}
                 className="absolute top-5 right-5 text-gray-500 hover:text-white transition-colors"
               >
                 <X size={18} />
@@ -318,7 +330,7 @@ export default function Hero() {
               </p>
               <a
                 href="#contact"
-                onClick={() => setShowAccountabilityModal(false)}
+                onClick={closeAccountability}
                 className="inline-flex items-center justify-center w-full py-4 rounded-2xl bg-[var(--primary)] hover:bg-[var(--complement-cyan)] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 shadow-[0_0_20px_rgba(159,129,185,0.4)]"
               >
                 <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em]" /> <span className="ml-2">NOW</span>
@@ -335,8 +347,8 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-[#030008]/70 backdrop-blur-md"
-            onClick={() => setShowResultsOverlay(false)}
+            className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-[#030008]/80 backdrop-blur-lg touch-none"
+            onClick={closeResults}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.94, y: 20 }}
@@ -344,10 +356,10 @@ export default function Hero() {
               exit={{ opacity: 0, scale: 0.94, y: 20 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg bg-[#030008]/90 border border-white/10 rounded-3xl p-8 md:p-10 shadow-[0_30px_80px_rgba(159,129,185,0.2)]"
+              className="relative w-full max-w-lg bg-[#030008]/95 border border-white/10 rounded-3xl p-8 md:p-10 shadow-[0_30px_80px_rgba(159,129,185,0.2)]"
             >
               <button
-                onClick={() => setShowResultsOverlay(false)}
+                onClick={closeResults}
                 className="absolute top-5 right-5 text-gray-500 hover:text-white transition-colors"
               >
                 <X size={18} />
@@ -365,7 +377,7 @@ export default function Hero() {
                       <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${item.color} bg-opacity-60 flex items-center justify-center text-white/90 shadow-inner`}>
                         <SacredGeometryLogo className="w-6 h-6" />
                       </div>
-                      <span className="text-xs text-gray-300 font-medium tracking-wide text-center">{item.label}</span>
+                      <span className="text-xs text-gray-300 font-medium tracking-wide text-center whitespace-nowrap">{item.label}</span>
                     </div>
                   </div>
                 ))}
@@ -374,7 +386,7 @@ export default function Hero() {
                 href="https://theworldsgreatestwater.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setShowResultsOverlay(false)}
+                onClick={closeResults}
                 className="inline-flex items-center justify-center w-full py-4 rounded-2xl bg-gradient-to-r from-[var(--primary)] to-[var(--complement-cyan)] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:opacity-90 shadow-[0_0_20px_rgba(159,129,185,0.4)] gap-[0.5em]"
               >
                 EXPLORE <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em]" /> UNIVERSE
