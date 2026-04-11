@@ -169,24 +169,14 @@ export const BRANDS: Brand[] = [
     priority: 9, // B9
   },
   {
-    id: "elev8-media",
-    name: "ELEV8 MEDIA",
-    description: "Energy in motion + The Illusion",
+    id: "elev8-robotics",
+    name: "ELEV8 ROBOTICS",
+    description: "YOUBOTICS. Expanding the possibilities of human and machine integration.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8creations.com",
-    image: "/images/elev8-creations.jpg",
+    url: "https://youinrobotics.com",
+    image: "/images/robotics.jpg",
     priority: 10, // B10
-  },
-  {
-    id: "ielev8my",
-    name: "iELEV8MY LUX Apparel",
-    description: "#1 NEW MONEY FASHION CREATORS in the universe.",
-    ctaText: "SHOP TO ELEV8",
-    universeCategory: "BODY",
-    url: "https://ielev8my.com",
-    image: "/images/ielev8my.jpg",
-    priority: 11, // B11
   },
   {
     id: "plea",
@@ -196,6 +186,16 @@ export const BRANDS: Brand[] = [
     universeCategory: "BODY",
     url: "https://ourplea.org",
     image: "/images/plea.jpg",
+    priority: 11, // B11
+  },
+  {
+    id: "elev8-eat-fresh",
+    name: "ELEV8 EAT FRESH",
+    description: "#1 Organic & Locally Sourced Food Galleria in the universe.",
+    ctaText: "SHOP TO ELEV8",
+    universeCategory: "BODY",
+    url: "https://elev8eatfresh.com",
+    image: "/images/eat-fresh.jpg",
     priority: 12, // B12
   },
   {
@@ -209,23 +209,23 @@ export const BRANDS: Brand[] = [
     priority: 13, // B13
   },
   {
-    id: "elev8-eat-fresh",
-    name: "ELEV8 EAT FRESH",
-    description: "#1 Organic & Locally Sourced Food Galleria in the universe.",
+    id: "elev8-media",
+    name: "ELEV8 MEDIA",
+    description: "Energy in motion + The Illusion",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8eatfresh.com",
-    image: "/images/eat-fresh.jpg",
+    url: "https://elev8creations.com",
+    image: "/images/elev8-creations.jpg",
     priority: 14, // B14
   },
   {
-    id: "elev8-robotics",
-    name: "ELEV8 ROBOTICS",
-    description: "YOUBOTICS. Expanding the possibilities of human and machine integration.",
+    id: "ielev8my",
+    name: "iELEV8MY LUX Apparel",
+    description: "#1 NEW MONEY FASHION CREATORS in the universe.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://youinrobotics.com",
-    image: "/images/robotics.jpg",
+    url: "https://ielev8my.com",
+    image: "/images/ielev8my.jpg",
     priority: 15, // B15
   },
 ];
