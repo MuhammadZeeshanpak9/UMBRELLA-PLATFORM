@@ -26,7 +26,7 @@ export const BRANDS: Brand[] = [
   },
   {
     id: "worlds-greatest-water",
-    name: "THE WORLD'S GREATEST WATER. ELEV8 WATER",
+    name: "THE WORLD'S GREATEST WATER",
     description: "#1 Premium Self-Development and wellness ultra purified water brand packaged in bottles.",
     ctaText: "EXPERIENCE",
     universeCategory: "SOUL",
@@ -109,33 +109,33 @@ export const BRANDS: Brand[] = [
     priority: 3, // B3
   },
   {
-    id: "thank-u-body",
-    name: "THANK U BODY",
-    description: "GRATITUDE TO THE HUMAN EXPERIENCE. #1 Body wellness brand in the universe.",
+    id: "elev8-media",
+    name: "ELEV8 MEDIA",
+    description: "Energy in motion + The Illusion",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://thankubody.com",
-    image: "/images/thank-u-body.jpg",
+    url: "https://elev8creations.com",
+    image: "/images/elev8-creations.jpg",
     priority: 4, // B4
   },
   {
+    id: "elev8-robotics",
+    name: "ELEV8 ROBOTICS",
+    description: "YOUBOTICS. Expanding the possibilities of human and machine integration.",
+    ctaText: "SHOP TO ELEV8",
+    universeCategory: "BODY",
+    url: "https://youinrobotics.com",
+    image: "/images/robotics.jpg",
+    priority: 5, // B5
+  },
+  {
     id: "greatest-african-project",
-    name: "THE GREATEST AFRICAN PROJECT. AFRICA RENEW.",
+    name: "THE GREATEST AFRICAN PROJECT",
     description: "#1 Mentalphysical & progressive movement restructuring the AFRICAN continent.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://thegreatestafricanproject.com",
     image: "/images/african-project.jpg",
-    priority: 5, // B5
-  },
-  {
-    id: "elev8-development",
-    name: "ELEV8 DEVELOPMENT",
-    description: "#1 Consciousness & GODLY lifestyle building development pioneer in the universe.",
-    ctaText: "SHOP TO ELEV8",
-    universeCategory: "BODY",
-    url: "https://elev8development.com",
-    image: "/images/elev8-development.jpg",
     priority: 6, // B6
   },
   {
@@ -149,13 +149,13 @@ export const BRANDS: Brand[] = [
     priority: 7, // B7
   },
   {
-    id: "worlds-greatest-music",
-    name: "THE WORLD'S GREATEST MUSIC WORLDWIDE",
-    description: "#1 self development & Mental wellness SOUND & FREQUENCY Creators in the universe.",
+    id: "elev8-development",
+    name: "ELEV8 DEVELOPMENT",
+    description: "#1 Consciousness & GODLY lifestyle building development pioneer in the universe.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://theworldsgreatestmusicworldwide.com",
-    image: "/images/worlds-greatest-music.jpg",
+    url: "https://elev8development.com",
+    image: "/images/elev8-development.jpg",
     priority: 8, // B8
   },
   {
@@ -169,26 +169,6 @@ export const BRANDS: Brand[] = [
     priority: 9, // B9
   },
   {
-    id: "elev8-robotics",
-    name: "ELEV8 ROBOTICS",
-    description: "YOUBOTICS. Expanding the possibilities of human and machine integration.",
-    ctaText: "SHOP TO ELEV8",
-    universeCategory: "BODY",
-    url: "https://youinrobotics.com",
-    image: "/images/robotics.jpg",
-    priority: 10, // B10
-  },
-  {
-    id: "plea",
-    name: "PLEA",
-    description: "Global Resource Sharing.",
-    ctaText: "SHOP TO ELEV8",
-    universeCategory: "BODY",
-    url: "https://ourplea.org",
-    image: "/images/plea.jpg",
-    priority: 11, // B11
-  },
-  {
     id: "elev8-eat-fresh",
     name: "ELEV8 EAT FRESH",
     description: "#1 Organic & Locally Sourced Food Galleria in the universe.",
@@ -196,7 +176,7 @@ export const BRANDS: Brand[] = [
     universeCategory: "BODY",
     url: "https://elev8eatfresh.com",
     image: "/images/eat-fresh.jpg",
-    priority: 12, // B12
+    priority: 10, // B10
   },
   {
     id: "elev8-godly-living",
@@ -206,17 +186,17 @@ export const BRANDS: Brand[] = [
     universeCategory: "BODY",
     url: "https://elev8godlyliving.com",
     image: "/images/godly-living.jpg",
-    priority: 13, // B13
+    priority: 11, // B11
   },
   {
-    id: "elev8-media",
-    name: "ELEV8 MEDIA",
-    description: "Energy in motion + The Illusion",
+    id: "worlds-greatest-music",
+    name: "THE WORLD'S GREATEST MUSIC WORLDWIDE",
+    description: "#1 self development & Mental wellness SOUND & FREQUENCY Creators in the universe.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8creations.com",
-    image: "/images/elev8-creations.jpg",
-    priority: 14, // B14
+    url: "https://theworldsgreatestmusicworldwide.com",
+    image: "/images/worlds-greatest-music.jpg",
+    priority: 12, // B12
   },
   {
     id: "ielev8my",
@@ -226,6 +206,26 @@ export const BRANDS: Brand[] = [
     universeCategory: "BODY",
     url: "https://ielev8my.com",
     image: "/images/ielev8my.jpg",
+    priority: 13, // B13
+  },
+  {
+    id: "plea",
+    name: "PLEA ( Global Resource Sharing)",
+    description: "Global Resource Sharing.",
+    ctaText: "SHOP TO ELEV8",
+    universeCategory: "BODY",
+    url: "https://ourplea.org",
+    image: "/images/plea.jpg",
+    priority: 14, // B14
+  },
+  {
+    id: "thank-u-body",
+    name: "THANK U BODY",
+    description: "GRATITUDE TO THE HUMAN EXPERIENCE. #1 Body wellness brand in the universe.",
+    ctaText: "SHOP TO ELEV8",
+    universeCategory: "BODY",
+    url: "https://thankubody.com",
+    image: "/images/thank-u-body.jpg",
     priority: 15, // B15
   },
 ];

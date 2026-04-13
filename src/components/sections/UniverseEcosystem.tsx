@@ -127,7 +127,7 @@ export default function UniverseEcosystem() {
             <span className="inline-flex items-center leading-none justify-center">
               <span className="text-white">ELEV</span>
               <InfinityLogo 
-                className="inline-block flex-shrink-0 w-[0.65em] h-[1em] opacity-90 ml-0 mr-[0.1em]" 
+                className="inline-block flex-shrink-0 w-[1.1em] h-[1.5em] opacity-90 -ml-[0.1em] mr-[-0.02em] drop-shadow-[0_0_15px_rgba(159,129,185,0.4)]" 
               />
             </span>
             <span className="mx-2 md:mx-4">UNIVERSE</span>

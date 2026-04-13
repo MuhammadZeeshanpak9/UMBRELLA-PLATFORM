@@ -168,7 +168,7 @@ export default function Hero() {
                 <span className="inline-flex items-center leading-none justify-center">
                   <span className="font-sans font-medium tracking-[0.05em] text-[var(--foreground)] opacity-80">ELEV</span>
                   <InfinityLogo 
-                    className="inline-block flex-shrink-0 w-[1.2em] h-[1.65em] opacity-80 -ml-[0.10em] mr-0" 
+                    className="inline-block flex-shrink-0 w-[1.8em] sm:w-[1.5em] h-[2.4em] sm:h-[2em] opacity-90 -ml-[0.12em] mr-[-0.05em] drop-shadow-[0_0_20px_rgba(159,129,185,0.5)] transition-all duration-700 hover:scale-105" 
                   />
                 </span>
                 <span>UNIVERSE</span>

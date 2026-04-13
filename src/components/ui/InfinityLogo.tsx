@@ -74,34 +74,34 @@ export function InfinityLogo({ className = "" }: { className?: string }) {
         strokeLinecap="round" 
         strokeLinejoin="round"
         filter="url(#chakraPulseGlow)"
-        initial={{ pathLength: 0.1, pathOffset: 0, opacity: 0 }}
+        initial={{ pathLength: 1, pathOffset: 0, opacity: 0.7 }}
         animate={{ 
-          pathOffset: 1, 
-          opacity: [0.4, 0.8, 0.4],
-          pathLength: [0.15, 0.25, 0.15]
+          opacity: 0.8,
+          pathLength: 1
         }}
         transition={{ 
-          pathOffset: { duration: 4, repeat: Infinity, ease: "linear" },
-          opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-          pathLength: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut"
         }}
       />
 
-      {/* Secondary sharper energy highlight */}
+      {/* Secondary sharper energy highlight - keeping it subtle and steady */}
       <motion.path 
         d={EIGHT_PATH}
         stroke="white" 
-        strokeWidth="1.5" 
+        strokeWidth="1.2" 
         strokeLinecap="round" 
         strokeLinejoin="round"
-        initial={{ pathLength: 0.05, pathOffset: 0, opacity: 0 }}
+        initial={{ pathLength: 1, opacity: 0.2 }}
         animate={{ 
-          pathOffset: 1,
-          opacity: [0, 0.6, 0]
+          opacity: [0.2, 0.4, 0.2]
         }}
         transition={{ 
-          pathOffset: { duration: 4, repeat: Infinity, ease: "linear" },
-          opacity: { duration: 4, repeat: Infinity, ease: "linear" }
+          duration: 4, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
         }}
       />
     </motion.svg>
