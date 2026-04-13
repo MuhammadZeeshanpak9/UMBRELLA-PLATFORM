@@ -157,7 +157,7 @@ export default function Hero() {
               <AudioPlayer />
               
               {/* Primary Vision Statement Grid — from user image */}
-              <div className="hidden sm:grid text-[10px] md:text-sm tracking-[0.4em] md:tracking-[0.6em] font-light text-[var(--primary)] uppercase mb-2 grid-cols-[1fr_auto_1fr] gap-x-2 opacity-90 w-full max-w-[300px] md:max-w-max mx-auto transition-all duration-700">
+              <div className="hidden sm:grid text-[10px] md:text-sm tracking-[0.4em] md:tracking-[0.6em] font-light text-[var(--primary)] uppercase mb-10 grid-cols-[1fr_auto_1fr] gap-x-2 opacity-90 w-full max-w-[300px] md:max-w-max mx-auto transition-all duration-700">
                 <Link href="?filter=MIND#ecosystem" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">MIND</Link>
                 <span className="opacity-30 text-center font-extralight px-2">+</span>
                 <Link href="?filter=BODY#ecosystem" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">BODY</Link>
@@ -169,14 +169,6 @@ export default function Hero() {
                 <Link href="#vision" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">CONSCIOUSNESS</Link>
                 <span className="opacity-30 text-center font-extralight px-2">+</span>
                 <Link href="?filter=BODY#ecosystem" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">GODLY LIVING</Link>
-              </div>
-
-              {/* Functional Category Filters */}
-              <div className="hidden sm:flex items-center justify-center gap-6 text-[9px] tracking-[0.3em] uppercase opacity-30 mb-6 mt-1">
-                <Link href="?filter=SOUL#ecosystem" className="hover:opacity-100 transition-opacity">SOUL</Link>
-                <Link href="?filter=MIND#ecosystem" className="hover:opacity-100 transition-opacity">MIND</Link>
-                <Link href="?filter=BODY#ecosystem" className="hover:opacity-100 transition-opacity">BODY</Link>
-                <Link href="?filter=CREATIONS#ecosystem" className="hover:opacity-100 transition-opacity">CREATIONS</Link>
               </div>
 
               <h1 className="text-[2rem] sm:text-4xl md:text-6xl lg:text-[5rem] font-sans font-extralight tracking-[0.1em] md:tracking-[0.15em] text-[var(--primary)] leading-[1.1] md:leading-[1.2] max-w-full px-2 md:px-0 md:max-w-4xl uppercase flex flex-col items-center">

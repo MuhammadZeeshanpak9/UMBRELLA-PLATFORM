@@ -31,8 +31,34 @@ function EcosystemCard({ brand }: { brand: Brand }) {
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       exit={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="perspective-[1000px] h-full"
+      className="perspective-[1000px] h-full relative z-10"
     >
+      {/* Floating Orbs & Text specifically for THE GRAND DESIGNER */}
+      {brand.id === "the-grand-designer" && (
+        <motion.div 
+          className="absolute -top-16 left-6 flex flex-col gap-3 z-30 pointer-events-none"
+          animate={{ opacity: [0.7, 1, 0.7] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="flex items-center gap-4">
+            <motion.div 
+              className="w-5 h-5 rounded-full bg-[#A855F7] shadow-[0_0_20px_#A855F7] border border-white/20" 
+              animate={{ scale: [0.9, 1.15, 0.9], opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <span className="text-xs tracking-[0.4em] text-[#A855F7] font-medium uppercase drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">TO KNOW</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <motion.div 
+              className="w-5 h-5 rounded-full bg-[#4338ca] shadow-[0_0_20px_#4338ca] border border-white/20" 
+              animate={{ scale: [0.9, 1.15, 0.9], opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            />
+            <span className="text-xs tracking-[0.4em] text-[#6366f1] font-medium uppercase drop-shadow-[0_0_8px_rgba(99,102,241,0.6)]">TO SEE</span>
+          </div>
+        </motion.div>
+      )}
+
       <motion.a 
         href={brand.url}
         target="_blank"
