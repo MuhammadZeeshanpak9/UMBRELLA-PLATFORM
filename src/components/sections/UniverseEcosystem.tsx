@@ -11,6 +11,63 @@ import { Elev8LogoText, ReplaceElev8, InfinityLogo } from "@/components/ui/Infin
 
 type FilterType = UniverseCategory | "CREATIONS";
 
+const EnergyOrb = ({ color, text, delay = 0, styleDelay = 0 }: { color: string, text: string, delay?: number, styleDelay?: number }) => (
+  <motion.div 
+    className="flex items-center gap-5 relative group/orb"
+    initial={{ opacity: 0, x: -10 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, delay, ease: "easeOut" }}
+    viewport={{ once: true }}
+  >
+    <div className="relative flex items-center justify-center w-5 h-5">
+      {/* Expanding Holographic Ripple */}
+      <motion.div
+        className="absolute rounded-full border border-white/20"
+        style={{ backgroundColor: `${color}33`, boxShadow: `0 0 30px ${color}` }}
+        animate={{ width: ["1rem", "3.5rem"], height: ["1rem", "3.5rem"], opacity: [0.8, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: styleDelay }}
+      />
+      
+      {/* Outer Rotating Sacred Geometry Ring */}
+      <motion.div
+        className="absolute inset-[-6px] rounded-full border-[1.5px] opacity-70"
+        style={{ borderColor: `${color}88`, borderTopColor: 'transparent', borderBottomColor: 'transparent' }}
+        animate={{ rotate: 360, scale: [1, 1.15, 1] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: styleDelay }}
+      />
+
+      {/* Inner Rotating Sacred Geometry Ring */}
+      <motion.div
+        className="absolute inset-[-2px] rounded-full border-[1.5px] opacity-90"
+        style={{ borderColor: `${color}BB`, borderLeftColor: 'transparent', borderRightColor: 'transparent' }}
+        animate={{ rotate: -360, scale: [1, 1.1, 1] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: styleDelay + 0.5 }}
+      />
+      
+      {/* Core Energy Orb */}
+      <motion.div 
+        className="relative z-10 w-2.5 h-2.5 rounded-full"
+        style={{ backgroundColor: color, boxShadow: `0 0 15px ${color}` }}
+        animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.8, 1, 0.8] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: styleDelay }}
+      >
+        <div className="absolute inset-[1px] rounded-full bg-white/80 blur-[0.5px]" />
+      </motion.div>
+    </div>
+
+    {/* Typography - with a subtle ambient glow */}
+    <motion.div 
+      className="text-[10px] sm:text-xs tracking-[0.4em] font-medium uppercase relative transition-all duration-500 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] group-hover/orb:drop-shadow-[0_0_15px_currentColor]"
+      style={{ color: color }}
+      animate={{ opacity: [0.7, 1, 0.7] }}
+      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: styleDelay + 1 }}
+    >
+      {text}
+      <span className="absolute inset-0 blur-[8px] opacity-40 z-[-1]" style={{ backgroundColor: color }} />
+    </motion.div>
+  </motion.div>
+);
+
 function EcosystemCard({ brand }: { brand: Brand }) {
   // 3D Hover & Flashlight Effect
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
@@ -33,29 +90,58 @@ function EcosystemCard({ brand }: { brand: Brand }) {
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="perspective-[1000px] h-full relative z-10"
     >
-      {/* Floating Orbs & Text specifically for THE GRAND DESIGNER */}
-      {brand.id === "the-grand-designer" && (
+      {/* Universal Floating Energy System (SOUL) */}
+      {brand.universeCategory === "SOUL" && (
         <motion.div 
-          className="absolute -top-16 left-6 flex flex-col gap-3 z-30 pointer-events-none"
-          animate={{ opacity: [0.7, 1, 0.7] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[5.5rem] left-8 flex flex-col gap-5 z-30 pointer-events-none"
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="flex items-center gap-4">
-            <motion.div 
-              className="w-5 h-5 rounded-full bg-[#A855F7] shadow-[0_0_20px_#A855F7] border border-white/20" 
-              animate={{ scale: [0.9, 1.15, 0.9], opacity: [0.8, 1, 0.8] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <span className="text-xs tracking-[0.4em] text-[#A855F7] font-medium uppercase drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">TO KNOW</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <motion.div 
-              className="w-5 h-5 rounded-full bg-[#4338ca] shadow-[0_0_20px_#4338ca] border border-white/20" 
-              animate={{ scale: [0.9, 1.15, 0.9], opacity: [0.8, 1, 0.8] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            />
-            <span className="text-xs tracking-[0.4em] text-[#6366f1] font-medium uppercase drop-shadow-[0_0_8px_rgba(99,102,241,0.6)]">TO SEE</span>
-          </div>
+          {/* Energy Thread / Constellation Line */}
+          <motion.div 
+            className="absolute left-[9px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#A855F7]/40 to-[#4338ca]/40 blur-[1px]"
+            animate={{ opacity: [0.4, 0.8, 0.4] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <EnergyOrb color="#A855F7" text="TO KNOW" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#6366f1" text="TO SEE" delay={0.4} styleDelay={0.5} />
+        </motion.div>
+      )}
+
+      {/* Universal Floating Energy System (MIND) */}
+      {brand.universeCategory === "MIND" && (
+        <motion.div 
+          className="absolute -top-[5.5rem] left-8 flex flex-col gap-5 z-30 pointer-events-none"
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        >
+          {/* Energy Thread */}
+          <motion.div 
+            className="absolute left-[9px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#3b82f6]/40 to-[#10b981]/40 blur-[1px]"
+            animate={{ opacity: [0.4, 0.8, 0.4] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <EnergyOrb color="#3b82f6" text="TO SPEAK" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#10b981" text="TO LOVE" delay={0.4} styleDelay={0.5} />
+        </motion.div>
+      )}
+
+      {/* Universal Floating Energy System (BODY) */}
+      {brand.universeCategory === "BODY" && (
+        <motion.div 
+          className="absolute -top-[7.5rem] left-8 flex flex-col gap-5 z-30 pointer-events-none"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        >
+          {/* Energy Thread */}
+          <motion.div 
+            className="absolute left-[9px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#eab308]/40 via-[#f97316]/40 to-[#ef4444]/40 blur-[1px]"
+            animate={{ opacity: [0.4, 0.8, 0.4] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <EnergyOrb color="#eab308" text="TO ACT" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#f97316" text="TO FEEL" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#ef4444" text="TO BE HERE" delay={0.6} styleDelay={1} />
         </motion.div>
       )}
 
@@ -192,7 +278,7 @@ export default function UniverseEcosystem() {
         </div>
 
         {/* Animated Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 min-h-[500px]">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 lg:gap-x-12 gap-y-32 md:gap-y-40 mt-16 lg:mt-24 min-h-[500px]">
           <AnimatePresence mode="popLayout">
             {filteredBrands.map((brand) => (
               <EcosystemCard key={brand.id} brand={brand} />
