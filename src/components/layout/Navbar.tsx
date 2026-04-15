@@ -26,7 +26,7 @@ export default function Navbar() {
 
   const links = [
     { name: "Home", href: "#home" },
-    { name: "Creations", href: "?filter=CREATIONS#ecosystem" },
+    { name: "ELEV8 ALL", href: "?filter=CREATIONS#ecosystem" },
     { name: "Vision", href: "#vision" },
     { name: "YOUTUBE", href: "https://youtube.com/@theworldsgreatestwater111?si=Y8Uz6sBWkmKln2cI", external: true },
     { name: "TIKTOK", href: "https://www.tiktok.com/@theworldsgreatestwater?_r=1&_t=ZP-95MUNoMMi11", external: true },
@@ -60,7 +60,13 @@ export default function Navbar() {
               rel={link.external ? "noopener noreferrer" : undefined}
               className="relative text-[10px] uppercase tracking-[0.2em] font-medium text-gray-400 hover:text-[#9f81b9] transition-colors duration-300 group"
             >
-              <span className="relative z-10">{link.name}</span>
+              <span className="relative z-10">
+                {link.name === "ELEV8 ALL" ? (
+                  <span className="flex items-center">
+                    <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> ALL
+                  </span>
+                ) : link.name}
+              </span>
               {/* Animated Glowing Underline */}
               {!link.external && (
                 <span className="absolute left-1/2 bottom-[-4px] -translate-x-1/2 w-0 h-[1.5px] bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent transition-all duration-500 ease-out group-hover:w-[150%] opacity-0 group-hover:opacity-100" />
@@ -94,15 +100,19 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.5 }}
                 >
-                  <Link
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-xl font-light tracking-[0.3em] uppercase text-gray-300 hover:text-[var(--primary)] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className="text-xl font-light tracking-[0.3em] uppercase text-gray-300 hover:text-[var(--primary)] transition-colors"
+                    >
+                      {link.name === "ELEV8 ALL" ? (
+                        <span className="flex items-center">
+                          <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> ALL
+                        </span>
+                      ) : link.name}
+                    </Link>
                 </motion.div>
               ))}
             </motion.div>

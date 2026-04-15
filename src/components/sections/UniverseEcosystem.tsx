@@ -20,50 +20,49 @@ const EnergyOrb = ({ color, text, delay = 0, styleDelay = 0 }: { color: string, 
     viewport={{ once: true }}
   >
     <div className="relative flex items-center justify-center w-5 h-5">
-      {/* Expanding Holographic Ripple */}
+      {/* Expanding Ripple - Extremely Subdued */}
       <motion.div
-        className="absolute rounded-full border border-white/20"
-        style={{ backgroundColor: `${color}33`, boxShadow: `0 0 30px ${color}` }}
-        animate={{ width: ["1rem", "3.5rem"], height: ["1rem", "3.5rem"], opacity: [0.8, 0] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: styleDelay }}
+        className="absolute rounded-full"
+        style={{ backgroundColor: `${color}1A` }}
+        animate={{ width: ["1rem", "2rem"], height: ["1rem", "2rem"], opacity: [0.3, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeOut", delay: styleDelay }}
       />
       
-      {/* Outer Rotating Sacred Geometry Ring */}
+      {/* Outer Rotating Sacred Geometry Ring - Faint */}
       <motion.div
-        className="absolute inset-[-6px] rounded-full border-[1.5px] opacity-70"
-        style={{ borderColor: `${color}88`, borderTopColor: 'transparent', borderBottomColor: 'transparent' }}
-        animate={{ rotate: 360, scale: [1, 1.15, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: styleDelay }}
+        className="absolute inset-[-5px] rounded-full border-[1px] opacity-20"
+        style={{ borderLeftColor: `${color}4D`, borderRightColor: `${color}4D`, borderTopColor: 'transparent', borderBottomColor: 'transparent' }}
+        animate={{ rotate: 360, scale: [1, 1.05, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: styleDelay }}
       />
 
-      {/* Inner Rotating Sacred Geometry Ring */}
+      {/* Inner Rotating Sacred Geometry Ring - Faint */}
       <motion.div
-        className="absolute inset-[-2px] rounded-full border-[1.5px] opacity-90"
-        style={{ borderColor: `${color}BB`, borderLeftColor: 'transparent', borderRightColor: 'transparent' }}
-        animate={{ rotate: -360, scale: [1, 1.1, 1] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: styleDelay + 0.5 }}
+        className="absolute inset-[-2px] rounded-full border-[1px] opacity-30"
+        style={{ borderTopColor: `${color}66`, borderBottomColor: `${color}66`, borderLeftColor: 'transparent', borderRightColor: 'transparent' }}
+        animate={{ rotate: -360 }}
+        transition={{ duration: 5, repeat: Infinity, ease: "linear", delay: styleDelay + 0.5 }}
       />
       
-      {/* Core Energy Orb */}
+      {/* Core Energy Orb - Muted */}
       <motion.div 
-        className="relative z-10 w-2.5 h-2.5 rounded-full"
-        style={{ backgroundColor: color, boxShadow: `0 0 15px ${color}` }}
-        animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.8, 1, 0.8] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: styleDelay }}
+        className="relative z-10 w-2 h-2 rounded-full"
+        style={{ backgroundColor: color, boxShadow: `0 0 3px ${color}` }}
+        animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.6, 0.9, 0.6] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: styleDelay }}
       >
         <div className="absolute inset-[1px] rounded-full bg-white/80 blur-[0.5px]" />
       </motion.div>
     </div>
 
-    {/* Typography - with a subtle ambient glow */}
+    {/* Typography - Pure Text, No Glow */}
     <motion.div 
-      className="text-[10px] sm:text-xs tracking-[0.4em] font-medium uppercase relative transition-all duration-500 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] group-hover/orb:drop-shadow-[0_0_15px_currentColor]"
+      className="text-[10px] sm:text-xs tracking-[0.4em] font-medium uppercase relative transition-all duration-700"
       style={{ color: color }}
-      animate={{ opacity: [0.7, 1, 0.7] }}
-      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: styleDelay + 1 }}
+      animate={{ opacity: [0.5, 0.9, 0.5] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: styleDelay + 1 }}
     >
       {text}
-      <span className="absolute inset-0 blur-[8px] opacity-40 z-[-1]" style={{ backgroundColor: color }} />
     </motion.div>
   </motion.div>
 );
@@ -97,14 +96,14 @@ function EcosystemCard({ brand }: { brand: Brand }) {
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         >
-          {/* Energy Thread / Constellation Line */}
+          {/* Energy Thread / Constellation Line - Minimal */}
           <motion.div 
-            className="absolute left-[9px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#A855F7]/40 to-[#4338ca]/40 blur-[1px]"
-            animate={{ opacity: [0.4, 0.8, 0.4] }}
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#b090c7]/10 to-[#858bc4]/10"
+            animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#A855F7" text="TO KNOW" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#6366f1" text="TO SEE" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#b090c7" text="TO KNOW" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#858bc4" text="TO SEE" delay={0.4} styleDelay={0.5} />
         </motion.div>
       )}
 
@@ -115,14 +114,14 @@ function EcosystemCard({ brand }: { brand: Brand }) {
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
-          {/* Energy Thread */}
+          {/* Energy Thread - Minimal */}
           <motion.div 
-            className="absolute left-[9px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#3b82f6]/40 to-[#10b981]/40 blur-[1px]"
-            animate={{ opacity: [0.4, 0.8, 0.4] }}
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#84a1c7]/10 to-[#80b8a1]/10"
+            animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#3b82f6" text="TO SPEAK" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#10b981" text="TO LOVE" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#84a1c7" text="TO LEARN" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#80b8a1" text="TO LOVE" delay={0.4} styleDelay={0.5} />
         </motion.div>
       )}
 
@@ -133,15 +132,15 @@ function EcosystemCard({ brand }: { brand: Brand }) {
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >
-          {/* Energy Thread */}
+          {/* Energy Thread - Minimal */}
           <motion.div 
-            className="absolute left-[9px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#eab308]/40 via-[#f97316]/40 to-[#ef4444]/40 blur-[1px]"
-            animate={{ opacity: [0.4, 0.8, 0.4] }}
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#d1b77f]/10 via-[#cfa288]/10 to-[#bf7373]/10"
+            animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#eab308" text="TO ACT" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#f97316" text="TO FEEL" delay={0.4} styleDelay={0.5} />
-          <EnergyOrb color="#ef4444" text="TO BE HERE" delay={0.6} styleDelay={1} />
+          <EnergyOrb color="#d1b77f" text="TO ACT" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#cfa288" text="TO FEEL" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#bf7373" text="TO BE HERE" delay={0.6} styleDelay={1} />
         </motion.div>
       )}
 

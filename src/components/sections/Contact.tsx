@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Elev8LogoText } from "@/components/ui/InfinityLogo";
 
 export default function Contact() {
   return (
@@ -22,8 +23,14 @@ export default function Contact() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4.5rem] font-sans font-bold tracking-tighter text-white uppercase leading-[1.1] mb-4 md:mb-6 drop-shadow-xl">
               GREATEST, <br className="hidden lg:block"/> SAY HELLO
             </h2>
+            <p className="text-lg md:text-xl text-white font-semibold tracking-wide uppercase mb-3">
+              I AM THE GREATEST.
+            </p>
+            <p className="text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-3">
+              Together, we will <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> the universe within and the world in the physical reality.
+            </p>
             <p className="text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
-              We&apos;d love to hear from you. Reach out for partnerships, collaborations, or general inquiries.
+              Send a message to <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> for universal collaborations, partnerships, or general information.
             </p>
           </motion.div>
 

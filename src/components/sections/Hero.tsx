@@ -111,7 +111,7 @@ export default function Hero() {
                 
                 <div className="flex flex-col gap-8 items-center justify-center flex-1 relative z-10">
                   {[
-                    { label: 'CREATIONS', filter: 'CREATIONS' },
+                    { label: 'ELEV8 ALL', filter: 'CREATIONS' },
                     { label: 'SOUL', filter: 'SOUL' },
                     { label: 'MIND', filter: 'MIND' },
                     { label: 'BODY', filter: 'BODY' },
@@ -128,7 +128,11 @@ export default function Hero() {
                         onClick={() => setIsMenuOpen(false)}
                         className="text-2xl md:text-3xl font-extralight tracking-[0.2em] uppercase text-gray-300 hover:text-[var(--primary)] hover:scale-105 transition-all text-center block"
                       >
-                        {item.label}
+                        {item.label === "ELEV8 ALL" ? (
+                          <span className="flex items-center justify-center">
+                            <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> ALL
+                          </span>
+                        ) : item.label}
                       </Link>
                     </motion.div>
                   ))}
@@ -157,17 +161,17 @@ export default function Hero() {
               <AudioPlayer />
               
               {/* Primary Vision Statement Grid — from user image */}
-              <div className="hidden sm:grid text-[10px] md:text-sm tracking-[0.4em] md:tracking-[0.6em] font-light text-[var(--primary)] uppercase mb-10 grid-cols-[1fr_auto_1fr] gap-x-2 opacity-90 w-full max-w-[300px] md:max-w-max mx-auto transition-all duration-700">
+              <div className="grid items-center text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.6em] font-semibold text-[var(--primary)] uppercase mb-10 grid-cols-[1fr_auto_1fr] gap-x-2 sm:gap-x-3 gap-y-1 opacity-90 w-full max-w-[320px] sm:max-w-[450px] md:max-w-[600px] lg:max-w-[700px] mx-auto transition-all duration-700">
                 <Link href="?filter=MIND#ecosystem" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">MIND</Link>
-                <span className="opacity-30 text-center font-extralight px-2">+</span>
+                <span className="text-center font-bold text-sm sm:text-base md:text-lg px-1 sm:px-2 text-[var(--primary)]">+</span>
                 <Link href="?filter=BODY#ecosystem" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">BODY</Link>
 
                 <Link href="#vision" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">SPIRITUALITY</Link>
-                <span className="opacity-30 text-center font-extralight px-2">+</span>
+                <span className="text-center font-bold text-sm sm:text-base md:text-lg px-1 sm:px-2 text-[var(--primary)]">+</span>
                 <Link href="#vision" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">SCIENCE</Link>
 
                 <Link href="#vision" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">CONSCIOUSNESS</Link>
-                <span className="opacity-30 text-center font-extralight px-2">+</span>
+                <span className="text-center font-bold text-sm sm:text-base md:text-lg px-1 sm:px-2 text-[var(--primary)]">+</span>
                 <Link href="?filter=BODY#ecosystem" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">GODLY LIVING</Link>
               </div>
 
@@ -237,7 +241,7 @@ export default function Hero() {
           <div className="flex justify-start lg:justify-end gap-4 lg:h-20 items-center px-2 sm:px-4">
             <div className="liquid-glass flex flex-wrap lg:flex-nowrap items-center gap-2 sm:gap-4 px-4 sm:px-6 py-3 rounded-full w-full lg:w-auto justify-center">
               {[
-                { label: "CREATIONS", href: "?filter=CREATIONS#ecosystem" },
+                { label: "ELEV8 ALL", href: "?filter=CREATIONS#ecosystem" },
                 { label: "YOUTUBE", href: "https://youtube.com/@theworldsgreatestwater111?si=Y8Uz6sBWkmKln2cI" },
                 { label: "TIKTOK", href: "https://www.tiktok.com/@theworldsgreatestwater?_r=1&_t=ZP-95MUNoMMi11" },
                 { label: "INSTAGRAM", href: "https://www.instagram.com/theworldsgreatestwater?igsh=MWY5NnptdW5uM3NzZQ==" },
@@ -249,7 +253,11 @@ export default function Hero() {
                   rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="text-[10px] sm:text-xs font-medium text-gray-600 hover:text-[var(--primary)] transition-colors tracking-wider"
                 >
-                  {social.label}
+                  {social.label === "ELEV8 ALL" ? (
+                    <span className="flex items-center">
+                      <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> ALL
+                    </span>
+                  ) : social.label}
                 </a>
               ))}
               <div className="w-[1px] h-4 bg-gray-300 mx-2"></div>
@@ -260,10 +268,10 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center lg:justify-end px-2 sm:px-4">
-             <div className="liquid-glass-strong w-full lg:w-64 p-4 md:p-6 rounded-[2rem] flex flex-col gap-2 md:gap-3 text-center lg:text-left">
-               <h3 className="font-semibold text-lg text-[var(--primary)] tracking-tight uppercase">ENTER <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em]" /> ECOSYSTEM</h3>
-               <p className="text-sm text-gray-500 font-light leading-relaxed">A seamless integration between spiritual innerstanding and physical manifestation.</p>
-             </div>
+             <a href="?filter=CREATIONS#ecosystem" className="liquid-glass-strong w-full lg:w-64 p-4 md:p-6 rounded-[2rem] flex flex-col gap-2 md:gap-3 text-center lg:text-left cursor-pointer hover:border-white/30 hover:shadow-[0_0_30px_rgba(159,129,185,0.3)] transition-all duration-500 group">
+               <h3 className="font-semibold text-lg text-[var(--primary)] tracking-tight uppercase group-hover:text-white transition-colors duration-300">ENTER <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em]" /> ECOSYSTEM</h3>
+               <p className="text-sm text-gray-500 font-light leading-relaxed group-hover:text-gray-400 transition-colors duration-300">A seamless integration between spiritual innerstanding and physical manifestation.</p>
+             </a>
           </div>
 
           {/* Bottom Features Container */}
@@ -331,7 +339,7 @@ export default function Hero() {
               </div>
               <h3 className="text-xl font-semibold tracking-tight text-white uppercase mb-3">Connect with the Ecosystem</h3>
               <p className="text-sm text-gray-400 font-light leading-relaxed mb-4">
-                Connect with the <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] opacity-80" /> ALL movement to create positive & balanced coexisting with other spirit beings having physical life experiences in the mind.
+                Connect with the <Elev8LogoText textClassName="uppercase" iconClassName="w-[1.1em] h-[1.5em] mx-[0.15em] opacity-80" /> ALL movement to create positive & balanced coexisting with other spirit beings having physical life experiences in the mind.
               </p>
               <p className="text-sm text-gray-400 font-light leading-relaxed mb-8">
                 It&apos;s always a WIN WIN, collaborating, partnering, and elevating the universal consciousness.
@@ -341,7 +349,7 @@ export default function Hero() {
                 onClick={closeAccountability}
                 className="inline-flex items-center justify-center w-full py-4 rounded-2xl bg-[var(--primary)] hover:bg-[var(--complement-cyan)] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 shadow-[0_0_20px_rgba(159,129,185,0.4)]"
               >
-                <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em]" /> <span className="ml-2">NOW</span>
+                <Elev8LogoText textClassName="uppercase text-sm" iconClassName="w-[1.2em] h-[1.7em] mx-[0.15em]" /> <span className="ml-2">NOW</span>
               </a>
             </motion.div>
           </motion.div>
