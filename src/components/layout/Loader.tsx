@@ -32,7 +32,6 @@ export default function Loader() {
             <Elev8LogoText 
               textClassName="text-4xl font-sans font-medium tracking-[0.2em] text-[var(--primary)] uppercase"
               iconClassName="w-[4.0em] h-[5.5em] ml-[0.05em] mr-[0.15em]"
-              animated={true}
             />
           </motion.div>
         </motion.div>

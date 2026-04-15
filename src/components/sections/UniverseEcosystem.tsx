@@ -7,13 +7,13 @@ import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence, useMotionTemplate, useSpring } from "framer-motion";
 import { BRANDS, Brand, UniverseCategory } from "@/config/brands";
 import { ArrowUpRight } from "lucide-react";
-import { Elev8LogoText, ReplaceElev8, InfinityLogo } from "@/components/ui/InfinityLogo";
+import { ReplaceElev8, InfinityLogo } from "@/components/ui/InfinityLogo";
 
 type FilterType = UniverseCategory | "CREATIONS";
 
 const EnergyOrb = ({ color, text, delay = 0, styleDelay = 0 }: { color: string, text: string, delay?: number, styleDelay?: number }) => (
   <motion.div 
-    className="flex items-center gap-5 relative group/orb"
+    className="flex items-center gap-4 relative group/orb whitespace-nowrap"
     initial={{ opacity: 0, x: -10 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 1, delay, ease: "easeOut" }}
@@ -44,10 +44,10 @@ const EnergyOrb = ({ color, text, delay = 0, styleDelay = 0 }: { color: string, 
         transition={{ duration: 5, repeat: Infinity, ease: "linear", delay: styleDelay + 0.5 }}
       />
       
-      {/* Core Energy Orb - Muted */}
+      {/* Core Energy Orb - Brighter */}
       <motion.div 
         className="relative z-10 w-2 h-2 rounded-full"
-        style={{ backgroundColor: color, boxShadow: `0 0 3px ${color}` }}
+        style={{ backgroundColor: color, boxShadow: `0 0 6px ${color}` }}
         animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.6, 0.9, 0.6] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: styleDelay }}
       >
@@ -67,7 +67,7 @@ const EnergyOrb = ({ color, text, delay = 0, styleDelay = 0 }: { color: string, 
   </motion.div>
 );
 
-function EcosystemCard({ brand }: { brand: Brand }) {
+function EcosystemCard({ brand, index = 999, activeFilter }: { brand: Brand, index?: number, activeFilter?: FilterType }) {
   // 3D Hover & Flashlight Effect
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
@@ -90,7 +90,7 @@ function EcosystemCard({ brand }: { brand: Brand }) {
       className="perspective-[1000px] h-full relative z-10"
     >
       {/* Universal Floating Energy System (SOUL) */}
-      {brand.universeCategory === "SOUL" && (
+      {brand.universeCategory === "SOUL" && index <= 2 && activeFilter === "SOUL" && (
         <motion.div 
           className="absolute -top-[5.5rem] left-8 flex flex-col gap-5 z-30 pointer-events-none"
           animate={{ y: [0, -6, 0] }}
@@ -98,17 +98,17 @@ function EcosystemCard({ brand }: { brand: Brand }) {
         >
           {/* Energy Thread / Constellation Line - Minimal */}
           <motion.div 
-            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#b090c7]/10 to-[#858bc4]/10"
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#c991f2]/10 to-[#8c9fff]/10"
             animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#b090c7" text="TO KNOW" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#858bc4" text="TO SEE" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#c991f2" text="TO KNOW" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#8c9fff" text="TO SEE" delay={0.4} styleDelay={0.5} />
         </motion.div>
       )}
 
       {/* Universal Floating Energy System (MIND) */}
-      {brand.universeCategory === "MIND" && (
+      {brand.universeCategory === "MIND" && index <= 2 && activeFilter === "MIND" && (
         <motion.div 
           className="absolute -top-[5.5rem] left-8 flex flex-col gap-5 z-30 pointer-events-none"
           animate={{ y: [0, -6, 0] }}
@@ -116,17 +116,17 @@ function EcosystemCard({ brand }: { brand: Brand }) {
         >
           {/* Energy Thread - Minimal */}
           <motion.div 
-            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#84a1c7]/10 to-[#80b8a1]/10"
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#78b5ff]/10 to-[#4ee09b]/10"
             animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#84a1c7" text="TO LEARN" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#80b8a1" text="TO LOVE" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#78b5ff" text="TO LEARN" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#4ee09b" text="TO LOVE" delay={0.4} styleDelay={0.5} />
         </motion.div>
       )}
 
       {/* Universal Floating Energy System (BODY) */}
-      {brand.universeCategory === "BODY" && (
+      {brand.universeCategory === "BODY" && index <= 2 && activeFilter === "BODY" && (
         <motion.div 
           className="absolute -top-[7.5rem] left-8 flex flex-col gap-5 z-30 pointer-events-none"
           animate={{ y: [0, -8, 0] }}
@@ -134,13 +134,13 @@ function EcosystemCard({ brand }: { brand: Brand }) {
         >
           {/* Energy Thread - Minimal */}
           <motion.div 
-            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#d1b77f]/10 via-[#cfa288]/10 to-[#bf7373]/10"
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#ffd15c]/10 via-[#ff9e5e]/10 to-[#fc6060]/10"
             animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#d1b77f" text="TO ACT" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#cfa288" text="TO FEEL" delay={0.4} styleDelay={0.5} />
-          <EnergyOrb color="#bf7373" text="TO BE HERE" delay={0.6} styleDelay={1} />
+          <EnergyOrb color="#ffd15c" text="TO ACT" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#ff9e5e" text="TO FEEL" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#fc6060" text="TO BE HERE" delay={0.6} styleDelay={1} />
         </motion.div>
       )}
 
@@ -277,10 +277,10 @@ export default function UniverseEcosystem() {
         </div>
 
         {/* Animated Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 lg:gap-x-12 gap-y-32 md:gap-y-40 mt-16 lg:mt-24 min-h-[500px]">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 lg:gap-x-12 gap-y-32 md:gap-y-40 mt-32 lg:mt-40 xl:mt-48 min-h-[500px]">
           <AnimatePresence mode="popLayout">
-            {filteredBrands.map((brand) => (
-              <EcosystemCard key={brand.id} brand={brand} />
+            {filteredBrands.map((brand, index) => (
+              <EcosystemCard key={brand.id} brand={brand} index={index} activeFilter={activeFilter} />
             ))}
           </AnimatePresence>
         </motion.div>

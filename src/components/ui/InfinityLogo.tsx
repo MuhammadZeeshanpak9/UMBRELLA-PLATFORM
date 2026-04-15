@@ -111,13 +111,11 @@ export function InfinityLogo({ className = "" }: { className?: string }) {
 export function Elev8LogoText({ 
   className = "", 
   textClassName = "", 
-  iconClassName = "", 
-  animated = false 
+  iconClassName = ""
 }: { 
   className?: string, 
   textClassName?: string, 
-  iconClassName?: string, 
-  animated?: boolean 
+  iconClassName?: string
 }) {
   // Strip any old margin classes to universally control the spacing here safely
   const strippedIconClass = iconClassName.replace(/\bm[lxyr]?-\[[^\]]+\]\b/g, "").trim();
@@ -136,14 +134,12 @@ export function ReplaceElev8({
   text, 
   className = "", 
   textClassName = "", 
-  iconClassName = "",
-  animated = false
+  iconClassName = ""
 }: { 
   text: string, 
   className?: string, 
   textClassName?: string, 
-  iconClassName?: string,
-  animated?: boolean
+  iconClassName?: string
 }) {
   if (!text.includes("ELEV8")) return <>{text}</>;
   
@@ -158,7 +154,6 @@ export function ReplaceElev8({
               className={className} 
               textClassName={textClassName} 
               iconClassName={iconClassName} 
-              animated={animated}
             />
           )}
         </React.Fragment>

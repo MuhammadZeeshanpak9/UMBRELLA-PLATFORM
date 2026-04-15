@@ -381,7 +381,7 @@ export default function Hero() {
                 <X size={18} />
               </button>
               <h3 className="text-xl font-semibold tracking-tight text-white uppercase mb-2">Experience the Results</h3>
-              <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">Explore the full range of premium experiences, creations, and E-learning from the <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] opacity-80" /> universe.</p>
+              <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">Explore the full range of premium experiences, creations, and E-learning from the <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.9em] h-[1.3em] mx-[0.1em] opacity-80" /> universe.</p>
               <div className="grid grid-cols-3 gap-3 mb-8">
                 {[
                   { label: "Experiences", color: "from-[var(--primary)] to-[var(--complement-pink)]" },
@@ -405,7 +405,7 @@ export default function Hero() {
                 onClick={closeResults}
                 className="inline-flex items-center justify-center w-full py-4 rounded-2xl bg-gradient-to-r from-[var(--primary)] to-[var(--complement-cyan)] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:opacity-90 shadow-[0_0_20px_rgba(159,129,185,0.4)] gap-[0.5em]"
               >
-                EXPLORE <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em]" /> UNIVERSE
+                EXPLORE <Elev8LogoText textClassName="uppercase" iconClassName="w-[1.1em] h-[1.5em] mx-[0.1em]" /> UNIVERSE
               </a>
             </motion.div>
           </motion.div>
