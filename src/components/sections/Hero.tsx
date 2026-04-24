@@ -183,7 +183,7 @@ export default function Hero() {
                     className="inline-block flex-shrink-0 w-[1.8em] sm:w-[1.5em] h-[2.4em] sm:h-[2em] opacity-90 -ml-[0.12em] mr-[-0.05em] drop-shadow-[0_0_20px_rgba(159,129,185,0.5)] transition-all duration-700 hover:scale-105" 
                   />
                 </span>
-                <span>UNIVERSE</span>
+                <span>YOUNIVERSE</span>
               </h1>
             </motion.div>
 
@@ -405,7 +405,7 @@ export default function Hero() {
                 onClick={closeResults}
                 className="inline-flex items-center justify-center w-full py-4 rounded-2xl bg-gradient-to-r from-[var(--primary)] to-[var(--complement-cyan)] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:opacity-90 shadow-[0_0_20px_rgba(159,129,185,0.4)] gap-[0.5em]"
               >
-                EXPLORE <Elev8LogoText textClassName="uppercase" iconClassName="w-[1.1em] h-[1.5em] mx-[0.1em]" /> UNIVERSE
+                EXPLORE <Elev8LogoText textClassName="uppercase" iconClassName="w-[1.1em] h-[1.5em] mx-[0.1em]" /> YOUNIVERSE
               </a>
             </motion.div>
           </motion.div>

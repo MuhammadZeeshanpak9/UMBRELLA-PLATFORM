@@ -2,9 +2,9 @@
 
 import React from "react";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { motion, AnimatePresence, useMotionTemplate, useSpring } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { BRANDS, Brand, UniverseCategory } from "@/config/brands";
 import { ArrowUpRight } from "lucide-react";
 import { ReplaceElev8, InfinityLogo } from "@/components/ui/InfinityLogo";
@@ -67,27 +67,26 @@ const EnergyOrb = ({ color, text, delay = 0, styleDelay = 0 }: { color: string, 
   </motion.div>
 );
 
-function EcosystemCard({ brand, index = 999, activeFilter }: { brand: Brand, index?: number, activeFilter?: FilterType }) {
-  // 3D Hover & Flashlight Effect
-  const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
-  const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
-  
+const EcosystemCard = React.memo(function EcosystemCard({ brand, index = 999, activeFilter }: { brand: Brand, index?: number, activeFilter?: FilterType }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
   function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent<HTMLAnchorElement>) {
     const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+    if (cardRef.current) {
+      cardRef.current.style.setProperty("--mouse-x", `${clientX - left}px`);
+      cardRef.current.style.setProperty("--mouse-y", `${clientY - top}px`);
+    }
   }
-  
-  const maskImage = useMotionTemplate`radial-gradient(300px circle at ${mouseX}px ${mouseY}px, white, transparent 80%)`;
 
   return (
     <motion.div
+      ref={cardRef}
       layout
       initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       exit={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="perspective-[1000px] h-full relative z-10"
+      className="perspective-[1000px] h-full relative z-10 ecosystem-card-motion"
     >
       {/* Universal Floating Energy System (SOUL) */}
       {brand.universeCategory === "SOUL" && index <= 2 && activeFilter === "SOUL" && (
@@ -153,10 +152,14 @@ function EcosystemCard({ brand, index = 999, activeFilter }: { brand: Brand, ind
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="group flex flex-col h-full bg-[#0a0514]/30 backdrop-blur-md border border-white/5 rounded-xl hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(255,214,232,0.15)] hover:border-white/20 transition-all duration-700 relative overflow-hidden"
       >
-        {/* Flashlight Hover Layer */}
-        <motion.div 
-          className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-[#9f81b9]/10 to-[var(--complement-cyan)]/10"
-          style={{ maskImage, WebkitMaskImage: maskImage }}
+        {/* Flashlight Hover Layer — CSS custom props, zero JS overhead on mousemove */}
+        <div
+          className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+          style={{
+            background: "radial-gradient(300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(159,129,185,0.08), transparent 80%)",
+            maskImage: "radial-gradient(300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), white, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), white, transparent 80%)",
+          }}
         />
 
         <div className="p-8 flex flex-col flex-1 relative z-10 w-full h-full justify-between">
@@ -174,7 +177,7 @@ function EcosystemCard({ brand, index = 999, activeFilter }: { brand: Brand, ind
               <ReplaceElev8 text={brand.name} iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em]" />
             </h4>
             
-            <p className="text-sm font-light text-gray-400 mb-8 leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-500">
+            <p className="text-sm font-light text-gray-400 mb-8 leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-500 text-left w-full block whitespace-pre-line">
               <ReplaceElev8 text={brand.description} iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" />
             </p>
           </div>
@@ -189,7 +192,7 @@ function EcosystemCard({ brand, index = 999, activeFilter }: { brand: Brand, ind
       </motion.a>
     </motion.div>
   );
-}
+});
 
 export default function UniverseEcosystem() {
   const searchParams = useSearchParams();
@@ -241,7 +244,7 @@ export default function UniverseEcosystem() {
                 className="inline-block flex-shrink-0 w-[1.1em] h-[1.5em] opacity-90 -ml-[0.1em] mr-[-0.02em] drop-shadow-[0_0_15px_rgba(159,129,185,0.4)]" 
               />
             </span>
-            <span className="mx-2 md:mx-4">UNIVERSE</span>
+            <span className="mx-2 md:mx-4">YOUNIVERSE</span>
             <span className="text-[var(--primary)] text-[#9f81b9]">ECOSYSTEM</span>
           </motion.h2>
 

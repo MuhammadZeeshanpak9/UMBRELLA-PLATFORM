@@ -1,0 +1,25 @@
+{
+  "name": "ELEV8 Corporation — Youniverse Hub",
+  "short_name": "ELEV8 Corp",
+  "description": "A Youniverse of Creations Designed to Elevate Life — Mind, Body & Soul.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en-US",
+  "background_color": "#030008",
+  "theme_color": "#9f81b9",
+  "categories": ["health", "wellness", "lifestyle", "education", "entertainment"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

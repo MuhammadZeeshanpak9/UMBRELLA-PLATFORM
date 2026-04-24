@@ -14,7 +14,7 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-6 text-sm text-gray-500 leading-relaxed max-w-sm tracking-wide">
-            A universe of interconnected creations designed to <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> human awareness, potential and experiences in this beautiful GRAND DESIGN called LIFE.
+            A youniverse of interconnected creations designed to <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> human awareness, potential and experiences in this beautiful GRAND DESIGN called LIFE.
           </p>
         </div>
 

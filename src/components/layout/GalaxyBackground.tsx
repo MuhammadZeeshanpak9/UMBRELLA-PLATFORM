@@ -8,15 +8,15 @@ import { motion } from "framer-motion";
 function FlatUniverse() {
   const ref = useRef<THREE.Points>(null);
 
-  const [positions, colors, sizes] = useMemo(() => {
-    const particleCount = 20000;
+  const [positions, colors, sizes, resetX] = useMemo(() => {
+    const particleCount = typeof window !== "undefined" && window.devicePixelRatio > 1 ? 8000 : 5000;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
+    const resetX = new Float32Array(particleCount);
     const color = new THREE.Color();
 
     for (let i = 0; i < particleCount; i++) {
-      // Generate a wide, endless flat surface to cover the dark edges fully
       // eslint-disable-next-line react-hooks/purity
       const x = (Math.random() - 0.5) * 400;
       // eslint-disable-next-line react-hooks/purity
@@ -26,36 +26,33 @@ function FlatUniverse() {
 
       positions.set([x, y, z], i * 3);
 
-      // Bright space colors mapping
       // eslint-disable-next-line react-hooks/purity
       const choice = Math.random();
-      if (choice < 0.4) color.set("#9F81B9"); // Primary Purple
-      else if (choice < 0.6) color.set("#C6B3D9"); // Accent
-      else if (choice < 0.8) color.set("#FFD6E8"); // Pink
-      else color.set("#D6F1FF"); // Cyan
+      if (choice < 0.4) color.set("#9F81B9");
+      else if (choice < 0.6) color.set("#C6B3D9");
+      else if (choice < 0.8) color.set("#FFD6E8");
+      else color.set("#D6F1FF");
 
       colors.set([color.r, color.g, color.b], i * 3);
       sizes[i] = Math.random() * 2; // eslint-disable-line react-hooks/purity
+      // Pre-compute reset X positions — eliminates Math.random() from the hot useFrame loop
+      resetX[i] = (Math.random() - 0.5) * 400; // eslint-disable-line react-hooks/purity
     }
-    return [positions, colors, sizes];
+    return [positions, colors, sizes, resetX];
   }, []);
 
   useFrame((state) => {
     if (ref.current) {
-      // Rotate the flat plane at the original speed
       ref.current.rotation.y = state.clock.elapsedTime * 0.02;
-      
-      // Animate individual stars moving forward at normal speed
+
       const positions = ref.current.geometry.attributes.position.array as Float32Array;
       for (let i = 0; i < sizes.length; i++) {
         const i3 = i * 3;
-        // Move Z forward (towards the camera)
         positions[i3 + 2] += 0.05 + (sizes[i] * 0.02);
 
-        // If a star passes behind the camera, reset it to the far distance
         if (positions[i3 + 2] > 200) {
           positions[i3 + 2] = -200;
-          positions[i3] = (Math.random() - 0.5) * 400;
+          positions[i3] = resetX[i]; // pre-computed — no Math.random() in hot path
         }
       }
       ref.current.geometry.attributes.position.needsUpdate = true;
@@ -181,13 +178,8 @@ function StarGatherFigure() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(10,20,60,0.8)_0%,rgba(5,10,30,0.5)_40%,transparent_70%)] pointer-events-none mix-blend-multiply" />
       </motion.div>
 
-      {/* Breathing wrapper — starts after stars have assembled */}
-      <motion.div
-        className="w-full max-w-[1000px] h-[95vh] scale-[1.0] md:scale-[0.8] transform origin-center"
-        initial={{ scale: 0.97 }}
-        animate={{ scale: [0.95, 1.07, 0.95] }}
-        transition={{ delay: 5, duration: 9, repeat: Infinity, ease: "easeInOut" }}
-      >
+      {/* Breathing wrapper — CSS animation, zero Framer Motion RAF cost */}
+      <div className="w-full max-w-[1000px] h-[95vh] scale-[1.0] md:scale-[0.8] transform origin-center figure-breathe">
         <svg viewBox="0 0 800 600" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
           
           {/* ── Blurred soft silhouette fades in AFTER stars land ── */}
@@ -241,18 +233,17 @@ function StarGatherFigure() {
             const delay    = 2 + i * 0.011;
             const isChakra = (pt as { isChakra?: boolean }).isChakra ?? false;
             return (
-              <g key={i}>
-                {/* Ripple ring for chakra dots only */}
+              <g key={`star-${i}-${pt.x.toFixed(1)}-${pt.y.toFixed(1)}`}>
+                {/* Ripple ring for chakra dots — native SVG animate, zero JS RAF cost */}
                 {isChakra && (
-                  <motion.circle
-                    cx={pt.x} cy={pt.y} r={pt.size}
-                    fill="transparent"
-                    stroke={pt.color}
-                    strokeWidth="1.5"
-                    initial={{ opacity: 0 }}
-                    animate={{ r: [pt.size, pt.size + 20, pt.size], opacity: [0, 0.5, 0] }}
-                    transition={{ delay: 5 + i * 0.1, duration: 3, repeat: Infinity, ease: "easeOut" }}
-                  />
+                  <circle cx={pt.x} cy={pt.y} r={pt.size} fill="transparent" stroke={pt.color} strokeWidth="1.5" opacity="0">
+                    <animate attributeName="r"
+                      values={`${pt.size};${pt.size + 20};${pt.size}`}
+                      dur="3s" begin={`${5 + i * 0.1}s`} repeatCount="indefinite"
+                      calcMode="spline" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1"
+                    />
+                    <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin={`${5 + i * 0.1}s`} repeatCount="indefinite" />
+                  </circle>
                 )}
 
                 {/* The star particle itself */}
@@ -281,7 +272,7 @@ function StarGatherFigure() {
             );
           })}
         </svg>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -297,8 +288,10 @@ export default function GalaxyBackground() {
             loop
             muted
             playsInline
+            preload="auto"
+            disablePictureInPicture
             className="w-full h-full object-cover opacity-40 mix-blend-screen"
-            style={{ filter: "hue-rotate(150deg) saturate(1.2)" }}
+            style={{ filter: "hue-rotate(150deg) saturate(1.2)", willChange: "transform" }}
           >
             <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4" type="video/mp4" />
           </video>
@@ -306,12 +299,13 @@ export default function GalaxyBackground() {
       </div>
 
       {/* Three.js star field */}
-      <div className="absolute inset-0 z-[1]" style={{ position: "relative" }}>
+      <div className="absolute inset-0 z-[1] galaxy-canvas" style={{ position: "relative" }}>
         <Canvas
           camera={{ position: [0, 8, 24], fov: 60 }}
-          gl={{ antialias: true, alpha: true }}
+          gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+          dpr={[1, 1.5]}
+          performance={{ min: 0.5 }}
           onCreated={() => {
-            // Suppress the deprecated THREE.Clock warning from r3f internals
             const originalWarn = console.warn.bind(console);
             console.warn = (...args: unknown[]) => {
               if (typeof args[0] === "string" && args[0].includes("THREE.Clock")) return;

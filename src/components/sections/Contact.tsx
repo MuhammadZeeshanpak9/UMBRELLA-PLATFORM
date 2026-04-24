@@ -27,7 +27,7 @@ export default function Contact() {
               I AM THE GREATEST.
             </p>
             <p className="text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-3">
-              Together, we will <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> the universe within and the world in the physical reality.
+              Together, we will <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> the youniverse within and the world in the physical reality.
             </p>
             <p className="text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
               Send a message to <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> for universal collaborations, partnerships, or general information.

@@ -17,7 +17,7 @@ export const BRANDS: Brand[] = [
   {
     id: "the-grand-designer",
     name: "THE GRAND DESIGNER",
-    description: "#1 Mentalphysical wellness experience in the universe guaranteed to reveal the GREATNESS in Y.O.U.",
+    description: "#1 MENTALPHYSICAL WELLNESS EXPERIENCE IN THE YOUNIVERSE GUARANTEED TO REVEAL THE GREATNESS IN Y.O.U.",
     ctaText: "EXPERIENCE",
     universeCategory: "SOUL",
     url: "https://thegranddesigner.com",
@@ -27,7 +27,7 @@ export const BRANDS: Brand[] = [
   {
     id: "worlds-greatest-water",
     name: "THE WORLD'S GREATEST WATER",
-    description: "#1 Premium Self-Development and wellness ultra purified water brand packaged in bottles.",
+    description: "#1 PREMIUM SELF-DEVELOPMENT AND WELLNESS ULTRA PURIFIED WATER BRAND PACKAGED IN BOTTLES.",
     ctaText: "EXPERIENCE",
     universeCategory: "SOUL",
     url: "https://theworldsgreatestwater.com",
@@ -39,7 +39,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-god-within",
     name: "ELEV8 GOD WITHIN GLOBAL MINISTRIES",
-    description: "#1 Spiritual and Physical Mental wellness movement in the universe.",
+    description: "#1 SPIRITUAL AND PHYSICAL MENTAL WELLNESS MOVEMENT IN THE YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
     url: "https://elev8godwithin.com",
@@ -49,7 +49,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-mentalversity",
     name: "ELEV8 MENTALVERSITY",
-    description: "#1 SPIRITUALITY & SCIENCE EXPERIENCE CENTER IN THE UNIVERSE.",
+    description: "#1 SPIRITUALITY & SCIENCE EXPERIENCE CENTER IN THE YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
     url: "https://elev8mentalversity.com",
@@ -58,8 +58,8 @@ export const BRANDS: Brand[] = [
   },
   {
     id: "worlds-greatest-movie",
-    name: "The Worlds Greatest Movie About YOU",
-    description: "#1 CINEMATIC EXPERIENCE OF MYSELF IN MY UNIVERSE.",
+    name: "THE WORLDS GREATEST MOVIE ABOUT YOU",
+    description: "#1 CINEMATIC EXPERIENCE OF MYSELF IN MY YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
     url: "https://theworldsgreatestmovieaboutyou.com",
@@ -69,7 +69,7 @@ export const BRANDS: Brand[] = [
   {
     id: "vybe-plus-you",
     name: "VYBE + YOU",
-    description: "#1 Celebration & Exploration experience of myself in my universe.",
+    description: "#1 CELEBRATION & EXPLORATION EXPERIENCE OF MYSELF IN MY YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
     url: "https://vybeplusyou.com",
@@ -81,7 +81,7 @@ export const BRANDS: Brand[] = [
   {
     id: "worlds-greatest-coin",
     name: "THE WORLD'S GREATEST COIN",
-    description: "#1 Block Chain & Crypto Currency trading in the universe.",
+    description: "#1 BLOCK CHAIN & CRYPTO CURRENCY TRADING IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://theworldsgreatestcoin.com",
@@ -91,7 +91,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-spiritual-alliance",
     name: "ELEV8 SPIRITUAL ALLIANCE",
-    description: "Guardian + Fallen Angel's",
+    description: "GUARDIAN + FALLEN ANGEL'S",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://elev8spiritualalliance.com",
@@ -101,7 +101,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-venture-capital",
     name: "ELEV8 VENTURE CAPITAL",
-    description: "#1 WEALTH CREATION & PROGRESSIVE Collaborators in the universe.",
+    description: "#1 WEALTH CREATION & PROGRESSIVE COLLABORATORS IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://elev8venturecapital.com",
@@ -111,7 +111,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-media",
     name: "ELEV8 MEDIA",
-    description: "Energy in motion + The Illusion",
+    description: "ENERGY IN MOTION + THE ILLUSION",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://elev8creations.com",
@@ -121,7 +121,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-robotics",
     name: "ELEV8 ROBOTICS",
-    description: "YOUBOTICS. Expanding the possibilities of human and machine integration.",
+    description: "YOUBOTICS. EXPANDING THE POSSIBILITIES OF HUMAN AND TECHNOLOGY INTEGRATION.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://youinrobotics.com",
@@ -130,8 +130,8 @@ export const BRANDS: Brand[] = [
   },
   {
     id: "greatest-african-project",
-    name: "THE GREATEST AFRICAN PROJECT",
-    description: "#1 Mentalphysical & progressive movement restructuring the AFRICAN continent.",
+    name: "THE GREATEST AFRICAN PROJECT. AFRICA RENEW",
+    description: "#1 MENTALPHYSICAL & PROGRESSIVE MOVEMENT RESTRUCTURING THE AFRICAN CONTINENT.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://thegreatestafricanproject.com",
@@ -141,7 +141,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-renewable-energy",
     name: "ELEV8 RENEWABLE ENERGY",
-    description: "LIGHT OF THE UNIVERSE.",
+    description: "LIGHT OF THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://elev8renewenergy.com",
@@ -151,7 +151,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-development",
     name: "ELEV8 DEVELOPMENT",
-    description: "#1 Consciousness & GODLY lifestyle building development pioneer in the universe.",
+    description: "#1 CONSCIOUSNESS & GODLY LIFESTYLE BUILDING DEVELOPMENT PIONEER IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://elev8development.com",
@@ -161,7 +161,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-automotion",
     name: "ELEV8 AUTO & AVIATION",
-    description: "EVERYTHING MOVING. Innovations in terrestrial and aerial transit.",
+    description: "EVERYTHING MOVING. INNOVATIONS IN TERRESTRIAL AND AERIAL TRANSIT.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://elev8automotion.com",
@@ -171,7 +171,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-eat-fresh",
     name: "ELEV8 EAT FRESH",
-    description: "#1 Organic & Locally Sourced Food Galleria in the universe.",
+    description: "#1 ORGANIC & LOCALLY SOURCED FOOD GALLERIA IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://elev8eatfresh.com",
@@ -181,7 +181,7 @@ export const BRANDS: Brand[] = [
   {
     id: "elev8-godly-living",
     name: "ELEV8 LUX GODLY LIVING",
-    description: "#1 Premium Curated Experience doyen for Exclusive Mansions | Elite Private Islands | Bespoke Private Jets | Rare Exotic Cars",
+    description: "#1 PREMIUM CURATED EXPERIENCE DOYEN FOR EXCLUSIVE MANSIONS | ELITE PRIVATE ISLANDS | BESPOKE PRIVATE JETS | RARE EXOTIC CARS",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://elev8godlyliving.com",
@@ -191,7 +191,7 @@ export const BRANDS: Brand[] = [
   {
     id: "worlds-greatest-music",
     name: "THE WORLD'S GREATEST MUSIC WORLDWIDE",
-    description: "#1 self development & Mental wellness SOUND & FREQUENCY Creators in the universe.",
+    description: "#1 SELF DEVELOPMENT & MENTAL WELLNESS SOUND & FREQUENCY CREATORS IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://theworldsgreatestmusicworldwide.com",
@@ -200,8 +200,8 @@ export const BRANDS: Brand[] = [
   },
   {
     id: "ielev8my",
-    name: "iELEV8MY LUX Apparel",
-    description: "#1 NEW MONEY FASHION CREATORS in the universe.",
+    name: "IELEV8MY LUX APPAREL",
+    description: "#1 NEW MONEY FASHION CREATORS IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://ielev8my.com",
@@ -210,8 +210,8 @@ export const BRANDS: Brand[] = [
   },
   {
     id: "plea",
-    name: "PLEA ( Global Resource Sharing)",
-    description: "Global Resource Sharing.",
+    name: "PLEA",
+    description: "GLOBAL RESOURCE SHARING.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://ourplea.org",
@@ -221,7 +221,7 @@ export const BRANDS: Brand[] = [
   {
     id: "thank-u-body",
     name: "THANK U BODY",
-    description: "GRATITUDE TO THE HUMAN EXPERIENCE. #1 Body wellness brand in the universe.",
+    description: "GRATITUDE TO THE HUMAN EXPERIENCE.\n#1 BODY WELLNESS BRAND IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
     url: "https://thankubody.com",
