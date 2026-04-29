@@ -20,13 +20,20 @@ export default function Vision() {
   return (
     <section id="vision" ref={containerRef} className="relative py-24 md:py-[30vh] z-10 overflow-hidden text-center flex flex-col items-center justify-center">
       {/* Animated Breathing Cosmos Singularity Orbs */}
-      <motion.div 
+      <motion.div
         style={{ scale: scalePulse, rotate: rotatePulse, opacity: opacityPulse }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[1200px] h-[600px] md:h-[1200px] rounded-full blur-[140px] pointer-events-none -z-10 mix-blend-screen"
       >
-        {/* Complex Gradient representation of a Singularity */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#9F81B9]/80 via-[#FFD6E8]/40 to-[#D6F1FF]/60 rotate-45" />
         <div className="absolute inset-10 rounded-full bg-black/50 blur-3xl" />
+      </motion.div>
+
+      {/* Second counter-rotating orb for depth */}
+      <motion.div
+        style={{ scale: scalePulse, rotate: rotatePulse, opacity: opacityPulse }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] rounded-full blur-[100px] pointer-events-none -z-10 mix-blend-screen"
+      >
+        <div className="absolute inset-0 rounded-full bg-gradient-to-bl from-[#FFD6E8]/50 via-[#D6F1FF]/30 to-[#9F81B9]/40 -rotate-45" />
       </motion.div>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10 w-full">
@@ -49,7 +56,20 @@ export default function Vision() {
           className="text-3xl sm:text-4xl md:text-6xl lg:text-[5.5rem] font-sans font-light tracking-tighter text-[#9f81b9] max-w-6xl mx-auto leading-[1.15] drop-shadow-2xl"
         >
           MIND CREATIONS designed to express the unlimited nature of consciousness in the human experience. <br /><br />
-          <span className="italic font-medium text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] via-[var(--complement-pink)] to-[var(--complement-cyan)] shadow-white/30">I AM YOU.</span>
+          <span className="italic font-medium text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] via-[var(--complement-pink)] to-[var(--complement-cyan)] shadow-white/30">
+            {"I AM YOU.".split("").map((char, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.9 + i * 0.065, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? " " : char}
+              </motion.span>
+            ))}
+          </span>
         </motion.h2>
         
         <motion.div

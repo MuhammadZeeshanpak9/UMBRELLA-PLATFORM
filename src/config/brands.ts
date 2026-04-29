@@ -26,7 +26,7 @@ export const BRANDS: Brand[] = [
   },
   {
     id: "worlds-greatest-water",
-    name: "THE WORLD'S GREATEST WATER",
+    name: "THE WORLD'S GREATEST WATER. ELEV8 WATER",
     description: "#1 PREMIUM SELF-DEVELOPMENT AND WELLNESS ULTRA PURIFIED WATER BRAND PACKAGED IN BOTTLES.",
     ctaText: "EXPERIENCE",
     universeCategory: "SOUL",

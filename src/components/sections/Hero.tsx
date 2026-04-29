@@ -68,6 +68,27 @@ export default function Hero() {
         
         {/* LEFT PANEL */}
         <div className="relative w-full lg:w-[52%] flex flex-col lg:min-h-[90vh] bg-white/[0.03] backdrop-blur-xl border border-white/20 rounded-3xl shadow-[0_20px_60px_rgba(159,129,185,0.1)] overflow-visible sm:overflow-hidden">
+          {/* Ambient floating orbs — behind all content */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl z-0">
+            <motion.div
+              className="absolute top-[8%] left-[12%] w-48 h-48 rounded-full blur-[60px]"
+              style={{ background: "radial-gradient(circle, rgba(159,129,185,0.15), transparent 70%)" }}
+              animate={{ y: [0, -18, 0], scale: [1, 1.1, 1] }}
+              transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute top-[50%] right-[8%] w-64 h-64 rounded-full blur-[80px]"
+              style={{ background: "radial-gradient(circle, rgba(255,214,232,0.08), transparent 70%)" }}
+              animate={{ y: [0, 16, 0], scale: [1.05, 1, 1.05] }}
+              transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+            />
+            <motion.div
+              className="absolute bottom-[12%] left-[30%] w-40 h-40 rounded-full blur-[50px]"
+              style={{ background: "radial-gradient(circle, rgba(214,241,255,0.1), transparent 70%)" }}
+              animate={{ y: [0, -12, 0], x: [0, 8, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+            />
+          </div>
           {/* Top Nav inside Left Panel */}
           <div className="flex justify-between items-center p-4 sm:p-6 md:p-8">
             <div className="flex items-center gap-4 relative z-10">
@@ -147,9 +168,15 @@ export default function Hero() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="mb-6 md:mb-10 text-[var(--primary)] drop-shadow-[0_0_20px_rgba(159,129,185,0.8)] hover:scale-105 transition-transform duration-700"
+              className="mb-6 md:mb-10 text-[var(--primary)] hover:scale-105 transition-transform duration-700"
             >
-              <SacredGeometryLogo className="w-16 h-16 md:w-24 md:h-24" />
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="animate-glow-breathe"
+              >
+                <SacredGeometryLogo className="w-16 h-16 md:w-24 md:h-24" />
+              </motion.div>
             </motion.div>
 
             <motion.div 
@@ -191,10 +218,17 @@ export default function Hero() {
               href="?filter=CREATIONS#ecosystem"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 md:mt-10 liquid-glass-strong flex items-center gap-3 px-7 py-3.5 rounded-full font-semibold tracking-[0.2em] text-xs sm:text-sm text-white transition-all shadow-[0_0_20px_rgba(159,129,185,0.3)] group border border-[var(--primary)]/40 hover:border-[var(--primary)] hover:shadow-[0_0_30px_rgba(159,129,185,0.5)] uppercase bg-[var(--primary)]/20 backdrop-blur-sm"
+              className="mt-6 md:mt-10 liquid-glass-strong flex items-center gap-3 px-7 py-3.5 rounded-full font-semibold tracking-[0.2em] text-xs sm:text-sm text-white transition-all shadow-[0_0_20px_rgba(159,129,185,0.3)] group border border-[var(--primary)]/40 hover:border-[var(--primary)] hover:shadow-[0_0_30px_rgba(159,129,185,0.5)] uppercase bg-[var(--primary)]/20 backdrop-blur-sm relative overflow-hidden"
             >
-              EXPLORE NOW
-              <div className="w-7 h-7 rounded-full bg-[var(--primary)] flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+              {/* Shimmer sweep */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent"
+                initial={{ x: "-100%" }}
+                animate={{ x: "200%" }}
+                transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 3.5, ease: "easeInOut" }}
+              />
+              <span className="relative z-10">EXPLORE NOW</span>
+              <div className="relative z-10 w-7 h-7 rounded-full bg-[var(--primary)] flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                 <Download size={13} className="text-white" />
               </div>
             </motion.a>

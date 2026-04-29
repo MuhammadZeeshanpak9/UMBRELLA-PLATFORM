@@ -277,6 +277,25 @@ export default function UniverseEcosystem() {
               </button>
             ))}
           </motion.div>
+
+          {/* Animated brand count badge */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeFilter + filteredBrands.length}
+              initial={{ opacity: 0, y: -6, scale: 0.92 }}
+              animate={{ opacity: 1, y: 0,  scale: 1 }}
+              exit={{ opacity: 0, y: 6,    scale: 0.92 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-6 flex items-center gap-2 text-[10px] tracking-[0.3em] text-gray-500 uppercase"
+            >
+              <div className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-60" />
+              <span>
+                {filteredBrands.length}&nbsp;
+                {activeFilter === "CREATIONS" ? "CREATIONS" : `${activeFilter} BRANDS`}
+              </span>
+              <div className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-60" />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Animated Grid */}
