@@ -62,7 +62,7 @@ export const BRANDS: Brand[] = [
     description: "#1 CINEMATIC EXPERIENCE OF MYSELF IN MY YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
-    url: "https://theworldsgreatestmovieaboutyou.com",
+    url: "https://movie-s-site.vercel.app/",
     image: "/images/worlds-greatest-movie.jpg",
     priority: 3, // M3
   },
@@ -84,7 +84,7 @@ export const BRANDS: Brand[] = [
     description: "#1 BLOCK CHAIN & CRYPTO CURRENCY TRADING IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://theworldsgreatestcoin.com",
+    url: "https://theworldsgreatestcoin.org/",
     image: "/images/greatest-coin.jpg",
     priority: 1, // B1
   },
@@ -104,7 +104,7 @@ export const BRANDS: Brand[] = [
     description: "#1 WEALTH CREATION & PROGRESSIVE COLLABORATORS IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8venturecapital.com",
+    url: "https://venture-capital-one.vercel.app/",
     image: "/images/venture-capital.jpg",
     priority: 3, // B3
   },
@@ -134,7 +134,7 @@ export const BRANDS: Brand[] = [
     description: "#1 MENTALPHYSICAL & PROGRESSIVE MOVEMENT RESTRUCTURING THE AFRICAN CONTINENT.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://thegreatestafricanproject.com",
+    url: "https://africa-renew.vercel.app/",
     image: "/images/african-project.jpg",
     priority: 6, // B6
   },
@@ -154,7 +154,7 @@ export const BRANDS: Brand[] = [
     description: "#1 CONSCIOUSNESS & GODLY LIFESTYLE BUILDING DEVELOPMENT PIONEER IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8development.com",
+    url: "https://elev-8-development.vercel.app/",
     image: "/images/elev8-development.jpg",
     priority: 8, // B8
   },
