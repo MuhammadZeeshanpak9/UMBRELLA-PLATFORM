@@ -20,7 +20,7 @@ export const BRANDS: Brand[] = [
     description: "#1 MENTALPHYSICAL WELLNESS EXPERIENCE IN THE YOUNIVERSE GUARANTEED TO REVEAL THE GREATNESS IN Y.O.U.",
     ctaText: "EXPERIENCE",
     universeCategory: "SOUL",
-    url: "https://thegranddesigner.com",
+    url: "https://thegranddesigner.org",
     image: "/images/grand-designer.jpg",
     priority: 1, // S1
   },
@@ -30,7 +30,7 @@ export const BRANDS: Brand[] = [
     description: "#1 PREMIUM SELF-DEVELOPMENT AND WELLNESS ULTRA PURIFIED WATER BRAND PACKAGED IN BOTTLES.",
     ctaText: "EXPERIENCE",
     universeCategory: "SOUL",
-    url: "https://theworldsgreatestwater.com",
+    url: "https://theworldsgreatestwater.org",
     image: "/images/greatest-water.jpg",
     priority: 2, // S2
   },
@@ -42,7 +42,7 @@ export const BRANDS: Brand[] = [
     description: "#1 SPIRITUAL AND PHYSICAL MENTAL WELLNESS MOVEMENT IN THE YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
-    url: "https://elev8godwithin.com",
+    url: "https://elev8godwithin.org",
     image: "/images/god-within.jpg",
     priority: 1, // M1
   },
@@ -52,7 +52,7 @@ export const BRANDS: Brand[] = [
     description: "#1 SPIRITUALITY & SCIENCE EXPERIENCE CENTER IN THE YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
-    url: "https://elev8mentalversity.com",
+    url: "https://elev8mentalversity.org",
     image: "/images/elev8-mentalversity.jpg",
     priority: 2, // M2
   },
@@ -62,7 +62,7 @@ export const BRANDS: Brand[] = [
     description: "#1 CINEMATIC EXPERIENCE OF MYSELF IN MY YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
-    url: "https://movie-s-site.vercel.app/",
+    url: "https://theworldsgreatestmovieaboutyou.org",
     image: "/images/worlds-greatest-movie.jpg",
     priority: 3, // M3
   },
@@ -72,7 +72,7 @@ export const BRANDS: Brand[] = [
     description: "#1 CELEBRATION & EXPLORATION EXPERIENCE OF MYSELF IN MY YOUNIVERSE.",
     ctaText: "EXPLORE",
     universeCategory: "MIND",
-    url: "https://vybeplusyou.com",
+    url: "https://vybeplusyou.org",
     image: "/images/vybe-plus-you.jpg",
     priority: 4, // M4
   },
@@ -84,7 +84,7 @@ export const BRANDS: Brand[] = [
     description: "#1 BLOCK CHAIN & CRYPTO CURRENCY TRADING IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://theworldsgreatestcoin.org/",
+    url: "https://theworldsgreatestcoin.org",
     image: "/images/greatest-coin.jpg",
     priority: 1, // B1
   },
@@ -94,7 +94,7 @@ export const BRANDS: Brand[] = [
     description: "GUARDIAN + FALLEN ANGEL'S",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8spiritualalliance.com",
+    url: "https://elev8spiritualalliance.org",
     image: "/images/spiritual-alliance.jpg",
     priority: 2, // B2
   },
@@ -104,7 +104,7 @@ export const BRANDS: Brand[] = [
     description: "#1 WEALTH CREATION & PROGRESSIVE COLLABORATORS IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://venture-capital-one.vercel.app/",
+    url: "https://elev8venturecapital.org",
     image: "/images/venture-capital.jpg",
     priority: 3, // B3
   },
@@ -114,7 +114,7 @@ export const BRANDS: Brand[] = [
     description: "ENERGY IN MOTION + THE ILLUSION",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8creations.com",
+    url: "https://elev8creations.org",
     image: "/images/elev8-creations.jpg",
     priority: 4, // B4
   },
@@ -134,7 +134,7 @@ export const BRANDS: Brand[] = [
     description: "#1 MENTALPHYSICAL & PROGRESSIVE MOVEMENT RESTRUCTURING THE AFRICAN CONTINENT.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://africa-renew.vercel.app/",
+    url: "https://thegreatestafricanproject.org",
     image: "/images/african-project.jpg",
     priority: 6, // B6
   },
@@ -144,7 +144,7 @@ export const BRANDS: Brand[] = [
     description: "LIGHT OF THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8renewenergy.com",
+    url: "https://elev8renewenergy.org",
     image: "/images/renewable-energy.jpg",
     priority: 7, // B7
   },
@@ -154,7 +154,7 @@ export const BRANDS: Brand[] = [
     description: "#1 CONSCIOUSNESS & GODLY LIFESTYLE BUILDING DEVELOPMENT PIONEER IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev-8-development.vercel.app/",
+    url: "https://elev8development.org",
     image: "/images/elev8-development.jpg",
     priority: 8, // B8
   },
@@ -164,7 +164,7 @@ export const BRANDS: Brand[] = [
     description: "EVERYTHING MOVING. INNOVATIONS IN TERRESTRIAL AND AERIAL TRANSIT.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8automotion.com",
+    url: "https://elev8automotion.org",
     image: "/images/automotion.jpg",
     priority: 9, // B9
   },
@@ -174,7 +174,7 @@ export const BRANDS: Brand[] = [
     description: "#1 ORGANIC & LOCALLY SOURCED FOOD GALLERIA IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8eatfresh.com",
+    url: "https://elev8eatfresh.org",
     image: "/images/eat-fresh.jpg",
     priority: 10, // B10
   },
@@ -184,7 +184,7 @@ export const BRANDS: Brand[] = [
     description: "#1 PREMIUM CURATED EXPERIENCE DOYEN FOR EXCLUSIVE MANSIONS | ELITE PRIVATE ISLANDS | BESPOKE PRIVATE JETS | RARE EXOTIC CARS",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8godlyliving.com",
+    url: "https://elev8godlyliving.org",
     image: "/images/godly-living.jpg",
     priority: 11, // B11
   },
@@ -194,7 +194,7 @@ export const BRANDS: Brand[] = [
     description: "#1 SELF DEVELOPMENT & MENTAL WELLNESS SOUND & FREQUENCY CREATORS IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://theworldsgreatestmusicworldwide.com",
+    url: "https://theworldsgreatestmusicworldwide.org",
     image: "/images/worlds-greatest-music.jpg",
     priority: 12, // B12
   },
@@ -224,7 +224,7 @@ export const BRANDS: Brand[] = [
     description: "GRATITUDE TO THE HUMAN EXPERIENCE.\n#1 BODY WELLNESS BRAND IN THE YOUNIVERSE.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://thankubody.com",
+    url: "https://thankubody.org",
     image: "/images/thank-u-body.jpg",
     priority: 15, // B15
   },
