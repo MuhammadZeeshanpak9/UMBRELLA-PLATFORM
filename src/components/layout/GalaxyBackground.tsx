@@ -79,10 +79,156 @@ function FlatUniverse() {
 }
 
 // ─── UNIFIED STAR GATHER + CHAKRA COMPONENT ───────────────────────────────
-// Nothing is visible on load. Stars fly in from all edges and BUILD
-// both the figure silhouette (white dots) and the 7 chakras (colored orbs).
+// Stars fly in and BUILD the figure silhouette and the 7 chakras.
+
+function CustomConstellationFigure() {
+  const draw = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (i: number) => {
+      const delay = 1 + i * 0.2;
+      return {
+        pathLength: 1,
+        opacity: [0, 0.9, 0.7], // Increased opacity for better visibility
+        transition: {
+          pathLength: { delay, type: "tween", duration: 5, ease: "easeInOut" },
+          opacity: { delay, duration: 3 }
+        }
+      };
+    }
+  };
+
+  // Chakras positioned down the center axis (X=200)
+  const chakras = [
+    { id: 'root', cy: 360, color: '#ff3333' },
+    { id: 'sacral', cy: 310, color: '#ff9933' },
+    { id: 'solar', cy: 260, color: '#ffff66' },
+    { id: 'heart', cy: 200, color: '#33ff77' },
+    { id: 'throat', cy: 135, color: '#33ccff' },
+    { id: 'thirdeye', cy: 90, color: '#9933ff' },
+    { id: 'crown', cy: 50, color: '#e6ccff' }
+  ];
+
+  return (
+    <svg viewBox="0 0 400 450" className="w-[600px] max-w-[90vw] h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.1)] overflow-visible">
+      <defs>
+        <filter id="chakra-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        {/* Adjusted blur to maintain human shape while still looking like a soft cloud */}
+        <filter id="line-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="30" />
+        </filter>
+      </defs>
+
+      {/* Exact Stylized Geometric Figure - FAINT CLOUD BLUR */}
+      <motion.g 
+        stroke="rgba(200, 220, 255, 0.8)" 
+        strokeWidth="35" 
+        fill="none" 
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        filter="url(#line-glow)"
+      >
+        {/* Head (Oval) */}
+        <motion.ellipse 
+          cx="200" cy="80" rx="35" ry="45"
+          custom={1} variants={draw} initial="hidden" animate="visible" 
+        />
+        
+        {/* Neck Bell */}
+        <motion.path 
+          d="M 190 125 C 190 135, 185 140, 185 140 L 215 140 C 215 140, 210 135, 210 125 Z" 
+          custom={1.5} variants={draw} initial="hidden" animate="visible" 
+        />
+
+        {/* Upper Chest Arc */}
+        <motion.path 
+          d="M 110 190 Q 200 100 290 190" 
+          custom={2} variants={draw} initial="hidden" animate="visible" 
+        />
+
+        {/* Shoulder Joints */}
+        <motion.circle cx="110" cy="190" r="16" custom={2.5} variants={draw} initial="hidden" animate="visible" />
+        <motion.circle cx="290" cy="190" r="16" custom={2.5} variants={draw} initial="hidden" animate="visible" />
+
+        {/* Inner Chest Line */}
+        <motion.path 
+          d="M 125 195 Q 200 220 275 195" 
+          custom={3} variants={draw} initial="hidden" animate="visible" 
+        />
+
+        {/* Belly U-Shape */}
+        <motion.path 
+          d="M 125 195 C 100 330, 150 360, 200 360 C 250 360, 300 330, 275 195" 
+          custom={3.5} variants={draw} initial="hidden" animate="visible" 
+        />
+
+        {/* Left Arm (Double Lines for 2D Volume - Straighter natural drape) */}
+        <motion.path 
+          d="M 95 190 C 85 250, 65 320, 55 380" 
+          custom={4} variants={draw} initial="hidden" animate="visible" 
+        />
+        <motion.path 
+          d="M 125 190 C 115 250, 95 320, 85 380" 
+          custom={4.2} variants={draw} initial="hidden" animate="visible" 
+        />
+
+        {/* Right Arm (Double Lines for 2D Volume - Straighter natural drape) */}
+        <motion.path 
+          d="M 305 190 C 315 250, 335 320, 345 380" 
+          custom={4} variants={draw} initial="hidden" animate="visible" 
+        />
+        <motion.path 
+          d="M 275 190 C 285 250, 305 320, 315 380" 
+          custom={4.2} variants={draw} initial="hidden" animate="visible" 
+        />
+
+        {/* Hand/Knee Joints */}
+        <motion.circle cx="70" cy="380" r="16" custom={4.5} variants={draw} initial="hidden" animate="visible" />
+        <motion.circle cx="330" cy="380" r="16" custom={4.5} variants={draw} initial="hidden" animate="visible" />
+
+        {/* Legs (Lotus Position with Foot Loops & Diamond Center) */}
+        <motion.path 
+          d="M 200 330 L 70 380 C 30 400, 50 440, 90 420 L 200 390" 
+          custom={5} variants={draw} initial="hidden" animate="visible" 
+        />
+        <motion.path 
+          d="M 200 330 L 330 380 C 370 400, 350 440, 310 420 L 200 390" 
+          custom={5.5} variants={draw} initial="hidden" animate="visible" 
+        />
+      </motion.g>
+
+      {/* Chakras */}
+      <motion.g>
+        {chakras.map((chakra, i) => (
+          <motion.circle
+            key={chakra.id}
+            cx={200}
+            cy={chakra.cy}
+            r={3} // Very small solid circles aligned precisely on the body
+            fill={chakra.color}
+            stroke="none"
+            // No blur filter to keep them crisp and elegant like the image
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ 
+              opacity: [0.6, 1, 0.6], 
+              scale: [0.8, 1.2, 0.8] 
+            }}
+            transition={{ 
+              delay: 3 + (6 - i) * 0.2, // Animate from root up to crown
+              duration: 4, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          />
+        ))}
+      </motion.g>
+    </svg>
+  );
+}
+
 function StarGatherFigure() {
-  // ── Figure Image ──
   // The client requested using an exact image instead of SVG curves
   // We will load this image from the public/Assets folder.
 
@@ -102,33 +248,7 @@ function StarGatherFigure() {
 
       {/* Breathing wrapper — CSS animation, zero Framer Motion RAF cost */}
       <div className="w-full max-w-[1000px] h-[95vh] scale-[1.0] md:scale-[0.8] transform origin-center figure-breathe relative flex items-center justify-center">
-        
-        {/* ── Exact Meditating Figure Image ── */}
-        <motion.img
-          src="/Assets/meditation-figure.png"
-          alt="Meditating Figure"
-          initial={{ 
-            opacity: 0, 
-            scale: 0.85,
-            y: 40,
-            // Starts as a bright, desaturated burst of pure light with a heavy blur
-            filter: "hue-rotate(0deg) saturate(0) brightness(2.5) drop-shadow(0 0 80px rgba(255, 255, 255, 0.8)) blur(30px)"
-          }}
-          animate={{ 
-            opacity: 0.45, 
-            scale: 1,
-            y: 0,
-            // Settles into the deep indigo/purple theme
-            filter: "hue-rotate(45deg) saturate(1.2) brightness(1.2) drop-shadow(0 0 40px rgba(160, 130, 210, 0.4)) blur(0px)"
-          }}
-          transition={{ 
-            delay: 1.0, 
-            duration: 8, 
-            ease: "easeInOut" 
-          }}
-          className="w-full h-full object-contain pointer-events-none mix-blend-screen"
-        />
-        
+        <CustomConstellationFigure />
       </div>
     </div>
   );
