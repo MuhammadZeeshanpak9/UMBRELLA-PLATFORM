@@ -90,7 +90,7 @@ function CustomConstellationFigure() {
         pathLength: 1,
         opacity: [0, 0.9, 0.7], // Increased opacity for better visibility
         transition: {
-          pathLength: { delay, type: "tween", duration: 5, ease: "easeInOut" },
+          pathLength: { delay, type: "tween" as const, duration: 5, ease: "easeInOut" as const },
           opacity: { delay, duration: 3 }
         }
       };
