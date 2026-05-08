@@ -12,7 +12,6 @@ export default function Vision() {
     offset: ["start end", "end start"]
   });
 
-  const scalePulse = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.4, 0.8]);
   const opacityPulse = useTransform(scrollYProgress, [0, 0.5, 1], [0.2, 0.8, 0.2]);
   const rotatePulse = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const yMove = useTransform(scrollYProgress, [0, 1], [100, -100]);
@@ -21,7 +20,7 @@ export default function Vision() {
     <section id="vision" ref={containerRef} className="relative py-24 md:py-[30vh] z-10 overflow-hidden text-center flex flex-col items-center justify-center">
       {/* Animated Breathing Cosmos Singularity Orbs */}
       <motion.div
-        style={{ scale: scalePulse, rotate: rotatePulse, opacity: opacityPulse }}
+        style={{ rotate: rotatePulse, opacity: opacityPulse }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[1200px] h-[600px] md:h-[1200px] rounded-full blur-[140px] pointer-events-none -z-10 mix-blend-screen"
       >
         <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#9F81B9]/80 via-[#FFD6E8]/40 to-[#D6F1FF]/60 rotate-45" />
@@ -30,7 +29,7 @@ export default function Vision() {
 
       {/* Second counter-rotating orb for depth */}
       <motion.div
-        style={{ scale: scalePulse, rotate: rotatePulse, opacity: opacityPulse }}
+        style={{ rotate: rotatePulse, opacity: opacityPulse }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] rounded-full blur-[100px] pointer-events-none -z-10 mix-blend-screen"
       >
         <div className="absolute inset-0 rounded-full bg-gradient-to-bl from-[#FFD6E8]/50 via-[#D6F1FF]/30 to-[#9F81B9]/40 -rotate-45" />

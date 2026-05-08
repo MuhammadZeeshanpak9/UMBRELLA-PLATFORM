@@ -20,7 +20,7 @@ export const BRANDS: Brand[] = [
     description: "#1 MENTALPHYSICAL WELLNESS EXPERIENCE IN THE YOUNIVERSE GUARANTEED TO REVEAL THE GREATNESS IN Y.O.U.",
     ctaText: "EXPERIENCE",
     universeCategory: "SOUL",
-    url: "https://thegranddesigner.org",
+    url: "https://www.thegranddesigner.com/",
     image: "/images/grand-designer.jpg",
     priority: 1, // S1
   },
@@ -30,7 +30,7 @@ export const BRANDS: Brand[] = [
     description: "#1 PREMIUM SELF-DEVELOPMENT AND WELLNESS ULTRA PURIFIED WATER BRAND PACKAGED IN BOTTLES.",
     ctaText: "EXPERIENCE",
     universeCategory: "SOUL",
-    url: "https://theworldsgreatestwater.org",
+    url: "https://theworldsgreatestwater.com",
     image: "/images/greatest-water.jpg",
     priority: 2, // S2
   },
@@ -114,7 +114,7 @@ export const BRANDS: Brand[] = [
     description: "ENERGY IN MOTION + THE ILLUSION",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://elev8creations.org",
+    url: "https://elev8creations.com/",
     image: "/images/elev8-creations.jpg",
     priority: 4, // B4
   },
@@ -124,7 +124,7 @@ export const BRANDS: Brand[] = [
     description: "YOUBOTICS. EXPANDING THE POSSIBILITIES OF HUMAN AND TECHNOLOGY INTEGRATION.",
     ctaText: "SHOP TO ELEV8",
     universeCategory: "BODY",
-    url: "https://youinrobotics.com",
+    url: "https://youinrobotics.org",
     image: "/images/robotics.jpg",
     priority: 5, // B5
   },
