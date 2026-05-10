@@ -104,25 +104,41 @@ function CustomConstellationFigure() {
       {/* Chakras Only */}
       <motion.g>
         {chakras.map((chakra, i) => (
-          <motion.circle
+          <motion.g
             key={chakra.id}
-            cx={203}
-            cy={chakra.cy}
-            r={10}
-            fill={chakra.color}
-            filter="url(#chakra-glow)"
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ 
+              opacity: 0, 
+              x: i === 0 ? -400 : i === 1 ? 400 : i === 2 ? -450 : i === 3 ? 0 : i === 4 ? 450 : i === 5 ? -300 : 300,
+              y: i === 0 ? 300 : i === 1 ? 250 : i === 2 ? 0 : i === 3 ? 400 : i === 4 ? -50 : i === 5 ? -350 : -400
+            }}
             animate={{
-              opacity: [0.5, 1, 0.5],
-              scale: [0.8, 1.2, 0.8]
+              opacity: 1,
+              x: 0,
+              y: 0
             }}
             transition={{
-              delay: 3 + (6 - i) * 0.2,
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
+              duration: 2.5, delay: 1.2 + i * 0.1, ease: "backOut" 
             }}
-          />
+          >
+            <motion.circle
+              cx={203}
+              cy={chakra.cy}
+              r={10}
+              fill={chakra.color}
+              filter="url(#chakra-glow)"
+              animate={{
+                opacity: [0.6, 1, 0.6],
+                scale: [0.8, 1.1, 0.8]
+              }}
+              transition={{
+                duration: 3, 
+                repeat: Infinity, 
+                ease: "easeInOut", 
+                delay: i * 0.2
+              }}
+              style={{ originX: "50%", originY: "50%" }}
+            />
+          </motion.g>
         ))}
       </motion.g>
     </svg>
@@ -149,14 +165,21 @@ function StarGatherFigure() {
 
       {/* Breathing wrapper — CSS animation, zero Framer Motion RAF cost */}
       <div className="w-full max-w-[1000px] h-[95vh] scale-[1.0] md:scale-[0.8] transform origin-center figure-breathe relative flex items-center justify-center">
-        {/* Meditation Figure Image */}
         <motion.img 
           src="/Assets/meditation figure.png"
           alt="Meditation Figure"
           className="absolute w-[120%] sm:w-[95%] max-w-[850px] h-auto object-contain mix-blend-screen select-none"
-          initial={{ opacity: 0, filter: "blur(30px)", scale: 0.95 }}
-          animate={{ opacity: 0.48, filter: "blur(8px)", scale: 1 }}
-          transition={{ duration: 4, delay: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.95, y: 10 }}
+          animate={{ 
+            opacity: 0.48, 
+            scale: [1, 1.02, 1],
+            y: [0, -10, 0]
+          }}
+          transition={{ 
+            opacity: { duration: 4, delay: 1, ease: "easeOut" },
+            scale: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 },
+            y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }
+          }}
           style={{ 
             filter: "drop-shadow(0 0 50px rgba(159,129,185,0.3)) blur(8px)",
           }}
