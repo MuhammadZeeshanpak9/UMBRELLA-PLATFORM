@@ -83,13 +83,13 @@ function FlatUniverse() {
 
 function CustomConstellationFigure() {
   const chakras = [
-    { id: 'root', cy: 380, color: '#ff3333' },
-    { id: 'sacral', cy: 330, color: '#ff9933' },
-    { id: 'solar', cy: 280, color: '#ffff66' },
-    { id: 'heart', cy: 230, color: '#33ff77' },
-    { id: 'throat', cy: 180, color: '#33ccff' },
-    { id: 'thirdeye', cy: 130, color: '#9933ff' },
-    { id: 'crown', cy: 75, color: '#e6ccff' }
+    { id: 'root', cy: 350, color: '#ff3333' },
+    { id: 'sacral', cy: 305, color: '#ff9933' },
+    { id: 'solar', cy: 260, color: '#ffff66' },
+    { id: 'heart', cy: 215, color: '#33ff77' },
+    { id: 'throat', cy: 170, color: '#33ccff' },
+    { id: 'thirdeye', cy: 125, color: '#9933ff' },
+    { id: 'crown', cy: 80, color: '#e6ccff' }
   ];
 
   return (
@@ -106,12 +106,10 @@ function CustomConstellationFigure() {
         {chakras.map((chakra, i) => (
           <motion.circle
             key={chakra.id}
-            cx={200}
+            cx={208}
             cy={chakra.cy}
-            r={12}
-            fill="none"
-            stroke={chakra.color}
-            strokeWidth="2"
+            r={10}
+            fill={chakra.color}
             filter="url(#chakra-glow)"
             initial={{ opacity: 0, scale: 0 }}
             animate={{
@@ -144,13 +142,25 @@ function StarGatherFigure() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 2.5 }}
       >
-        <div className="w-[600px] h-[800px] bg-blue-900/30 blur-[120px] rounded-full mix-blend-screen" />
-        <div className="absolute w-[400px] h-[600px] bg-indigo-500/20 blur-[80px] rounded-full mix-blend-screen" />
+        <div className="w-[300px] h-[400px] sm:w-[600px] sm:h-[800px] bg-blue-900/30 blur-[60px] sm:blur-[120px] rounded-full mix-blend-screen" />
+        <div className="absolute w-[200px] h-[300px] sm:w-[400px] sm:h-[600px] bg-indigo-500/20 blur-[40px] sm:blur-[80px] rounded-full mix-blend-screen" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(10,20,60,0.8)_0%,rgba(5,10,30,0.5)_40%,transparent_70%)] pointer-events-none mix-blend-multiply" />
       </motion.div>
 
       {/* Breathing wrapper — CSS animation, zero Framer Motion RAF cost */}
       <div className="w-full max-w-[1000px] h-[95vh] scale-[1.0] md:scale-[0.8] transform origin-center figure-breathe relative flex items-center justify-center">
+        {/* Meditation Figure Image */}
+        <motion.img 
+          src="/Assets/meditation figure.png"
+          alt="Meditation Figure"
+          className="absolute w-[120%] sm:w-[95%] max-w-[850px] h-auto object-contain mix-blend-screen select-none"
+          initial={{ opacity: 0, filter: "blur(30px)", scale: 0.95 }}
+          animate={{ opacity: 0.48, filter: "blur(8px)", scale: 1 }}
+          transition={{ duration: 4, delay: 1, ease: "easeOut" }}
+          style={{ 
+            filter: "drop-shadow(0 0 50px rgba(159,129,185,0.3)) blur(8px)",
+          }}
+        />
         <CustomConstellationFigure />
       </div>
     </div>
