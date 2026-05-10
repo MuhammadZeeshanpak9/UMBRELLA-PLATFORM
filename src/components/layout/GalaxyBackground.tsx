@@ -106,7 +106,7 @@ function CustomConstellationFigure() {
         {chakras.map((chakra, i) => (
           <motion.circle
             key={chakra.id}
-            cx={208}
+            cx={203}
             cy={chakra.cy}
             r={10}
             fill={chakra.color}
