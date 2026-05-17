@@ -7,6 +7,8 @@ import { Menu, X } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Elev8LogoText } from "@/components/ui/InfinityLogo";
+import LanguageSelector from "@/components/ui/LanguageSelector";
+import { useT } from "@/hooks/useT";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -15,6 +17,7 @@ function cn(...inputs: ClassValue[]) {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = useT("nav");
 
   useEffect(() => {
     let ticking = false;
@@ -32,14 +35,14 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { name: "Home", href: "#home" },
-    { name: "ELEV8 ALL", href: "?filter=CREATIONS#ecosystem" },
-    { name: "Vision", href: "#vision" },
+    { name: t("home"), href: "#home" },
+    { name: "ELEV8 ALL", href: "?filter=CREATIONS#ecosystem", isElev8: true },
+    { name: t("vision"), href: "#vision" },
     { name: "YOUTUBE", href: "https://youtube.com/@theworldsgreatestwater111?si=Y8Uz6sBWkmKln2cI", external: true },
     { name: "TIKTOK", href: "https://www.tiktok.com/@theworldsgreatestwater?_r=1&_t=ZP-95MUNoMMi11", external: true },
     { name: "INSTAGRAM", href: "https://www.instagram.com/theworldsgreatestwater?igsh=MWY5NnptdW5uM3NzZQ==", external: true },
     { name: "TWITTER", href: "#", external: true },
-    { name: "SAY HELLO", href: "#contact" },
+    { name: t("sayHello"), href: "#contact" },
   ];
 
   return (
@@ -68,18 +71,18 @@ export default function Navbar() {
               className="relative text-[10px] uppercase tracking-[0.2em] font-medium text-gray-400 hover:text-[#9f81b9] transition-colors duration-300 group"
             >
               <span className="relative z-10">
-                {link.name === "ELEV8 ALL" ? (
+                {link.isElev8 ? (
                   <span className="flex items-center">
                     <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> ALL
                   </span>
                 ) : link.name}
               </span>
-              {/* Animated Glowing Underline */}
               {!link.external && (
                 <span className="absolute left-1/2 bottom-[-4px] -translate-x-1/2 w-0 h-[1.5px] bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent transition-all duration-500 ease-out group-hover:w-[150%] opacity-0 group-hover:opacity-100" />
               )}
             </Link>
           ))}
+          <LanguageSelector />
         </nav>
 
         {/* Mobile Toggle */}

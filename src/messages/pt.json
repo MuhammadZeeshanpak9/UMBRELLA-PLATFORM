@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Início",
+    "vision": "Visão",
+    "sayHello": "Diga Olá",
+    "accountability": "Responsabilidade",
+    "systems": "Sistemas",
+    "results": "Resultados"
+  },
+  "hero": {
+    "welcome": "BEM-VINDO A",
+    "explore": "EXPLORAR AGORA",
+    "enterEcosystem": "ENTRAR NO ECOSSISTEMA",
+    "ecosystemDesc": "Uma integração perfeita entre o entendimento espiritual e a manifestação física.",
+    "grandDesign": "O GRANDE DESIGN. A VIDA",
+    "grandDesigner": "O GRANDE DESIGNER.",
+    "iAmYou": "EU SOU VOCÊ.",
+    "elev8Now": "AGORA"
+  },
+  "filter": {
+    "all": "CRIAÇÕES",
+    "soul": "ALMA",
+    "mind": "MENTE",
+    "body": "CORPO"
+  },
+  "brands": {
+    "comingSoon": "Em Breve",
+    "visitSite": "Visitar Site",
+    "learnMore": "Saiba Mais",
+    "experience": "EXPERIÊNCIA",
+    "explore": "EXPLORAR",
+    "shopToElev8": "COMPRAR PARA ELEVAR"
+  },
+  "footer": {
+    "mindCreations": "CRIAÇÕES MENTAIS",
+    "communicate": "Comunicar",
+    "sayHello": "DIGA OLÁ",
+    "rights": "Licença Universal",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço"
+  },
+  "contact": {
+    "title": "GRANDIOSO, DIGA OLÁ",
+    "subtitle": "SOU O MAIOR.",
+    "description": "Juntos, elevaremos o youniverse interior e o mundo na realidade física.",
+    "description2": "Envie uma mensagem para colaborações universais, parcerias ou informações gerais.",
+    "name": "Nome",
+    "phone": "Telefone",
+    "email": "Seu Email",
+    "message": "Mensagem",
+    "send": "ENVIAR MENSAGEM",
+    "sending": "ENVIANDO...",
+    "successTitle": "Mensagem Enviada!",
+    "successDesc": "Entraremos em contato em breve, Grandioso.",
+    "sendAnother": "Enviar Outra",
+    "error": "Algo deu errado. Por favor, tente novamente."
+  },
+  "vision": {
+    "label": "Visão Universal",
+    "statement": "CRIAÇÕES MENTAIS projetadas para expressar a natureza ilimitada da consciência na experiência humana.",
+    "collaborate": "COLABORAR",
+    "joinMovement": "Junte-se ao Movimento"
+  },
+  "language": {
+    "select": "Idioma",
+    "search": "Procurar idioma..."
+  }
+}

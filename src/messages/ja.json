@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "vision": "ビジョン",
+    "sayHello": "ご挨拶",
+    "accountability": "説明責任",
+    "systems": "システム",
+    "results": "結果"
+  },
+  "hero": {
+    "welcome": "ようこそ",
+    "explore": "今すぐ探索",
+    "enterEcosystem": "エコシステムへ入る",
+    "ecosystemDesc": "スピリチュアルな理解と物質的な顕現の間のシームレスな統合。",
+    "grandDesign": "偉大なデザイン。人生",
+    "grandDesigner": "偉大なデザイナー。",
+    "iAmYou": "私はあなたです。",
+    "elev8Now": "今"
+  },
+  "filter": {
+    "all": "クリエーション",
+    "soul": "魂",
+    "mind": "心",
+    "body": "体"
+  },
+  "brands": {
+    "comingSoon": "近日公開",
+    "visitSite": "サイトを見る",
+    "learnMore": "詳細を見る",
+    "experience": "体験する",
+    "explore": "探索する",
+    "shopToElev8": "購入して向上"
+  },
+  "footer": {
+    "mindCreations": "マインドクリエーション",
+    "communicate": "コミュニケーション",
+    "sayHello": "ご挨拶",
+    "rights": "ユニバーサルライセンス",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約"
+  },
+  "contact": {
+    "title": "偉大なる方、ご挨拶を",
+    "subtitle": "私は最高です。",
+    "description": "共に、内なるユーニバースと物質的現実の世界を高めましょう。",
+    "description2": "普遍的なコラボレーション、パートナーシップ、または一般情報についてメッセージをお送りください。",
+    "name": "お名前",
+    "phone": "電話番号",
+    "email": "メールアドレス",
+    "message": "メッセージ",
+    "send": "メッセージを送る",
+    "sending": "送信中...",
+    "successTitle": "メッセージを送りました！",
+    "successDesc": "まもなくご連絡いたします、偉大なる方。",
+    "sendAnother": "別のメッセージを送る",
+    "error": "問題が発生しました。もう一度お試しください。"
+  },
+  "vision": {
+    "label": "ユニバーサルビジョン",
+    "statement": "人間の体験における意識の無限の本質を表現するために設計されたマインドクリエーション。",
+    "collaborate": "コラボレーション",
+    "joinMovement": "ムーブメントに参加"
+  },
+  "language": {
+    "select": "言語",
+    "search": "言語を検索..."
+  }
+}

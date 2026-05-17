@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Nyumbani",
+    "vision": "Maono",
+    "sayHello": "Sema Habari",
+    "accountability": "Uwajibikaji",
+    "systems": "Mifumo",
+    "results": "Matokeo"
+  },
+  "hero": {
+    "welcome": "KARIBU KWENYE",
+    "explore": "CHUNGUZA SASA",
+    "enterEcosystem": "INGIA MFUMO WA IKOLOJIA",
+    "ecosystemDesc": "Muunganiko mzuri kati ya uelewa wa kiroho na udhihirisho wa kimwili.",
+    "grandDesign": "MUUNDO MKUU. MAISHA",
+    "grandDesigner": "MBUNI MKUU.",
+    "iAmYou": "MIMI NI WEWE.",
+    "elev8Now": "SASA"
+  },
+  "filter": {
+    "all": "UBUNIFU",
+    "soul": "ROHO",
+    "mind": "AKILI",
+    "body": "MWILI"
+  },
+  "brands": {
+    "comingSoon": "Inakuja Hivi Karibuni",
+    "visitSite": "Tembelea Tovuti",
+    "learnMore": "Jifunze Zaidi",
+    "experience": "PATA UZOEFU",
+    "explore": "CHUNGUZA",
+    "shopToElev8": "NUNUA KWA KUPANDA"
+  },
+  "footer": {
+    "mindCreations": "UBUNIFU WA AKILI",
+    "communicate": "Wasiliana",
+    "sayHello": "SEMA HABARI",
+    "rights": "Leseni ya Ulimwengu",
+    "privacyPolicy": "Sera ya Faragha",
+    "termsOfService": "Masharti ya Huduma"
+  },
+  "contact": {
+    "title": "MKUU, SEMA HABARI",
+    "subtitle": "MIMI NDIYE MKUBWA ZAIDI.",
+    "description": "Pamoja, tutainua youniverse ya ndani na ulimwengu katika ukweli wa kimwili.",
+    "description2": "Tuma ujumbe kwa ushirikiano wa ulimwengu, ushirika, au taarifa za jumla.",
+    "name": "Jina",
+    "phone": "Simu",
+    "email": "Barua Pepe Yako",
+    "message": "Ujumbe",
+    "send": "TUMA UJUMBE",
+    "sending": "INATUMA...",
+    "successTitle": "Ujumbe Umetumwa!",
+    "successDesc": "Tutawasiliana nawe hivi karibuni, Mkuu.",
+    "sendAnother": "Tuma Mwingine",
+    "error": "Kuna hitilafu. Tafadhali jaribu tena."
+  },
+  "vision": {
+    "label": "Maono ya Ulimwengu",
+    "statement": "UBUNIFU WA AKILI ulioundwa kuonyesha asili isiyo na mipaka ya ufahamu katika uzoefu wa binadamu.",
+    "collaborate": "SHIRIKI",
+    "joinMovement": "Jiunge na Harakati"
+  },
+  "language": {
+    "select": "Lugha",
+    "search": "Tafuta lugha..."
+  }
+}

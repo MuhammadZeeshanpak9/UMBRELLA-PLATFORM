@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "vision": "Vision",
+    "sayHello": "Bonjour",
+    "accountability": "Responsabilité",
+    "systems": "Systèmes",
+    "results": "Résultats"
+  },
+  "hero": {
+    "welcome": "BIENVENUE À",
+    "explore": "EXPLORER MAINTENANT",
+    "enterEcosystem": "ENTRER DANS L'ÉCOSYSTÈME",
+    "ecosystemDesc": "Une intégration harmonieuse entre la compréhension spirituelle et la manifestation physique.",
+    "grandDesign": "LE GRAND DESSEIN. LA VIE",
+    "grandDesigner": "LE GRAND CONCEPTEUR.",
+    "iAmYou": "JE SUIS TOI.",
+    "elev8Now": "MAINTENANT"
+  },
+  "filter": {
+    "all": "CRÉATIONS",
+    "soul": "ÂME",
+    "mind": "ESPRIT",
+    "body": "CORPS"
+  },
+  "brands": {
+    "comingSoon": "Bientôt Disponible",
+    "visitSite": "Visiter le Site",
+    "learnMore": "En Savoir Plus",
+    "experience": "EXPÉRIENCE",
+    "explore": "EXPLORER",
+    "shopToElev8": "ACHETER POUR ÉLEVER"
+  },
+  "footer": {
+    "mindCreations": "CRÉATIONS MENTALES",
+    "communicate": "Communiquer",
+    "sayHello": "DIS BONJOUR",
+    "rights": "Licence Universelle",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation"
+  },
+  "contact": {
+    "title": "GRAND, DIS BONJOUR",
+    "subtitle": "JE SUIS LE PLUS GRAND.",
+    "description": "Ensemble, nous élèverons l'univers intérieur et le monde dans la réalité physique.",
+    "description2": "Envoyez un message pour des collaborations universelles, des partenariats ou des informations générales.",
+    "name": "Nom",
+    "phone": "Téléphone",
+    "email": "Votre Email",
+    "message": "Message",
+    "send": "ENVOYER LE MESSAGE",
+    "sending": "ENVOI EN COURS...",
+    "successTitle": "Message Envoyé!",
+    "successDesc": "Nous vous contacterons bientôt, Grand.",
+    "sendAnother": "Envoyer un Autre",
+    "error": "Quelque chose s'est mal passé. Veuillez réessayer."
+  },
+  "vision": {
+    "label": "Vision Universelle",
+    "statement": "CRÉATIONS MENTALES conçues pour exprimer la nature illimitée de la conscience dans l'expérience humaine.",
+    "collaborate": "COLLABORER",
+    "joinMovement": "Rejoindre le Mouvement"
+  },
+  "language": {
+    "select": "Langue",
+    "search": "Rechercher une langue..."
+  }
+}

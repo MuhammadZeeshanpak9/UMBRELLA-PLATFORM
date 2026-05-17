@@ -121,3 +121,12 @@ body {
   background-clip: text;
   animation: gradient-drift 5s ease infinite;
 }
+
+/* ── RTL Overrides ── */
+[dir="rtl"] {
+  letter-spacing: 0;
+}
+[dir="rtl"] .text-left { text-align: right; }
+[dir="rtl"] .text-right { text-align: left; }
+[dir="rtl"] .tracking-widest,
+[dir="rtl"] [class*="tracking-["] { letter-spacing: 0; }

@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "vision": "Vision",
+    "sayHello": "Hallo Sagen",
+    "accountability": "Verantwortung",
+    "systems": "Systeme",
+    "results": "Ergebnisse"
+  },
+  "hero": {
+    "welcome": "WILLKOMMEN BEI",
+    "explore": "JETZT ERKUNDEN",
+    "enterEcosystem": "ÖKOSYSTEM BETRETEN",
+    "ecosystemDesc": "Eine nahtlose Integration zwischen spirituellem Verständnis und physischer Manifestation.",
+    "grandDesign": "DAS GROSSE DESIGN. DAS LEBEN",
+    "grandDesigner": "DER GROSSE DESIGNER.",
+    "iAmYou": "ICH BIN DU.",
+    "elev8Now": "JETZT"
+  },
+  "filter": {
+    "all": "SCHÖPFUNGEN",
+    "soul": "SEELE",
+    "mind": "GEIST",
+    "body": "KÖRPER"
+  },
+  "brands": {
+    "comingSoon": "Demnächst",
+    "visitSite": "Website Besuchen",
+    "learnMore": "Mehr Erfahren",
+    "experience": "ERLEBEN",
+    "explore": "ERKUNDEN",
+    "shopToElev8": "EINKAUFEN ZUM ERHEBEN"
+  },
+  "footer": {
+    "mindCreations": "GEISTIGE SCHÖPFUNGEN",
+    "communicate": "Kommunizieren",
+    "sayHello": "HALLO SAGEN",
+    "rights": "Universelle Lizenz",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfService": "Nutzungsbedingungen"
+  },
+  "contact": {
+    "title": "GRANDIOS, SAG HALLO",
+    "subtitle": "ICH BIN DER GRÖSSTE.",
+    "description": "Gemeinsam werden wir das innere Youniverse und die Welt in der physischen Realität erheben.",
+    "description2": "Sende eine Nachricht für universelle Zusammenarbeit, Partnerschaften oder allgemeine Informationen.",
+    "name": "Name",
+    "phone": "Telefon",
+    "email": "Deine Email",
+    "message": "Nachricht",
+    "send": "NACHRICHT SENDEN",
+    "sending": "WIRD GESENDET...",
+    "successTitle": "Nachricht Gesendet!",
+    "successDesc": "Wir melden uns bald, Grandioser.",
+    "sendAnother": "Weitere Senden",
+    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+  },
+  "vision": {
+    "label": "Universelle Vision",
+    "statement": "GEISTIGE SCHÖPFUNGEN, die darauf ausgelegt sind, die grenzenlose Natur des Bewusstseins in der menschlichen Erfahrung auszudrücken.",
+    "collaborate": "ZUSAMMENARBEITEN",
+    "joinMovement": "Der Bewegung Beitreten"
+  },
+  "language": {
+    "select": "Sprache",
+    "search": "Sprache suchen..."
+  }
+}

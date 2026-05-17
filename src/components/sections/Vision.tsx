@@ -3,9 +3,11 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Elev8LogoText } from "@/components/ui/InfinityLogo";
+import { useT } from "@/hooks/useT";
 
 export default function Vision() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const t = useT("vision");
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -44,7 +46,7 @@ export default function Vision() {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-sm md:text-base tracking-[0.4em] uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#9f81b9] to-[var(--complement-cyan)] mb-12 block drop-shadow-[0_0_20px_rgba(159,129,185,0.5)]"
         >
-          <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.8em] h-[1.15em] -ml-[0.05em] mr-[0.05em] opacity-80" /> Universal Vision
+          <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.8em] h-[1.15em] -ml-[0.05em] mr-[0.05em] opacity-80" /> {t("label")}
         </motion.p>
         
         <motion.h2
@@ -54,7 +56,7 @@ export default function Vision() {
           transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="text-3xl sm:text-4xl md:text-6xl lg:text-[5.5rem] font-sans font-light tracking-tighter text-[#9f81b9] max-w-6xl mx-auto leading-[1.15] drop-shadow-2xl"
         >
-          MIND CREATIONS designed to express the unlimited nature of consciousness in the human experience. <br /><br />
+          {t("statement")} <br /><br />
           <span className="italic font-medium text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] via-[var(--complement-pink)] to-[var(--complement-cyan)] shadow-white/30">
             {"I AM YOU.".split("").map((char, i) => (
               <motion.span
@@ -79,10 +81,10 @@ export default function Vision() {
            className="mt-12 md:mt-24 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12"
         >
           <a href="#contact" className="group relative inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 bg-white outline outline-1 outline-white/20 text-xs font-bold uppercase tracking-[0.2em] text-[#030008] overflow-hidden transition-all duration-700 hover:bg-transparent hover:text-white hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] rounded-full w-full sm:w-auto">
-            <span className="relative z-10 transition-colors duration-500">COLLABORATE</span>
+            <span className="relative z-10 transition-colors duration-500">{t("collaborate")}</span>
           </a>
           <a href="#contact" className="group relative inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 bg-[#030008]/40 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-[0.2em] text-white overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-[0_0_60px_rgba(255,214,232,0.3)] rounded-full w-full sm:w-auto">
-            <span className="relative z-10 transition-colors duration-500 group-hover:text-[#030008] drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] group-hover:drop-shadow-none">Join the Movement</span>
+            <span className="relative z-10 transition-colors duration-500 group-hover:text-[#030008] drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] group-hover:drop-shadow-none">{t("joinMovement")}</span>
             <div className="absolute inset-0 h-full w-0 bg-gradient-to-r from-white via-[var(--complement-cyan)] to-white transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full z-0"></div>
           </a>
         </motion.div>

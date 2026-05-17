@@ -6,6 +6,7 @@ import { Download, Wand2, BookOpen, ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import AudioPlayer from "@/components/layout/AudioPlayer";
 import { Elev8LogoText, InfinityLogo } from "@/components/ui/InfinityLogo";
+import LanguageSelector from "@/components/ui/LanguageSelector";
 
 const SacredGeometryLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
   <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
@@ -97,12 +98,15 @@ export default function Hero() {
               </div>
               <Elev8LogoText textClassName="font-semibold text-xl tracking-tighter text-[var(--foreground)] uppercase" iconClassName="w-[0.8em] h-[1.15em] mx-[0.1em]" />
             </div>
-            <button 
-              onClick={() => setIsMenuOpen(true)}
-              className="liquid-glass rounded-full p-3 hover:scale-105 transition-transform relative z-10"
-            >
-              <Menu size={20} className="text-[var(--foreground)]" />
-            </button>
+            <div className="flex items-center gap-2 relative z-10">
+              <LanguageSelector />
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="liquid-glass rounded-full p-3 hover:scale-105 transition-transform"
+              >
+                <Menu size={20} className="text-[var(--foreground)]" />
+              </button>
+            </div>
           </div>
 
           {/* Menu Overlay */}

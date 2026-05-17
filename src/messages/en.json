@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "vision": "Vision",
+    "sayHello": "Say Hello",
+    "accountability": "Accountability",
+    "systems": "Systems",
+    "results": "Results"
+  },
+  "hero": {
+    "welcome": "WELCOME TO",
+    "explore": "EXPLORE NOW",
+    "enterEcosystem": "ENTER ECOSYSTEM",
+    "ecosystemDesc": "A seamless integration between spiritual innerstanding and physical manifestation.",
+    "grandDesign": "THE GRAND DESIGN. LIFE",
+    "grandDesigner": "THE GRAND DESIGNER.",
+    "iAmYou": "I AM YOU.",
+    "elev8Now": "NOW"
+  },
+  "filter": {
+    "all": "CREATIONS",
+    "soul": "SOUL",
+    "mind": "MIND",
+    "body": "BODY"
+  },
+  "brands": {
+    "comingSoon": "Coming Soon",
+    "visitSite": "Visit Site",
+    "learnMore": "Learn More",
+    "experience": "EXPERIENCE",
+    "explore": "EXPLORE",
+    "shopToElev8": "SHOP TO ELEV8"
+  },
+  "footer": {
+    "mindCreations": "MIND CREATIONS",
+    "communicate": "Communicate",
+    "sayHello": "SAY HELLO",
+    "rights": "Universal License",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "contact": {
+    "title": "GREATEST, SAY HELLO",
+    "subtitle": "I AM THE GREATEST.",
+    "description": "Together, we will elevate the youniverse within and the world in the physical reality.",
+    "description2": "Send a message for universal collaborations, partnerships, or general information.",
+    "name": "Name",
+    "phone": "Phone#",
+    "email": "Your Email",
+    "message": "Message",
+    "send": "SEND MESSAGE",
+    "sending": "SENDING...",
+    "successTitle": "Message Sent!",
+    "successDesc": "We'll be in touch soon, Greatest.",
+    "sendAnother": "Send Another",
+    "error": "Something went wrong. Please try again."
+  },
+  "vision": {
+    "label": "Universal Vision",
+    "statement": "MIND CREATIONS designed to express the unlimited nature of consciousness in the human experience.",
+    "collaborate": "COLLABORATE",
+    "joinMovement": "Join the Movement"
+  },
+  "language": {
+    "select": "Language",
+    "search": "Search language..."
+  }
+}

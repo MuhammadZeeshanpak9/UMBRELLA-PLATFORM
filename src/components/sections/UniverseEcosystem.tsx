@@ -3,6 +3,7 @@
 import React from "react";
 
 import { useState, useEffect, useRef } from "react";
+import { useT } from "@/hooks/useT";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { BRANDS, Brand, UniverseCategory } from "@/config/brands";
@@ -197,6 +198,7 @@ const EcosystemCard = React.memo(function EcosystemCard({ brand, index = 999, ac
 export default function UniverseEcosystem() {
   const searchParams = useSearchParams();
   const [activeFilter, setActiveFilter] = useState<FilterType>("CREATIONS");
+  const tFilter = useT("filter");
 
   useEffect(() => {
     const filterParam = searchParams.get("filter")?.toUpperCase();
@@ -207,6 +209,12 @@ export default function UniverseEcosystem() {
   }, [searchParams]);
 
   const filters: FilterType[] = ["CREATIONS", "SOUL", "MIND", "BODY"];
+  const filterLabels: Record<FilterType, string> = {
+    CREATIONS: tFilter("all"),
+    SOUL: tFilter("soul"),
+    MIND: tFilter("mind"),
+    BODY: tFilter("body"),
+  };
 
   // Group by category order (SOUL, MIND, BODY) then by priority
   const categoryOrder: UniverseCategory[] = ["SOUL", "MIND", "BODY"];
@@ -273,7 +281,7 @@ export default function UniverseEcosystem() {
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
-                <span className="relative z-10">{filter}</span>
+                <span className="relative z-10">{filterLabels[filter]}</span>
               </button>
             ))}
           </motion.div>
@@ -291,7 +299,7 @@ export default function UniverseEcosystem() {
               <div className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-60" />
               <span>
                 {filteredBrands.length}&nbsp;
-                {activeFilter === "CREATIONS" ? "CREATIONS" : `${activeFilter} BRANDS`}
+                {filterLabels[activeFilter]}
               </span>
               <div className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-60" />
             </motion.div>

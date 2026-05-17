@@ -9,7 +9,7 @@ function FlatUniverse() {
   const ref = useRef<THREE.Points>(null);
 
   const [positions, colors, sizes, resetX] = useMemo(() => {
-    const particleCount = typeof window !== "undefined" && window.devicePixelRatio > 1 ? 3500 : 2500;
+    const particleCount = typeof window !== "undefined" && window.devicePixelRatio > 1 ? 35000 : 28000;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
@@ -34,7 +34,7 @@ function FlatUniverse() {
       else color.set("#D6F1FF");
 
       colors.set([color.r, color.g, color.b], i * 3);
-      sizes[i] = Math.random() * 2; // eslint-disable-line react-hooks/purity
+      sizes[i] = Math.random() * 1.5; // eslint-disable-line react-hooks/purity
       // Pre-compute reset X positions — eliminates Math.random() from the hot useFrame loop
       resetX[i] = (Math.random() - 0.5) * 400; // eslint-disable-line react-hooks/purity
     }
@@ -67,10 +67,10 @@ function FlatUniverse() {
         <bufferAttribute attach="attributes-size" args={[sizes, 1]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.06}
+        size={0.07}
         vertexColors
         transparent
-        opacity={0.6}
+        opacity={0.75}
         sizeAttenuation
         depthWrite={false}
       />
@@ -83,13 +83,13 @@ function FlatUniverse() {
 
 function CustomConstellationFigure() {
   const chakras = [
-    { id: 'root', cy: 350, color: '#ff3333' },
-    { id: 'sacral', cy: 305, color: '#ff9933' },
+    { id: 'root', cy: 350, color: '#ff9933' },
+    { id: 'sacral', cy: 305, color: '#ff3333' },
     { id: 'solar', cy: 260, color: '#ffff66' },
     { id: 'heart', cy: 215, color: '#33ff77' },
     { id: 'throat', cy: 170, color: '#33ccff' },
-    { id: 'thirdeye', cy: 125, color: '#9933ff' },
-    { id: 'crown', cy: 80, color: '#e6ccff' }
+    { id: 'thirdeye', cy: 80, color: '#9933ff' },
+    { id: 'crown', cy: 125, color: '#e6ccff' }
   ];
 
   return (
@@ -101,40 +101,45 @@ function CustomConstellationFigure() {
         </filter>
       </defs>
 
-      {/* Chakras Only */}
+      {/* Chakras - Sequential Smooth Activation */}
       <motion.g>
         {chakras.map((chakra, i) => (
           <motion.g
             key={chakra.id}
             initial={{ 
               opacity: 0, 
-              x: i === 0 ? -400 : i === 1 ? 400 : i === 2 ? -450 : i === 3 ? 0 : i === 4 ? 450 : i === 5 ? -300 : 300,
-              y: i === 0 ? 300 : i === 1 ? 250 : i === 2 ? 0 : i === 3 ? 400 : i === 4 ? -50 : i === 5 ? -350 : -400
+              y: 40,
+              scale: 0.2
             }}
             animate={{
               opacity: 1,
-              x: 0,
-              y: 0
+              y: 0,
+              scale: 1
             }}
             transition={{
-              duration: 2.5, delay: 1.2 + i * 0.1, ease: "backOut" 
+              duration: 2, 
+              delay: 2 + i * 0.35, // Sequential activation from root to crown
+              ease: [0.16, 1, 0.3, 1] // Apple-like super smooth ease-out
             }}
           >
             <motion.circle
               cx={203}
               cy={chakra.cy}
-              r={10}
-              fill={chakra.color}
+              r={12}
+              fill="none"
+              stroke={chakra.color}
+              strokeWidth={3}
               filter="url(#chakra-glow)"
               animate={{
-                opacity: [0.6, 1, 0.6],
-                scale: [0.8, 1.1, 0.8]
+                opacity: [0.4, 0.85, 0.4],
+                scale: [0.9, 1.15, 0.9],
+                cy: [chakra.cy, chakra.cy - 5, chakra.cy] // Add subtle floating
               }}
               transition={{
-                duration: 3, 
+                duration: 4.5 + (i % 3) * 0.5, // Slightly staggered breathing rhythms
                 repeat: Infinity, 
                 ease: "easeInOut", 
-                delay: i * 0.2
+                delay: 2 + i * 0.35 // Start breathing as soon as it appears
               }}
               style={{ originX: "50%", originY: "50%" }}
             />
@@ -169,19 +174,19 @@ function StarGatherFigure() {
           src="/Assets/meditation figure.png"
           alt="Meditation Figure"
           className="absolute w-[120%] sm:w-[95%] max-w-[850px] h-auto object-contain mix-blend-screen select-none"
-          initial={{ opacity: 0, scale: 0.95, y: 10 }}
+          initial={{ opacity: 0, scale: 0.98, y: 15 }}
           animate={{ 
-            opacity: 0.48, 
-            scale: [1, 1.02, 1],
-            y: [0, -10, 0]
+            opacity: 0.48, // Keeping the same subtle opacity, not eye-catching
+            scale: [1, 1.015, 1],
+            y: [0, -12, 0]
           }}
           transition={{ 
-            opacity: { duration: 4, delay: 1, ease: "easeOut" },
-            scale: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 },
-            y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }
+            opacity: { duration: 4, delay: 1, ease: [0.25, 0.1, 0.25, 1] },
+            scale: { duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 },
+            y: { duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }
           }}
           style={{ 
-            filter: "drop-shadow(0 0 50px rgba(159,129,185,0.3)) blur(8px)",
+            filter: "drop-shadow(0 0 50px rgba(159,129,185,0.3)) blur(8px)", // Blur remains exactly the same
           }}
         />
         <CustomConstellationFigure />

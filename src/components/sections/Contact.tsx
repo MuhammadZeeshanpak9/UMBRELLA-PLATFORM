@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Elev8LogoText } from "@/components/ui/InfinityLogo";
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { useT } from "@/hooks/useT";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -13,6 +14,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const t = useT("contact");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -56,10 +58,10 @@ export default function Contact() {
             className="flex-1 w-full text-center lg:text-left"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4.5rem] font-sans font-bold tracking-tighter text-white uppercase leading-[1.1] mb-4 md:mb-6 drop-shadow-xl">
-              GREATEST, <br className="hidden lg:block" /> SAY HELLO
+              {t("title")}
             </h2>
             <p className="text-lg md:text-xl text-white font-semibold tracking-wide uppercase mb-3">
-              I AM THE GREATEST.
+              {t("subtitle")}
             </p>
             <p className="text-base md:text-lg text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-3">
               Together, we will <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> the youniverse within and the world in the physical reality.
@@ -86,15 +88,15 @@ export default function Contact() {
                   className="flex flex-col items-center justify-center gap-4 py-12 text-center"
                 >
                   <CheckCircle size={48} className="text-[var(--primary)]" />
-                  <p className="text-white font-semibold tracking-[0.15em] uppercase text-sm">Message Sent!</p>
+                  <p className="text-white font-semibold tracking-[0.15em] uppercase text-sm">{t("successTitle")}</p>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    We&apos;ll be in touch soon, Greatest.
+                    {t("successDesc")}
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
                     className="mt-4 text-xs tracking-[0.2em] uppercase text-[var(--primary)] hover:text-white transition-colors"
                   >
-                    Send Another
+                    {t("sendAnother")}
                   </button>
                 </motion.div>
               ) : (
@@ -102,7 +104,7 @@ export default function Contact() {
                   <div className="flex flex-col sm:flex-row gap-4 md:gap-5">
                     <input
                       type="text"
-                      placeholder="Name"
+                      placeholder={t("name")}
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       className={inputClass}
@@ -111,7 +113,7 @@ export default function Contact() {
                     />
                     <input
                       type="tel"
-                      placeholder="Phone#"
+                      placeholder={t("phone")}
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className={inputClass}
@@ -120,7 +122,7 @@ export default function Contact() {
                   </div>
                   <input
                     type="email"
-                    placeholder="Your Email"
+                    placeholder={t("email")}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className={inputClass}
@@ -128,7 +130,7 @@ export default function Contact() {
                     disabled={status === "loading"}
                   />
                   <textarea
-                    placeholder="Message"
+                    placeholder={t("message")}
                     rows={5}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -140,7 +142,7 @@ export default function Contact() {
                   {status === "error" && (
                     <div className="flex items-center gap-2 text-red-400 text-xs tracking-wide">
                       <AlertCircle size={14} />
-                      <span>Something went wrong. Please try again.</span>
+                      <span>{t("error")}</span>
                     </div>
                   )}
 
@@ -152,10 +154,10 @@ export default function Contact() {
                     {status === "loading" ? (
                       <>
                         <Loader2 size={14} className="animate-spin" />
-                        SENDING...
+                        {t("sending")}
                       </>
                     ) : (
-                      "SEND MESSAGE"
+                      t("send")
                     )}
                   </button>
                 </form>

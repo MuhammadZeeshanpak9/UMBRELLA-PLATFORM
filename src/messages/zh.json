@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "首页",
+    "vision": "愿景",
+    "sayHello": "打招呼",
+    "accountability": "责任",
+    "systems": "系统",
+    "results": "成果"
+  },
+  "hero": {
+    "welcome": "欢迎来到",
+    "explore": "立即探索",
+    "enterEcosystem": "进入生态系统",
+    "ecosystemDesc": "灵性理解与物质显化之间的无缝融合。",
+    "grandDesign": "宏大设计。生命",
+    "grandDesigner": "伟大设计师。",
+    "iAmYou": "我即是你。",
+    "elev8Now": "现在"
+  },
+  "filter": {
+    "all": "创作",
+    "soul": "灵魂",
+    "mind": "心灵",
+    "body": "身体"
+  },
+  "brands": {
+    "comingSoon": "即将推出",
+    "visitSite": "访问网站",
+    "learnMore": "了解更多",
+    "experience": "体验",
+    "explore": "探索",
+    "shopToElev8": "购物提升"
+  },
+  "footer": {
+    "mindCreations": "心灵创作",
+    "communicate": "沟通",
+    "sayHello": "打招呼",
+    "rights": "通用许可",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款"
+  },
+  "contact": {
+    "title": "伟大者，打声招呼",
+    "subtitle": "我是最伟大的。",
+    "description": "我们将共同提升内在宇宙和物质现实中的世界。",
+    "description2": "发送消息进行全球合作、伙伴关系或一般信息咨询。",
+    "name": "姓名",
+    "phone": "电话",
+    "email": "您的邮箱",
+    "message": "消息",
+    "send": "发送消息",
+    "sending": "发送中...",
+    "successTitle": "消息已发送！",
+    "successDesc": "我们会尽快与您联系，伟大者。",
+    "sendAnother": "再发一条",
+    "error": "出了点问题，请重试。"
+  },
+  "vision": {
+    "label": "宇宙愿景",
+    "statement": "心灵创作，旨在表达人类体验中意识的无限本质。",
+    "collaborate": "合作",
+    "joinMovement": "加入运动"
+  },
+  "language": {
+    "select": "语言",
+    "search": "搜索语言..."
+  }
+}
