@@ -83,13 +83,13 @@ function FlatUniverse() {
 
 function CustomConstellationFigure() {
   const chakras = [
-    { id: 'root', cy: 350, color: '#ff9933' },
-    { id: 'sacral', cy: 305, color: '#ff3333' },
-    { id: 'solar', cy: 260, color: '#ffff66' },
-    { id: 'heart', cy: 215, color: '#33ff77' },
-    { id: 'throat', cy: 170, color: '#33ccff' },
-    { id: 'thirdeye', cy: 80, color: '#9933ff' },
-    { id: 'crown', cy: 125, color: '#e6ccff' }
+    { id: 'root', cy: 350, color: '#ff3333' },
+    { id: 'sacral', cy: 306, color: '#ff9933' },
+    { id: 'solar', cy: 263, color: '#ffff66' },
+    { id: 'heart', cy: 220, color: '#33ff77' },
+    { id: 'throat', cy: 176, color: '#33ccff' },
+    { id: 'thirdeye', cy: 133, color: '#9933ff' },
+    { id: 'crown', cy: 90, color: '#e6ccff' }
   ];
 
   return (
@@ -125,7 +125,7 @@ function CustomConstellationFigure() {
             <motion.circle
               cx={203}
               cy={chakra.cy}
-              r={12}
+              r={9}
               fill="none"
               stroke={chakra.color}
               strokeWidth={3}
@@ -217,7 +217,7 @@ export default function GalaxyBackground() {
       </div>
 
       {/* Three.js star field */}
-      <div className="absolute inset-0 z-[1] galaxy-canvas" style={{ position: "relative" }}>
+      <div className="absolute inset-x-0 bottom-0 top-[5vh] md:top-[10vh] z-[1] galaxy-canvas">
         <Canvas
           camera={{ position: [0, 8, 24], fov: 60 }}
           gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
