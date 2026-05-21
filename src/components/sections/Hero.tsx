@@ -7,6 +7,7 @@ import Link from "next/link";
 import AudioPlayer from "@/components/layout/AudioPlayer";
 import { Elev8LogoText, InfinityLogo } from "@/components/ui/InfinityLogo";
 import LanguageSelector from "@/components/ui/LanguageSelector";
+import { useT } from "@/hooks/useT";
 
 const SacredGeometryLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
   <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
@@ -36,6 +37,11 @@ export default function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showAccountabilityModal, setShowAccountabilityModal] = useState(false);
   const [showResultsOverlay, setShowResultsOverlay] = useState(false);
+
+  const tHero   = useT("hero");
+  const tFilter = useT("filter");
+  const tNav    = useT("nav");
+  const tBrands = useT("brands");
 
   // Lock/unlock body scroll when any modal is open
   useEffect(() => {
@@ -136,14 +142,14 @@ export default function Hero() {
                 
                 <div className="flex flex-col gap-8 items-center justify-center flex-1 relative z-10">
                   {[
-                    { label: 'ELEV8 ALL', filter: 'CREATIONS' },
-                    { label: 'SOUL', filter: 'SOUL' },
-                    { label: 'MIND', filter: 'MIND' },
-                    { label: 'BODY', filter: 'BODY' },
-                    { label: 'SAY HELLO', href: '#contact' }
+                    { id: 'elev8all', brand: true,  label: '',                  filter: 'CREATIONS', href: '' },
+                    { id: 'soul',     brand: false, label: tFilter("soul"),     filter: 'SOUL',      href: '' },
+                    { id: 'mind',     brand: false, label: tFilter("mind"),     filter: 'MIND',      href: '' },
+                    { id: 'body',     brand: false, label: tFilter("body"),     filter: 'BODY',      href: '' },
+                    { id: 'contact',  brand: false, label: tNav("sayHello"),    filter: '',          href: '#contact' },
                   ].map((item, i) => (
                     <motion.div
-                      key={item.label}
+                      key={item.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.05 * i }}
@@ -153,7 +159,7 @@ export default function Hero() {
                         onClick={() => setIsMenuOpen(false)}
                         className="text-2xl md:text-3xl font-extralight tracking-[0.2em] uppercase text-gray-300 hover:text-[var(--primary)] hover:scale-105 transition-all text-center block"
                       >
-                        {item.label === "ELEV8 ALL" ? (
+                        {item.brand ? (
                           <span className="flex items-center justify-center">
                             <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em] opacity-80" /> ALL
                           </span>
@@ -193,21 +199,21 @@ export default function Hero() {
               
               {/* Primary Vision Statement Grid — from user image */}
               <div className="grid items-center text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.6em] font-semibold text-[var(--primary)] uppercase mb-10 grid-cols-[1fr_auto_1fr] gap-x-2 sm:gap-x-3 gap-y-1 opacity-90 w-full max-w-[320px] sm:max-w-[450px] md:max-w-[600px] lg:max-w-[700px] mx-auto transition-all duration-700">
-                <Link href="?filter=MIND#ecosystem" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">MIND</Link>
+                <Link href="?filter=MIND#ecosystem" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">{tFilter("mind")}</Link>
                 <span className="text-center font-bold text-sm sm:text-base md:text-lg px-1 sm:px-2 text-[var(--primary)]">+</span>
-                <Link href="?filter=BODY#ecosystem" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">BODY</Link>
+                <Link href="?filter=BODY#ecosystem" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">{tFilter("body")}</Link>
 
-                <Link href="#vision" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">SPIRITUALITY</Link>
+                <Link href="#vision" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">{tHero("grid.spirituality")}</Link>
                 <span className="text-center font-bold text-sm sm:text-base md:text-lg px-1 sm:px-2 text-[var(--primary)]">+</span>
-                <Link href="#vision" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">SCIENCE</Link>
+                <Link href="#vision" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">{tHero("grid.science")}</Link>
 
-                <Link href="#vision" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">CONSCIOUSNESS</Link>
+                <Link href="#vision" className="text-right whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">{tHero("grid.consciousness")}</Link>
                 <span className="text-center font-bold text-sm sm:text-base md:text-lg px-1 sm:px-2 text-[var(--primary)]">+</span>
-                <Link href="?filter=BODY#ecosystem" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">GODLY LIVING</Link>
+                <Link href="?filter=BODY#ecosystem" className="text-left whitespace-nowrap hover:text-white transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">{tHero("grid.godlyLiving")}</Link>
               </div>
 
               <h1 className="text-[2rem] sm:text-4xl md:text-6xl lg:text-[5rem] font-sans font-extralight tracking-[0.1em] md:tracking-[0.15em] text-[var(--primary)] leading-[1.1] md:leading-[1.2] max-w-full px-2 md:px-0 md:max-w-4xl uppercase flex flex-col items-center">
-                <span>WELCOME TO</span> 
+                <span>{tHero("welcome")}</span>
                 <span className="inline-flex items-center leading-none justify-center">
                   <span className="font-sans font-medium tracking-[0.05em] text-[var(--foreground)] opacity-80">ELEV</span>
                   <InfinityLogo 
@@ -231,25 +237,25 @@ export default function Hero() {
                 animate={{ x: "200%" }}
                 transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 3.5, ease: "easeInOut" }}
               />
-              <span className="relative z-10">EXPLORE NOW</span>
+              <span className="relative z-10">{tHero("explore")}</span>
               <div className="relative z-10 w-7 h-7 rounded-full bg-[var(--primary)] flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                 <Download size={13} className="text-white" />
               </div>
             </motion.a>
 
             <div className="hidden sm:flex mt-6 md:mt-10 flex-wrap justify-center gap-2 md:gap-3">
-              {["SOUL", "MIND", "BODY"].map((tag, i) => (
+              {(["soul", "mind", "body"] as const).map((tag, i) => (
                 <motion.div
                   key={tag}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + i * 0.1 }}
                 >
-                  <Link 
-                    href={`?filter=${tag}#ecosystem`}
+                  <Link
+                    href={`?filter=${tag.toUpperCase()}#ecosystem`}
                     className="liquid-glass px-5 py-2 rounded-full text-xs font-medium text-gray-600 hover:text-[var(--primary)] hover:border-[var(--primary)]/30 transition-all block"
                   >
-                    {tag}
+                    {tFilter(tag)}
                   </Link>
                 </motion.div>
               ))}
@@ -258,9 +264,9 @@ export default function Hero() {
 
           {/* Bottom Quote — hidden on mobile to keep layout clean */}
           <div className="hidden sm:block p-4 sm:p-6 md:p-8 pb-6 md:pb-10 text-center">
-            <span className="text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-bold text-[var(--primary)] opacity-80 block mb-2 md:mb-4">THE GRAND DESIGN. LIFE</span>
+            <span className="text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-bold text-[var(--primary)] opacity-80 block mb-2 md:mb-4">{tHero("grandDesign")}</span>
             <p className="text-sm md:text-xl text-[var(--primary)] max-w-md mx-auto leading-relaxed font-extralight tracking-[0.05em] md:tracking-[0.1em] uppercase">
-              THE GRAND DESIGNER. <span className="font-light opacity-50">I AM YOU.</span>
+              {tHero("grandDesigner")} <span className="font-light opacity-50">{tHero("iAmYou")}</span>
             </p>
             <div className="mt-8 flex items-center justify-center gap-4">
               <div className="h-[1px] w-8 bg-gray-300"></div>
@@ -307,8 +313,8 @@ export default function Hero() {
 
           <div className="flex justify-center lg:justify-end px-2 sm:px-4">
              <a href="?filter=CREATIONS#ecosystem" className="liquid-glass-strong w-full lg:w-64 p-4 md:p-6 rounded-[2rem] flex flex-col gap-2 md:gap-3 text-center lg:text-left cursor-pointer hover:border-white/30 hover:shadow-[0_0_30px_rgba(159,129,185,0.3)] transition-all duration-500 group">
-               <h3 className="font-semibold text-lg text-[var(--primary)] tracking-tight uppercase group-hover:text-white transition-colors duration-300">ENTER <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.55em] h-[0.85em] mx-[0.1em]" /> ECOSYSTEM</h3>
-               <p className="text-sm text-gray-500 font-light leading-relaxed group-hover:text-gray-400 transition-colors duration-300">A seamless integration between spiritual innerstanding and physical manifestation.</p>
+               <h3 className="font-semibold text-lg text-[var(--primary)] tracking-tight uppercase group-hover:text-white transition-colors duration-300">{tHero("enterEcosystem")}</h3>
+               <p className="text-sm text-gray-500 font-light leading-relaxed group-hover:text-gray-400 transition-colors duration-300">{tHero("ecosystemDesc")}</p>
              </a>
           </div>
 
@@ -317,8 +323,8 @@ export default function Hero() {
             <div className="liquid-glass rounded-[2.5rem] p-4 flex flex-col gap-4 shadow-xl shadow-[var(--primary)]/5">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { title: "SYSTEMS", icon: Wand2, color: "text-[var(--complement-cyan)]", bg: "bg-[var(--complement-cyan)]/10", onClick: handleSystemsClick },
-                  { title: "ACCOUNTABILITY", icon: BookOpen, color: "text-[var(--complement-pink)]", bg: "bg-[var(--complement-pink)]/10", onClick: openAccountability }
+                  { title: tNav("systems"),        icon: Wand2,     color: "text-[var(--complement-cyan)]",  bg: "bg-[var(--complement-cyan)]/10",  onClick: handleSystemsClick },
+                  { title: tNav("accountability"), icon: BookOpen,  color: "text-[var(--complement-pink)]", bg: "bg-[var(--complement-pink)]/10", onClick: openAccountability }
                 ].map((card) => (
                   <div key={card.title} onClick={card.onClick} className="liquid-glass-strong p-4 md:p-6 rounded-3xl group cursor-pointer hover:border-white transition-colors flex flex-col items-center sm:items-start text-center sm:text-left">
                     <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full ${card.bg} flex items-center justify-center mb-4 md:mb-6 overflow-hidden`}>
@@ -333,8 +339,8 @@ export default function Hero() {
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-12 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] overflow-hidden shadow-inner"></div>
                   <div>
-                    <h4 className="font-medium text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors uppercase tracking-widest text-sm md:text-base">RESULTS</h4>
-                    <p className="text-xs text-gray-500 mt-1">Discover dynamic scaling</p>
+                    <h4 className="font-medium text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors uppercase tracking-widest text-sm md:text-base">{tNav("results")}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{tHero("discoverScaling")}</p>
                   </div>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-gray-400 group-hover:text-[var(--primary)] group-hover:scale-105 transition-all">
@@ -375,19 +381,19 @@ export default function Hero() {
               <div className="w-12 h-12 rounded-full bg-[var(--complement-pink)]/10 flex items-center justify-center mx-auto mb-6">
                 <BookOpen size={20} className="text-[var(--complement-pink)]" />
               </div>
-              <h3 className="text-xl font-semibold tracking-tight text-white uppercase mb-3">Connect with the Ecosystem</h3>
+              <h3 className="text-xl font-semibold tracking-tight text-white uppercase mb-3">{tHero("modal.accountabilityTitle")}</h3>
               <p className="text-sm text-gray-400 font-light leading-relaxed mb-4">
-                Connect with the <Elev8LogoText textClassName="uppercase" iconClassName="w-[1.1em] h-[1.5em] mx-[0.15em] opacity-80" /> ALL movement to create positive & balanced coexisting with other spirit beings having physical life experiences in the mind.
+                {tHero("modal.accountabilityBody1")}
               </p>
               <p className="text-sm text-gray-400 font-light leading-relaxed mb-8">
-                It&apos;s always a WIN WIN, collaborating, partnering, and elevating the universal consciousness.
+                {tHero("modal.accountabilityBody2")}
               </p>
               <a
                 href="#contact"
                 onClick={closeAccountability}
                 className="inline-flex items-center justify-center w-full py-4 rounded-2xl bg-[var(--primary)] hover:bg-[var(--complement-cyan)] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 shadow-[0_0_20px_rgba(159,129,185,0.4)]"
               >
-                <Elev8LogoText textClassName="uppercase text-sm" iconClassName="w-[1.2em] h-[1.7em] mx-[0.15em]" /> <span className="ml-2">NOW</span>
+                <Elev8LogoText textClassName="uppercase text-sm" iconClassName="w-[1.2em] h-[1.7em] mx-[0.15em]" /> <span className="ml-2">{tHero("elev8Now")}</span>
               </a>
             </motion.div>
           </motion.div>
@@ -418,13 +424,13 @@ export default function Hero() {
               >
                 <X size={18} />
               </button>
-              <h3 className="text-xl font-semibold tracking-tight text-white uppercase mb-2">Experience the Results</h3>
-              <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">Explore the full range of premium experiences, creations, and E-learning from the <Elev8LogoText textClassName="uppercase" iconClassName="w-[0.9em] h-[1.3em] mx-[0.1em] opacity-80" /> universe.</p>
+              <h3 className="text-xl font-semibold tracking-tight text-white uppercase mb-2">{tHero("modal.resultsTitle")}</h3>
+              <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">{tHero("modal.resultsBody")}</p>
               <div className="grid grid-cols-3 gap-3 mb-8">
                 {[
-                  { label: "Experiences", color: "from-[var(--primary)] to-[var(--complement-pink)]" },
-                  { label: "Creations", color: "from-[var(--complement-cyan)] to-[var(--primary)]" },
-                  { label: "E-learning", color: "from-[var(--complement-pink)] to-[var(--complement-cyan)]" },
+                  { label: tHero("modal.experiences"), color: "from-[var(--primary)] to-[var(--complement-pink)]" },
+                  { label: tHero("modal.creations"),   color: "from-[var(--complement-cyan)] to-[var(--primary)]" },
+                  { label: tHero("modal.elearning"),   color: "from-[var(--complement-pink)] to-[var(--complement-cyan)]" },
                 ].map((item) => (
                   <div key={item.label} className={`rounded-2xl bg-gradient-to-br ${item.color} p-[1px]`}>
                     <div className="rounded-2xl bg-[#030008]/80 p-4 h-full flex flex-col items-center justify-center gap-3">
@@ -443,7 +449,7 @@ export default function Hero() {
                 onClick={closeResults}
                 className="inline-flex items-center justify-center w-full py-4 rounded-2xl bg-gradient-to-r from-[var(--primary)] to-[var(--complement-cyan)] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:opacity-90 shadow-[0_0_20px_rgba(159,129,185,0.4)] gap-[0.5em]"
               >
-                EXPLORE <Elev8LogoText textClassName="uppercase" iconClassName="w-[1.1em] h-[1.5em] mx-[0.1em]" /> YOUNIVERSE
+                {tBrands("explore")} <Elev8LogoText textClassName="uppercase" iconClassName="w-[1.1em] h-[1.5em] mx-[0.1em]" /> YOUNIVERSE
               </a>
             </motion.div>
           </motion.div>

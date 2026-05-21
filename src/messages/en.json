@@ -15,7 +15,25 @@
     "grandDesign": "THE GRAND DESIGN. LIFE",
     "grandDesigner": "THE GRAND DESIGNER.",
     "iAmYou": "I AM YOU.",
-    "elev8Now": "NOW"
+    "elev8Now": "NOW",
+    "grid": {
+      "spirituality": "SPIRITUALITY",
+      "science": "SCIENCE",
+      "consciousness": "CONSCIOUSNESS",
+      "godlyLiving": "GODLY LIVING"
+    },
+    "discoverScaling": "Discover dynamic scaling",
+    "modal": {
+      "accountabilityTitle": "Connect with the Ecosystem",
+      "accountabilityBody1": "Connect with the ELEV8 ALL movement to create positive & balanced coexisting with other spirit beings having physical life experiences in the mind.",
+      "accountabilityBody2": "It's always a WIN WIN, collaborating, partnering, and elevating the universal consciousness.",
+      "resultsTitle": "Experience the Results",
+      "resultsBody": "Explore the full range of premium experiences, creations, and E-learning from the ELEV8 universe.",
+      "experiences": "Experiences",
+      "creations": "Creations",
+      "elearning": "E-learning",
+      "exploreUniverse": "EXPLORE YOUNIVERSE"
+    }
   },
   "filter": {
     "all": "CREATIONS",

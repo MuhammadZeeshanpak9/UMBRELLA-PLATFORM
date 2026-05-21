@@ -15,7 +15,25 @@
     "grandDesign": "महान डिज़ाइन। जीवन",
     "grandDesigner": "महान डिज़ाइनर।",
     "iAmYou": "मैं तुम हूं।",
-    "elev8Now": "अभी"
+    "elev8Now": "अभी",
+    "grid": {
+      "spirituality": "आध्यात्मिकता",
+      "science": "विज्ञान",
+      "consciousness": "चेतना",
+      "godlyLiving": "ईश्वरीय जीवन"
+    },
+    "discoverScaling": "गतिशील विकास खोजें",
+    "modal": {
+      "accountabilityTitle": "पारिस्थितिकी तंत्र से जुड़ें",
+      "accountabilityBody1": "ELEV8 ALL आंदोलन से जुड़ें और मन में शारीरिक जीवन अनुभव करने वाले अन्य आत्मिक प्राणियों के साथ सकारात्मक और संतुलित सहअस्तित्व बनाएं।",
+      "accountabilityBody2": "यह हमेशा WIN WIN है, सहयोग करना, साझेदारी करना और सार्वभौमिक चेतना को ऊंचा उठाना।",
+      "resultsTitle": "परिणाम अनुभव करें",
+      "resultsBody": "ELEV8 यूनिवर्स से प्रीमियम अनुभवों, रचनाओं और ई-लर्निंग की पूरी श्रृंखला का अन्वेषण करें।",
+      "experiences": "अनुभव",
+      "creations": "रचनाएं",
+      "elearning": "ई-लर्निंग",
+      "exploreUniverse": "YOUNIVERSE खोजें"
+    }
   },
   "filter": {
     "all": "रचनाएं",

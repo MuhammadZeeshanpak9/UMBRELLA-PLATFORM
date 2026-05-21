@@ -15,7 +15,25 @@
     "grandDesign": "宏大设计。生命",
     "grandDesigner": "伟大设计师。",
     "iAmYou": "我即是你。",
-    "elev8Now": "现在"
+    "elev8Now": "现在",
+    "grid": {
+      "spirituality": "灵性",
+      "science": "科学",
+      "consciousness": "意识",
+      "godlyLiving": "圣洁生活"
+    },
+    "discoverScaling": "探索动态成长",
+    "modal": {
+      "accountabilityTitle": "加入我们的生态系统",
+      "accountabilityBody1": "加入 ELEV8 ALL 运动，与其他在心灵中体验物质生活的精神存在创造积极而平衡的共存。",
+      "accountabilityBody2": "这始终是双赢，通过合作、伙伴关系，共同提升宇宙意识。",
+      "resultsTitle": "体验成果",
+      "resultsBody": "探索来自 ELEV8 宇宙的全系列高端体验、创作和电子学习。",
+      "experiences": "体验",
+      "creations": "创作",
+      "elearning": "电子学习",
+      "exploreUniverse": "探索 YOUNIVERSE"
+    }
   },
   "filter": {
     "all": "创作",

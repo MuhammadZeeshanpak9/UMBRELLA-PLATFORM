@@ -15,7 +15,25 @@
     "grandDesign": "偉大なデザイン。人生",
     "grandDesigner": "偉大なデザイナー。",
     "iAmYou": "私はあなたです。",
-    "elev8Now": "今"
+    "elev8Now": "今",
+    "grid": {
+      "spirituality": "スピリチュアリティ",
+      "science": "科学",
+      "consciousness": "意識",
+      "godlyLiving": "敬虔な生き方"
+    },
+    "discoverScaling": "ダイナミックな成長を発見する",
+    "modal": {
+      "accountabilityTitle": "エコシステムに参加する",
+      "accountabilityBody1": "ELEV8 ALLムーブメントに参加して、心の中で肉体的な人生経験をしている他の精神的な存在と、ポジティブでバランスの取れた共存を築きましょう。",
+      "accountabilityBody2": "常にWIN-WINです。コラボレーション、パートナーシップ、そして普遍的な意識を高めることで。",
+      "resultsTitle": "結果を体験する",
+      "resultsBody": "ELEV8ユニバースのプレミアム体験、クリエーション、Eラーニングの全ラインナップを探索してください。",
+      "experiences": "体験",
+      "creations": "クリエーション",
+      "elearning": "Eラーニング",
+      "exploreUniverse": "YOUNIVERSEを探索"
+    }
   },
   "filter": {
     "all": "クリエーション",

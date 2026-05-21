@@ -37,6 +37,15 @@ function unflattenMessages(flat: Record<string, string>): Record<string, unknown
   return result;
 }
 
+export async function GET(req: NextRequest) {
+  const ping = new URL(req.url).searchParams.get("ping");
+  if (ping === "true") {
+    const key = process.env.DEEPL_API_KEY;
+    return NextResponse.json({ configured: !!(key && key !== "your_deepl_api_key_here") });
+  }
+  return NextResponse.json({ error: "Use POST for translations" }, { status: 405 });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { targetLang } = (await req.json()) as { targetLang: string };
@@ -47,6 +56,7 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.DEEPL_API_KEY;
     if (!apiKey || apiKey === "your_deepl_api_key_here") {
+      console.warn("[Translation API] DeepL key not configured — AI languages disabled");
       return NextResponse.json({ error: "DEEPL_API_KEY not configured" }, { status: 503 });
     }
 

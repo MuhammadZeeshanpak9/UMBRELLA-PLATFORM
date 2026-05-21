@@ -15,7 +15,25 @@
     "grandDesign": "EL GRAN DISEÑO. LA VIDA",
     "grandDesigner": "EL GRAN DISEÑADOR.",
     "iAmYou": "YO SOY TÚ.",
-    "elev8Now": "AHORA"
+    "elev8Now": "AHORA",
+    "grid": {
+      "spirituality": "ESPIRITUALIDAD",
+      "science": "CIENCIA",
+      "consciousness": "CONSCIENCIA",
+      "godlyLiving": "VIDA DIVINA"
+    },
+    "discoverScaling": "Descubre el crecimiento dinámico",
+    "modal": {
+      "accountabilityTitle": "Conecta con el Ecosistema",
+      "accountabilityBody1": "Conéctate con el movimiento ELEV8 ALL para crear una coexistencia positiva y equilibrada con otros seres espirituales que tienen experiencias de vida física en la mente.",
+      "accountabilityBody2": "Siempre es un GANAR GANAR, colaborando, asociándose y elevando la conciencia universal.",
+      "resultsTitle": "Experimenta los Resultados",
+      "resultsBody": "Explora la gama completa de experiencias premium, creaciones y E-learning del universo ELEV8.",
+      "experiences": "Experiencias",
+      "creations": "Creaciones",
+      "elearning": "E-learning",
+      "exploreUniverse": "EXPLORAR YOUNIVERSE"
+    }
   },
   "filter": {
     "all": "CREACIONES",

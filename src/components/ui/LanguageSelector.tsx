@@ -8,7 +8,7 @@ import { useDynamicTranslation } from "@/components/providers/DynamicTranslation
 import { useT } from "@/hooks/useT";
 import { CORE_LOCALES, type CoreLocale } from "@/i18n/routing";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, Search, Check, ChevronDown } from "lucide-react";
+import { Globe, Search, Check, ChevronDown, Lock } from "lucide-react";
 
 type LangEntry = { code: string; name: string; nativeName: string };
 
@@ -60,6 +60,7 @@ export default function LanguageSelector() {
   const [search, setSearch]       = useState("");
   const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
   const [mounted, setMounted]     = useState(false);
+  const [apiConfigured, setApiConfigured] = useState<boolean | null>(null);
 
   const router        = useRouter();
   const pathname      = usePathname();
@@ -70,6 +71,21 @@ export default function LanguageSelector() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { setMounted(true); }, []);
+
+  useEffect(() => {
+    const cached = sessionStorage.getItem("elev8_deepl_configured");
+    if (cached !== null) {
+      setApiConfigured(cached === "true");
+      return;
+    }
+    fetch("/api/translate?ping=true")
+      .then((r) => r.json())
+      .then((data: { configured: boolean }) => {
+        setApiConfigured(data.configured);
+        sessionStorage.setItem("elev8_deepl_configured", String(data.configured));
+      })
+      .catch(() => setApiConfigured(false));
+  }, []);
 
   const activeCode = dynamicLocale ?? currentLocale;
   const activeLang = ALL_LANGUAGES.find((l) => l.code === activeCode);
@@ -219,6 +235,7 @@ export default function LanguageSelector() {
                     lang={lang}
                     isActive={lang.code === activeCode}
                     isDynamic={true}
+                    locked={apiConfigured === false}
                     index={coreFiltered.length + i}
                     onSelect={handleSelect}
                   />
@@ -281,14 +298,51 @@ export default function LanguageSelector() {
 
 /* ─── Individual row ─── */
 function LangRow({
-  lang, isActive, isDynamic, index, onSelect,
+  lang, isActive, isDynamic, locked = false, index, onSelect,
 }: {
   lang: LangEntry;
   isActive: boolean;
   isDynamic: boolean;
+  locked?: boolean;
   index: number;
   onSelect: (l: LangEntry) => void;
 }) {
+  const aiBadge = (
+    <span className="text-[8px] px-1.5 py-0.5 rounded-md tracking-widest font-medium"
+          style={{
+            background: "linear-gradient(135deg, rgba(159,129,185,0.15), rgba(214,241,255,0.08))",
+            color: "rgba(159,129,185,0.7)",
+            border: "1px solid rgba(159,129,185,0.18)",
+          }}>
+      AI
+    </span>
+  );
+
+  if (locked) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, x: -6 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: index * 0.018, duration: 0.2 }}
+        title="Available soon"
+        className="w-full flex items-center justify-between px-4 py-2.5 cursor-not-allowed opacity-40"
+      >
+        <div className="flex flex-col gap-0.5">
+          <span className="text-[12px] font-medium leading-tight" style={{ color: "#d1d5db" }}>
+            {lang.nativeName}
+          </span>
+          <span className="text-[10px] leading-tight" style={{ color: "rgba(255,255,255,0.25)" }}>
+            {lang.name}
+          </span>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          {aiBadge}
+          <Lock size={10} style={{ color: "rgba(159,129,185,0.5)" }} />
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.button
       initial={{ opacity: 0, x: -6 }}
@@ -311,16 +365,7 @@ function LangRow({
       </div>
 
       <div className="flex items-center gap-2 flex-shrink-0">
-        {isDynamic && (
-          <span className="text-[8px] px-1.5 py-0.5 rounded-md tracking-widest font-medium"
-                style={{
-                  background: "linear-gradient(135deg, rgba(159,129,185,0.15), rgba(214,241,255,0.08))",
-                  color: "rgba(159,129,185,0.7)",
-                  border: "1px solid rgba(159,129,185,0.18)",
-                }}>
-            AI
-          </span>
-        )}
+        {isDynamic && aiBadge}
         {isActive && (
           <motion.div
             initial={{ scale: 0 }}

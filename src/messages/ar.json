@@ -15,7 +15,25 @@
     "grandDesign": "التصميم العظيم. الحياة",
     "grandDesigner": "المصمم العظيم.",
     "iAmYou": "أنا أنت.",
-    "elev8Now": "الآن"
+    "elev8Now": "الآن",
+    "grid": {
+      "spirituality": "الروحانية",
+      "science": "العلم",
+      "consciousness": "الوعي",
+      "godlyLiving": "العيش الرباني"
+    },
+    "discoverScaling": "اكتشف التطور الديناميكي",
+    "modal": {
+      "accountabilityTitle": "انضم إلى النظام البيئي",
+      "accountabilityBody1": "تواصل مع حركة ELEV8 ALL لخلق تعايش إيجابي ومتوازن مع كائنات روحية أخرى تعيش تجارب الحياة المادية في العقل.",
+      "accountabilityBody2": "إنها دائماً مكسب للجميع، بالتعاون والشراكة والارتقاء بالوعي الكوني.",
+      "resultsTitle": "اختبر النتائج",
+      "resultsBody": "استكشف النطاق الكامل من التجارب المتميزة والإبداعات والتعليم الإلكتروني من عالم ELEV8.",
+      "experiences": "تجارب",
+      "creations": "إبداعات",
+      "elearning": "التعلم الإلكتروني",
+      "exploreUniverse": "استكشف YOUNIVERSE"
+    }
   },
   "filter": {
     "all": "الإبداعات",

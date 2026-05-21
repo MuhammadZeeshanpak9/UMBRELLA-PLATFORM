@@ -15,7 +15,25 @@
     "grandDesign": "DAS GROSSE DESIGN. DAS LEBEN",
     "grandDesigner": "DER GROSSE DESIGNER.",
     "iAmYou": "ICH BIN DU.",
-    "elev8Now": "JETZT"
+    "elev8Now": "JETZT",
+    "grid": {
+      "spirituality": "SPIRITUALITÄT",
+      "science": "WISSENSCHAFT",
+      "consciousness": "BEWUSSTSEIN",
+      "godlyLiving": "GOTTGEFÄLLIGES LEBEN"
+    },
+    "discoverScaling": "Entdecke dynamisches Wachstum",
+    "modal": {
+      "accountabilityTitle": "Verbinde dich mit dem Ökosystem",
+      "accountabilityBody1": "Verbinde dich mit der ELEV8 ALL Bewegung, um eine positive und ausgewogene Koexistenz mit anderen Geistwesen zu schaffen, die physische Lebenserfahrungen im Geist machen.",
+      "accountabilityBody2": "Es ist immer ein WIN-WIN, durch Zusammenarbeit, Partnerschaft und die Erhebung des universellen Bewusstseins.",
+      "resultsTitle": "Erlebe die Ergebnisse",
+      "resultsBody": "Erkunde das gesamte Spektrum an Premium-Erlebnissen, Kreationen und E-Learning aus dem ELEV8-Universum.",
+      "experiences": "Erlebnisse",
+      "creations": "Kreationen",
+      "elearning": "E-Learning",
+      "exploreUniverse": "YOUNIVERSE ERKUNDEN"
+    }
   },
   "filter": {
     "all": "SCHÖPFUNGEN",

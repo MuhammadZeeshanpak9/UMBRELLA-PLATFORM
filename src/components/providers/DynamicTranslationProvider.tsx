@@ -74,17 +74,22 @@ export default function DynamicTranslationProvider({ children }: { children: Rea
     }
 
     setIsLoading(true);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 3000);
     try {
       const res = await fetch("/api/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ targetLang: locale }),
+        signal: controller.signal,
       });
+      clearTimeout(timer);
       if (!res.ok) throw new Error("Translation fetch failed");
       const { messages: fetched } = (await res.json()) as { messages: MessagesObj };
       setCachedMessages(locale, fetched);
       setMessages(fetched);
     } catch {
+      clearTimeout(timer);
       setMessages(null);
     } finally {
       setIsLoading(false);

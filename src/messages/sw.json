@@ -15,7 +15,25 @@
     "grandDesign": "MUUNDO MKUU. MAISHA",
     "grandDesigner": "MBUNI MKUU.",
     "iAmYou": "MIMI NI WEWE.",
-    "elev8Now": "SASA"
+    "elev8Now": "SASA",
+    "grid": {
+      "spirituality": "ROHO",
+      "science": "SAYANSI",
+      "consciousness": "UFAHAMU",
+      "godlyLiving": "MAISHA YA KIMUNGU"
+    },
+    "discoverScaling": "Gundua ukuaji wa nguvu",
+    "modal": {
+      "accountabilityTitle": "Jiunge na Mfumo wa Ikolojia",
+      "accountabilityBody1": "Jiunge na harakati ya ELEV8 ALL kuunda kuishi pamoja kwa amani na usawa na viumbe wengine wa kiroho.",
+      "accountabilityBody2": "Daima ni USHINDI KWA WOTE, kwa kushirikiana, kuungana, na kuinua ufahamu wa ulimwengu.",
+      "resultsTitle": "Pata Matokeo",
+      "resultsBody": "Chunguza anuwai kamili ya uzoefu wa hali ya juu, ubunifu, na E-learning kutoka ulimwengu wa ELEV8.",
+      "experiences": "Uzoefu",
+      "creations": "Ubunifu",
+      "elearning": "E-kujifunza",
+      "exploreUniverse": "CHUNGUZA YOUNIVERSE"
+    }
   },
   "filter": {
     "all": "UBUNIFU",

@@ -15,7 +15,25 @@
     "grandDesign": "LE GRAND DESSEIN. LA VIE",
     "grandDesigner": "LE GRAND CONCEPTEUR.",
     "iAmYou": "JE SUIS TOI.",
-    "elev8Now": "MAINTENANT"
+    "elev8Now": "MAINTENANT",
+    "grid": {
+      "spirituality": "SPIRITUALITÉ",
+      "science": "SCIENCE",
+      "consciousness": "CONSCIENCE",
+      "godlyLiving": "VIE SACRÉE"
+    },
+    "discoverScaling": "Découvrez la progression dynamique",
+    "modal": {
+      "accountabilityTitle": "Rejoignez l'Écosystème",
+      "accountabilityBody1": "Rejoignez le mouvement ELEV8 ALL pour créer une coexistence positive et équilibrée avec d'autres êtres spirituels vivant des expériences physiques dans l'esprit.",
+      "accountabilityBody2": "C'est toujours un GAGNANT-GAGNANT, en collaborant, en s'associant et en élevant la conscience universelle.",
+      "resultsTitle": "Vivez les Résultats",
+      "resultsBody": "Explorez toute la gamme d'expériences premium, de créations et d'E-learning de l'univers ELEV8.",
+      "experiences": "Expériences",
+      "creations": "Créations",
+      "elearning": "E-learning",
+      "exploreUniverse": "EXPLORER YOUNIVERSE"
+    }
   },
   "filter": {
     "all": "CRÉATIONS",
