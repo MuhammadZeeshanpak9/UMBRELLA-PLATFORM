@@ -88,8 +88,8 @@ function CustomConstellationFigure() {
     { id: 'solar', cy: 263, color: '#ffff66' },
     { id: 'heart', cy: 220, color: '#33ff77' },
     { id: 'throat', cy: 176, color: '#33ccff' },
-    { id: 'crown', cy: 133, color: '#e6ccff' },
-    { id: 'thirdeye', cy: 90, color: '#3b00ff' } // Indigo/Blue like the YOU bottle
+    { id: 'thirdeye', cy: 133, color: '#3b00ff' },
+    { id: 'crown', cy: 90, color: '#e6ccff' }
   ];
 
   return (
