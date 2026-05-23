@@ -246,7 +246,7 @@ export default function UniverseEcosystem() {
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-wrap items-center justify-center text-4xl sm:text-5xl md:text-7xl font-sans font-light tracking-tighter text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-8 md:mb-12 uppercase"
           >
-            <span className="inline-flex items-center leading-none justify-center">
+            <span dir="ltr" className="inline-flex items-center leading-none justify-center">
               <span className="text-white">ELEV</span>
               <InfinityLogo 
                 className="inline-block flex-shrink-0 w-[1.1em] h-[1.5em] opacity-90 -ml-[0.1em] mr-[-0.02em] drop-shadow-[0_0_15px_rgba(159,129,185,0.4)]" 

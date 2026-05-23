@@ -214,7 +214,7 @@ export default function Hero() {
 
               <h1 className="text-[2rem] sm:text-4xl md:text-6xl lg:text-[5rem] font-sans font-extralight tracking-[0.1em] md:tracking-[0.15em] text-[var(--primary)] leading-[1.1] md:leading-[1.2] max-w-full px-2 md:px-0 md:max-w-4xl uppercase flex flex-col items-center">
                 <span>{tHero("welcome")}</span>
-                <span className="inline-flex items-center leading-none justify-center">
+                <span dir="ltr" className="inline-flex items-center leading-none justify-center">
                   <span className="font-sans font-medium tracking-[0.05em] text-[var(--foreground)] opacity-80">ELEV</span>
                   <InfinityLogo 
                     className="inline-block flex-shrink-0 w-[1.8em] sm:w-[1.5em] h-[2.4em] sm:h-[2em] opacity-90 -ml-[0.12em] mr-[-0.05em] drop-shadow-[0_0_20px_rgba(159,129,185,0.5)] transition-all duration-700 hover:scale-105" 
