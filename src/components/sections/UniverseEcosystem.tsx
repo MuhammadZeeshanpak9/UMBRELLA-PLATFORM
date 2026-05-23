@@ -98,12 +98,12 @@ const EcosystemCard = React.memo(function EcosystemCard({ brand, index = 999, ac
         >
           {/* Energy Thread / Constellation Line - Minimal */}
           <motion.div 
-            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#c991f2]/10 to-[#8c9fff]/10"
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#9B59B6]/10 to-[#4B0082]/10"
             animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#c991f2" text="TO KNOW" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#8c9fff" text="TO SEE" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#9B59B6" text="TO KNOW" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#4B0082" text="TO SEE" delay={0.4} styleDelay={0.5} />
         </motion.div>
       )}
 
@@ -116,12 +116,12 @@ const EcosystemCard = React.memo(function EcosystemCard({ brand, index = 999, ac
         >
           {/* Energy Thread - Minimal */}
           <motion.div 
-            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#78b5ff]/10 to-[#4ee09b]/10"
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#1E90FF]/10 to-[#27AE60]/10"
             animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#78b5ff" text="TO LEARN" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#4ee09b" text="TO LOVE" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#1E90FF" text="TO SPEAK" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#27AE60" text="TO LOVE" delay={0.4} styleDelay={0.5} />
         </motion.div>
       )}
 
@@ -134,13 +134,13 @@ const EcosystemCard = React.memo(function EcosystemCard({ brand, index = 999, ac
         >
           {/* Energy Thread - Minimal */}
           <motion.div 
-            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#ffd15c]/10 via-[#ff9e5e]/10 to-[#fc6060]/10"
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#F1C40F]/10 via-[#E67E22]/10 to-[#C0392B]/10"
             animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#ffd15c" text="TO ACT" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#ff9e5e" text="TO FEEL" delay={0.4} styleDelay={0.5} />
-          <EnergyOrb color="#fc6060" text="TO BE HERE" delay={0.6} styleDelay={1} />
+          <EnergyOrb color="#F1C40F" text="TO ACT" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#E67E22" text="TO FEEL" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#C0392B" text="TO BE HERE" delay={0.6} styleDelay={1} />
         </motion.div>
       )}
 
@@ -286,24 +286,6 @@ export default function UniverseEcosystem() {
             ))}
           </motion.div>
 
-          {/* Animated brand count badge */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeFilter + filteredBrands.length}
-              initial={{ opacity: 0, y: -6, scale: 0.92 }}
-              animate={{ opacity: 1, y: 0,  scale: 1 }}
-              exit={{ opacity: 0, y: 6,    scale: 0.92 }}
-              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 flex items-center gap-2 text-[10px] tracking-[0.3em] text-gray-500 uppercase"
-            >
-              <div className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-60" />
-              <span>
-                {filteredBrands.length}&nbsp;
-                {filterLabels[activeFilter]}
-              </span>
-              <div className="w-1 h-1 rounded-full bg-[var(--primary)] opacity-60" />
-            </motion.div>
-          </AnimatePresence>
         </div>
 
         {/* Animated Grid */}

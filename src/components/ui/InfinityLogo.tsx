@@ -121,7 +121,7 @@ export function Elev8LogoText({
   const strippedIconClass = iconClassName.replace(/\bm[lxyr]?-\[[^\]]+\]\b/g, "").trim();
 
   return (
-    <span className={`inline-flex items-center leading-none ${className}`}>
+    <span dir="ltr" className={`inline-flex items-center leading-none ${className}`}>
       <span className={textClassName}>ELEV</span>
       <InfinityLogo 
         className={`inline-block flex-shrink-0 -ml-[0.10em] mr-[0.02em] ${strippedIconClass}`} 
