@@ -98,12 +98,12 @@ const EcosystemCard = React.memo(function EcosystemCard({ brand, index = 999, ac
         >
           {/* Energy Thread / Constellation Line - Minimal */}
           <motion.div 
-            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#9B59B6]/10 to-[#4B0082]/10"
+            className="absolute left-[8px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#4B0082]/10 to-[#9B59B6]/10"
             animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
-          <EnergyOrb color="#9B59B6" text="TO KNOW" delay={0.2} styleDelay={0} />
-          <EnergyOrb color="#4B0082" text="TO SEE" delay={0.4} styleDelay={0.5} />
+          <EnergyOrb color="#4B0082" text="TO KNOW" delay={0.2} styleDelay={0} />
+          <EnergyOrb color="#9B59B6" text="TO SEE" delay={0.4} styleDelay={0.5} />
         </motion.div>
       )}
 
