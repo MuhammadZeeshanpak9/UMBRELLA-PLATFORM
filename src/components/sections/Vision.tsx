@@ -8,6 +8,7 @@ import { useT } from "@/hooks/useT";
 export default function Vision() {
   const containerRef = useRef<HTMLDivElement>(null);
   const t = useT("vision");
+  const tHero = useT("hero");
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -58,16 +59,16 @@ export default function Vision() {
         >
           {t("statement")} <br /><br />
           <span className="italic font-medium text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] via-[var(--complement-pink)] to-[var(--complement-cyan)] shadow-white/30">
-            {"I AM YOU.".split("").map((char, i) => (
+            {tHero("iAmYou").split(" ").map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: 0.9 + i * 0.065, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: "inline-block" }}
+                transition={{ duration: 0.5, delay: 0.9 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: "inline-block", marginInlineEnd: "0.3em" }}
               >
-                {char === " " ? " " : char}
+                {word}
               </motion.span>
             ))}
           </span>
