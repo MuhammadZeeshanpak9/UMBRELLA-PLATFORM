@@ -124,11 +124,17 @@ export default function LanguageSelector() {
 
   useEffect(() => {
     if (!open) return;
-    window.addEventListener("scroll", calcPos, true);
-    window.addEventListener("resize", calcPos);
+    let rafId: number;
+    const throttled = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(calcPos);
+    };
+    window.addEventListener("scroll", throttled, true);
+    window.addEventListener("resize", throttled);
     return () => {
-      window.removeEventListener("scroll", calcPos, true);
-      window.removeEventListener("resize", calcPos);
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", throttled, true);
+      window.removeEventListener("resize", throttled);
     };
   }, [open]);
 

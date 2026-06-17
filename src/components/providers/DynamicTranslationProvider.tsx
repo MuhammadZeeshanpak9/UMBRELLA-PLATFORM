@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, useRef } from "react";
 
 type MessagesObj = Record<string, unknown>;
 
@@ -60,6 +60,12 @@ export default function DynamicTranslationProvider({ children }: { children: Rea
   const [dynamicLocale, setDynamicLocaleState] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const isMountedRef = useRef(true);
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => { isMountedRef.current = false; };
+  }, []);
+
   // Read cookie on mount
   useEffect(() => {
     const saved = getCookie(COOKIE_KEY);
@@ -69,10 +75,11 @@ export default function DynamicTranslationProvider({ children }: { children: Rea
   const fetchTranslations = useCallback(async (locale: string) => {
     const cached = getCachedMessages(locale);
     if (cached) {
-      setMessages(cached);
+      if (isMountedRef.current) setMessages(cached);
       return;
     }
 
+    if (!isMountedRef.current) return;
     setIsLoading(true);
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 3000);
@@ -86,13 +93,15 @@ export default function DynamicTranslationProvider({ children }: { children: Rea
       clearTimeout(timer);
       if (!res.ok) throw new Error("Translation fetch failed");
       const { messages: fetched } = (await res.json()) as { messages: MessagesObj };
-      setCachedMessages(locale, fetched);
-      setMessages(fetched);
+      if (isMountedRef.current) {
+        setCachedMessages(locale, fetched);
+        setMessages(fetched);
+      }
     } catch {
       clearTimeout(timer);
-      setMessages(null);
+      if (isMountedRef.current) setMessages(null);
     } finally {
-      setIsLoading(false);
+      if (isMountedRef.current) setIsLoading(false);
     }
   }, []);
 
@@ -124,10 +133,13 @@ export default function DynamicTranslationProvider({ children }: { children: Rea
     }
   }, [dynamicLocale]);
 
+  const contextValue = useMemo(
+    () => ({ messages, dynamicLocale, isLoading, setDynamicLocale, clearDynamic }),
+    [messages, dynamicLocale, isLoading, setDynamicLocale, clearDynamic]
+  );
+
   return (
-    <DynamicTranslationContext.Provider
-      value={{ messages, dynamicLocale, isLoading, setDynamicLocale, clearDynamic }}
-    >
+    <DynamicTranslationContext.Provider value={contextValue}>
       {children}
     </DynamicTranslationContext.Provider>
   );

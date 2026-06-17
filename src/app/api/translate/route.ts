@@ -9,6 +9,13 @@ const DEEPL_LANG_MAP: Record<string, deepl.TargetLanguageCode> = {
   "zh-tw": "zh-HANT",
 };
 
+// Singleton — reused across warm Vercel worker invocations
+let _translator: deepl.Translator | null = null;
+function getTranslator(apiKey: string): deepl.Translator {
+  if (!_translator) _translator = new deepl.Translator(apiKey);
+  return _translator;
+}
+
 function flattenMessages(obj: Record<string, unknown>, prefix = ""): Record<string, string> {
   const result: Record<string, string> = {};
   for (const key of Object.keys(obj)) {
@@ -41,7 +48,10 @@ export async function GET(req: NextRequest) {
   const ping = new URL(req.url).searchParams.get("ping");
   if (ping === "true") {
     const key = process.env.DEEPL_API_KEY;
-    return NextResponse.json({ configured: !!(key && key !== "your_deepl_api_key_here") });
+    return NextResponse.json(
+      { configured: !!(key && key !== "your_deepl_api_key_here") },
+      { headers: { "Cache-Control": "public, max-age=3600" } }
+    );
   }
   return NextResponse.json({ error: "Use POST for translations" }, { status: 405 });
 }
@@ -50,8 +60,8 @@ export async function POST(req: NextRequest) {
   try {
     const { targetLang } = (await req.json()) as { targetLang: string };
 
-    if (!targetLang || typeof targetLang !== "string") {
-      return NextResponse.json({ error: "Missing targetLang" }, { status: 400 });
+    if (!targetLang || typeof targetLang !== "string" || targetLang.length > 20) {
+      return NextResponse.json({ error: "Invalid targetLang" }, { status: 400 });
     }
 
     const apiKey = process.env.DEEPL_API_KEY;
@@ -60,7 +70,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "DEEPL_API_KEY not configured" }, { status: 503 });
     }
 
-    const translator = new deepl.Translator(apiKey);
+    const translator = getTranslator(apiKey);
 
     const deepLTarget = (DEEPL_LANG_MAP[targetLang.toLowerCase()] ??
       targetLang) as deepl.TargetLanguageCode;
