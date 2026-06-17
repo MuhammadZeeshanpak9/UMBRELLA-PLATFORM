@@ -73,16 +73,17 @@ export default function LanguageSelector() {
   useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
+    // Only cache the positive result — never cache "false" so a newly-added key is picked up immediately
     const cached = sessionStorage.getItem("elev8_deepl_configured");
-    if (cached !== null) {
-      setApiConfigured(cached === "true");
+    if (cached === "true") {
+      setApiConfigured(true);
       return;
     }
     fetch("/api/translate?ping=true")
       .then((r) => r.json())
       .then((data: { configured: boolean }) => {
         setApiConfigured(data.configured);
-        sessionStorage.setItem("elev8_deepl_configured", String(data.configured));
+        if (data.configured) sessionStorage.setItem("elev8_deepl_configured", "true");
       })
       .catch(() => setApiConfigured(false));
   }, []);

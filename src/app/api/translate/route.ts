@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
     const key = process.env.DEEPL_API_KEY;
     return NextResponse.json(
       { configured: !!(key && key !== "your_deepl_api_key_here") },
-      { headers: { "Cache-Control": "public, max-age=3600" } }
+      { headers: { "Cache-Control": "private, no-store" } }
     );
   }
   return NextResponse.json({ error: "Use POST for translations" }, { status: 405 });
